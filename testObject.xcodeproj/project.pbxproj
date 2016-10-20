@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BABD68AF1DAC98BB0000B124 /* ThirdTController.m in Sources */ = {isa = PBXBuildFile; fileRef = BABD68AE1DAC98BB0000B124 /* ThirdTController.m */; };
-		BABD68B31DADC62A0000B124 /* TestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BABD68B11DADC62A0000B124 /* TestCell.m */; };
-		BABD68B41DADC62A0000B124 /* TestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BABD68B21DADC62A0000B124 /* TestCell.xib */; };
 		BACEE4041DAC8BC20061CA95 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BACEE4031DAC8BC20061CA95 /* main.m */; };
 		BACEE4071DAC8BC20061CA95 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BACEE4061DAC8BC20061CA95 /* AppDelegate.m */; };
 		BACEE40D1DAC8BC30061CA95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BACEE40B1DAC8BC30061CA95 /* Main.storyboard */; };
@@ -17,9 +14,13 @@
 		BACEE4121DAC8BC30061CA95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BACEE4101DAC8BC30061CA95 /* LaunchScreen.storyboard */; };
 		BACEE41D1DAC8BC30061CA95 /* testObjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BACEE41C1DAC8BC30061CA95 /* testObjectTests.m */; };
 		BACEE4281DAC8BC30061CA95 /* testObjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BACEE4271DAC8BC30061CA95 /* testObjectUITests.m */; };
-		BACEE43E1DAC93E50061CA95 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BACEE43D1DAC93E50061CA95 /* TestViewController.m */; };
-		BACEE4421DAC95A40061CA95 /* FirstTController.m in Sources */ = {isa = PBXBuildFile; fileRef = BACEE4411DAC95A40061CA95 /* FirstTController.m */; };
-		BACEE4451DAC97A70061CA95 /* SecondTController.m in Sources */ = {isa = PBXBuildFile; fileRef = BACEE4441DAC97A70061CA95 /* SecondTController.m */; };
+		E519BAE01DB89B5500AB74CD /* FirstTController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BAD31DB89B5500AB74CD /* FirstTController.m */; };
+		E519BAE11DB89B5500AB74CD /* SecondTController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BAD51DB89B5500AB74CD /* SecondTController.m */; };
+		E519BAE21DB89B5500AB74CD /* TestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BAD71DB89B5500AB74CD /* TestCell.m */; };
+		E519BAE31DB89B5500AB74CD /* TestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E519BAD81DB89B5500AB74CD /* TestCell.xib */; };
+		E519BAE41DB89B5500AB74CD /* ThirdTController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BADA1DB89B5500AB74CD /* ThirdTController.m */; };
+		E519BAE51DB89B5500AB74CD /* HeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BADD1DB89B5500AB74CD /* HeadView.m */; };
+		E519BAE61DB89B5500AB74CD /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BADF1DB89B5500AB74CD /* TestViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,11 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BABD68AD1DAC98BB0000B124 /* ThirdTController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdTController.h; sourceTree = "<group>"; };
-		BABD68AE1DAC98BB0000B124 /* ThirdTController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdTController.m; sourceTree = "<group>"; };
-		BABD68B01DADC62A0000B124 /* TestCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCell.h; sourceTree = "<group>"; };
-		BABD68B11DADC62A0000B124 /* TestCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCell.m; sourceTree = "<group>"; };
-		BABD68B21DADC62A0000B124 /* TestCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestCell.xib; sourceTree = "<group>"; };
 		BACEE3FF1DAC8BC20061CA95 /* testObject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testObject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BACEE4031DAC8BC20061CA95 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BACEE4051DAC8BC20061CA95 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -59,12 +55,19 @@
 		BACEE4231DAC8BC30061CA95 /* testObjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testObjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BACEE4271DAC8BC30061CA95 /* testObjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testObjectUITests.m; sourceTree = "<group>"; };
 		BACEE4291DAC8BC30061CA95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BACEE43C1DAC93E50061CA95 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
-		BACEE43D1DAC93E50061CA95 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
-		BACEE4401DAC95A40061CA95 /* FirstTController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstTController.h; sourceTree = "<group>"; };
-		BACEE4411DAC95A40061CA95 /* FirstTController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstTController.m; sourceTree = "<group>"; };
-		BACEE4431DAC97A70061CA95 /* SecondTController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondTController.h; sourceTree = "<group>"; };
-		BACEE4441DAC97A70061CA95 /* SecondTController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondTController.m; sourceTree = "<group>"; };
+		E519BAD21DB89B5500AB74CD /* FirstTController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstTController.h; sourceTree = "<group>"; };
+		E519BAD31DB89B5500AB74CD /* FirstTController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstTController.m; sourceTree = "<group>"; };
+		E519BAD41DB89B5500AB74CD /* SecondTController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondTController.h; sourceTree = "<group>"; };
+		E519BAD51DB89B5500AB74CD /* SecondTController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondTController.m; sourceTree = "<group>"; };
+		E519BAD61DB89B5500AB74CD /* TestCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCell.h; sourceTree = "<group>"; };
+		E519BAD71DB89B5500AB74CD /* TestCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCell.m; sourceTree = "<group>"; };
+		E519BAD81DB89B5500AB74CD /* TestCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestCell.xib; sourceTree = "<group>"; };
+		E519BAD91DB89B5500AB74CD /* ThirdTController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdTController.h; sourceTree = "<group>"; };
+		E519BADA1DB89B5500AB74CD /* ThirdTController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdTController.m; sourceTree = "<group>"; };
+		E519BADC1DB89B5500AB74CD /* HeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadView.h; sourceTree = "<group>"; };
+		E519BADD1DB89B5500AB74CD /* HeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadView.m; sourceTree = "<group>"; };
+		E519BADE1DB89B5500AB74CD /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		E519BADF1DB89B5500AB74CD /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +118,7 @@
 		BACEE4011DAC8BC20061CA95 /* testObject */ = {
 			isa = PBXGroup;
 			children = (
-				BACEE43B1DAC93E50061CA95 /* Classes */,
+				E519BAD01DB89B5500AB74CD /* Classes */,
 				BACEE4051DAC8BC20061CA95 /* AppDelegate.h */,
 				BACEE4061DAC8BC20061CA95 /* AppDelegate.m */,
 				BACEE40B1DAC8BC30061CA95 /* Main.storyboard */,
@@ -153,30 +156,40 @@
 			path = testObjectUITests;
 			sourceTree = "<group>";
 		};
-		BACEE43B1DAC93E50061CA95 /* Classes */ = {
+		E519BAD01DB89B5500AB74CD /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				BACEE43C1DAC93E50061CA95 /* TestViewController.h */,
-				BACEE43D1DAC93E50061CA95 /* TestViewController.m */,
-				BACEE43F1DAC957D0061CA95 /* ChildVC */,
+				E519BAD11DB89B5500AB74CD /* ChildVC */,
+				E519BADB1DB89B5500AB74CD /* HeadView */,
+				E519BADE1DB89B5500AB74CD /* TestViewController.h */,
+				E519BADF1DB89B5500AB74CD /* TestViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		BACEE43F1DAC957D0061CA95 /* ChildVC */ = {
+		E519BAD11DB89B5500AB74CD /* ChildVC */ = {
 			isa = PBXGroup;
 			children = (
-				BACEE4401DAC95A40061CA95 /* FirstTController.h */,
-				BACEE4411DAC95A40061CA95 /* FirstTController.m */,
-				BACEE4431DAC97A70061CA95 /* SecondTController.h */,
-				BACEE4441DAC97A70061CA95 /* SecondTController.m */,
-				BABD68AD1DAC98BB0000B124 /* ThirdTController.h */,
-				BABD68AE1DAC98BB0000B124 /* ThirdTController.m */,
-				BABD68B01DADC62A0000B124 /* TestCell.h */,
-				BABD68B11DADC62A0000B124 /* TestCell.m */,
-				BABD68B21DADC62A0000B124 /* TestCell.xib */,
+				E519BAD21DB89B5500AB74CD /* FirstTController.h */,
+				E519BAD31DB89B5500AB74CD /* FirstTController.m */,
+				E519BAD41DB89B5500AB74CD /* SecondTController.h */,
+				E519BAD51DB89B5500AB74CD /* SecondTController.m */,
+				E519BAD61DB89B5500AB74CD /* TestCell.h */,
+				E519BAD71DB89B5500AB74CD /* TestCell.m */,
+				E519BAD81DB89B5500AB74CD /* TestCell.xib */,
+				E519BAD91DB89B5500AB74CD /* ThirdTController.h */,
+				E519BADA1DB89B5500AB74CD /* ThirdTController.m */,
 			);
 			path = ChildVC;
+			sourceTree = "<group>";
+		};
+		E519BADB1DB89B5500AB74CD /* HeadView */ = {
+			isa = PBXGroup;
+			children = (
+				E519BADC1DB89B5500AB74CD /* HeadView.h */,
+				E519BADD1DB89B5500AB74CD /* HeadView.m */,
+			);
+			path = HeadView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,7 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BACEE4121DAC8BC30061CA95 /* LaunchScreen.storyboard in Resources */,
-				BABD68B41DADC62A0000B124 /* TestCell.xib in Resources */,
+				E519BAE31DB89B5500AB74CD /* TestCell.xib in Resources */,
 				BACEE40F1DAC8BC30061CA95 /* Assets.xcassets in Resources */,
 				BACEE40D1DAC8BC30061CA95 /* Main.storyboard in Resources */,
 			);
@@ -310,12 +323,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BABD68AF1DAC98BB0000B124 /* ThirdTController.m in Sources */,
-				BACEE43E1DAC93E50061CA95 /* TestViewController.m in Sources */,
-				BABD68B31DADC62A0000B124 /* TestCell.m in Sources */,
-				BACEE4421DAC95A40061CA95 /* FirstTController.m in Sources */,
-				BACEE4451DAC97A70061CA95 /* SecondTController.m in Sources */,
+				E519BAE41DB89B5500AB74CD /* ThirdTController.m in Sources */,
 				BACEE4071DAC8BC20061CA95 /* AppDelegate.m in Sources */,
+				E519BAE01DB89B5500AB74CD /* FirstTController.m in Sources */,
+				E519BAE21DB89B5500AB74CD /* TestCell.m in Sources */,
+				E519BAE51DB89B5500AB74CD /* HeadView.m in Sources */,
+				E519BAE11DB89B5500AB74CD /* SecondTController.m in Sources */,
+				E519BAE61DB89B5500AB74CD /* TestViewController.m in Sources */,
 				BACEE4041DAC8BC20061CA95 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

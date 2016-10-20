@@ -2,12 +2,12 @@
 //  ThirdTController.h
 //  testObject
 //
-//  Created by Windy on 16/10/11.
+//  Created by Windy on 16/10/13.
 //  Copyright © 2016年 Windy. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "FirstTController.h"
 
-@interface ThirdTController : UITableViewController
+@interface ThirdTController : FirstTController
 
 @end

@@ -20,7 +20,15 @@
     
 //    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TestCell class]) bundle:nil] forCellReuseIdentifier:@"ID"];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.clipsToBounds = NO;
+    self.tableView.contentInset = UIEdgeInsetsMake(200, 0, 0, 0);
+    self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(200, 0, 0, 0);
+//    UITableView *tableview = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStyleGrouped];
+//    tableview.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//    tableview.delegate = self;
+//    tableview.dataSource = self;
+//    self.view = tableview;
+//    self.view.backgroundColor = [UIColor grayColor];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,6 +37,10 @@
 }
 
 #pragma mark - Table view data source
+
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//    return 3;
+//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 10;

@@ -1,13 +1,13 @@
 //
-//  SecondTController.h
+//  HeadView.h
 //  testObject
 //
 //  Created by Windy on 16/10/13.
 //  Copyright © 2016年 Windy. All rights reserved.
 //
 
-#import "FirstTController.h"
+#import <UIKit/UIKit.h>
 
-@interface SecondTController : FirstTController
+@interface HeadView : UIView
 
 @end

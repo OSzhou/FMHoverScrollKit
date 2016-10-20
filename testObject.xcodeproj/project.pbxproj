@@ -21,6 +21,10 @@
 		E519BAE41DB89B5500AB74CD /* ThirdTController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BADA1DB89B5500AB74CD /* ThirdTController.m */; };
 		E519BAE51DB89B5500AB74CD /* HeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BADD1DB89B5500AB74CD /* HeadView.m */; };
 		E519BAE61DB89B5500AB74CD /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BADF1DB89B5500AB74CD /* TestViewController.m */; };
+		E519BAE91DB8A25C00AB74CD /* FMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BAE81DB8A25C00AB74CD /* FMBaseViewController.m */; };
+		E519BAEC1DB8B06400AB74CD /* FourTController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BAEB1DB8B06400AB74CD /* FourTController.m */; };
+		E519BAEF1DB8B07A00AB74CD /* FiveTController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BAEE1DB8B07A00AB74CD /* FiveTController.m */; };
+		E519BAF21DB8B0D700AB74CD /* SixTController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BAF11DB8B0D700AB74CD /* SixTController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +72,14 @@
 		E519BADD1DB89B5500AB74CD /* HeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadView.m; sourceTree = "<group>"; };
 		E519BADE1DB89B5500AB74CD /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		E519BADF1DB89B5500AB74CD /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		E519BAE71DB8A25C00AB74CD /* FMBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMBaseViewController.h; sourceTree = "<group>"; };
+		E519BAE81DB8A25C00AB74CD /* FMBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMBaseViewController.m; sourceTree = "<group>"; };
+		E519BAEA1DB8B06400AB74CD /* FourTController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourTController.h; sourceTree = "<group>"; };
+		E519BAEB1DB8B06400AB74CD /* FourTController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourTController.m; sourceTree = "<group>"; };
+		E519BAED1DB8B07A00AB74CD /* FiveTController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiveTController.h; sourceTree = "<group>"; };
+		E519BAEE1DB8B07A00AB74CD /* FiveTController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiveTController.m; sourceTree = "<group>"; };
+		E519BAF01DB8B0D700AB74CD /* SixTController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SixTController.h; sourceTree = "<group>"; };
+		E519BAF11DB8B0D700AB74CD /* SixTController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SixTController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +138,12 @@
 				BACEE4101DAC8BC30061CA95 /* LaunchScreen.storyboard */,
 				BACEE4131DAC8BC30061CA95 /* Info.plist */,
 				BACEE4021DAC8BC20061CA95 /* Supporting Files */,
+				E519BAEA1DB8B06400AB74CD /* FourTController.h */,
+				E519BAEB1DB8B06400AB74CD /* FourTController.m */,
+				E519BAED1DB8B07A00AB74CD /* FiveTController.h */,
+				E519BAEE1DB8B07A00AB74CD /* FiveTController.m */,
+				E519BAF01DB8B0D700AB74CD /* SixTController.h */,
+				E519BAF11DB8B0D700AB74CD /* SixTController.m */,
 			);
 			path = testObject;
 			sourceTree = "<group>";
@@ -163,6 +181,8 @@
 				E519BADB1DB89B5500AB74CD /* HeadView */,
 				E519BADE1DB89B5500AB74CD /* TestViewController.h */,
 				E519BADF1DB89B5500AB74CD /* TestViewController.m */,
+				E519BAE71DB8A25C00AB74CD /* FMBaseViewController.h */,
+				E519BAE81DB8A25C00AB74CD /* FMBaseViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -325,12 +345,16 @@
 			files = (
 				E519BAE41DB89B5500AB74CD /* ThirdTController.m in Sources */,
 				BACEE4071DAC8BC20061CA95 /* AppDelegate.m in Sources */,
+				E519BAEC1DB8B06400AB74CD /* FourTController.m in Sources */,
+				E519BAF21DB8B0D700AB74CD /* SixTController.m in Sources */,
 				E519BAE01DB89B5500AB74CD /* FirstTController.m in Sources */,
 				E519BAE21DB89B5500AB74CD /* TestCell.m in Sources */,
+				E519BAE91DB8A25C00AB74CD /* FMBaseViewController.m in Sources */,
 				E519BAE51DB89B5500AB74CD /* HeadView.m in Sources */,
 				E519BAE11DB89B5500AB74CD /* SecondTController.m in Sources */,
 				E519BAE61DB89B5500AB74CD /* TestViewController.m in Sources */,
 				BACEE4041DAC8BC20061CA95 /* main.m in Sources */,
+				E519BAEF1DB8B07A00AB74CD /* FiveTController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

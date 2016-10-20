@@ -1,12 +1,12 @@
 //
-//  TestViewController.m
+//  FMBaseViewController.m
 //  testObject
 //
-//  Created by Windy on 16/10/11.
+//  Created by Windy on 2016/10/20.
 //  Copyright © 2016年 Windy. All rights reserved.
 //
 
-#import "TestViewController.h"
+#import "FMBaseViewController.h"
 #import "FirstTController.h"
 #import "SecondTController.h"
 #import "ThirdTController.h"
@@ -16,41 +16,46 @@
 #define View_H [UIScreen mainScreen].bounds.size.height
 #define BTN_BG_H 50
 #define headView_H 250
-@interface TestViewController () <UIScrollViewDelegate, UITableViewDelegate, tableViewOneDelegate>
+@interface FMBaseViewController () <UIScrollViewDelegate, UITableViewDelegate, tableViewOneDelegate>
 @property (nonatomic, strong) UIView *bar;
 @property (nonatomic, strong) HeadView *headView;
 @property (nonatomic, strong) UIScrollView *horizontalSV;
 @property (nonatomic, strong) UITableView *tableV;
 /** 指示条 */
 @property (nonatomic, strong) UIView *indicatorView;
+/** childVcArr */
+@property (nonatomic, strong) NSArray *childArr;
+/** childVcCount */
+@property (nonatomic, assign) NSInteger cvcCount;
 /** 上个tableView的偏移量 */
 @property (nonatomic, assign) CGFloat preTOffsetY;
 @end
 
-@implementation TestViewController
+@implementation FMBaseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor yellowColor];
-    FirstTController *ftv = [[FirstTController alloc] init];
-    SecondTController *stv = [[SecondTController alloc] init];
-    ThirdTController *ttv = [[ThirdTController alloc] init];
-    ftv.delegate = self;
-    stv.delegate = self;
-    ttv.delegate = self;
-    [self addChildViewController:ftv];
-    [self addChildViewController:stv];
-    [self addChildViewController:ttv];
-    NSArray *arr = @[ftv,stv];
-    [self.childViewControllers arrayByAddingObjectsFromArray:arr];
-    ftv.view.frame = CGRectMake(0, 0, View_W, View_H - BTN_BG_H);
-    stv.view.frame = CGRectMake(View_W, 0, View_W, View_H - BTN_BG_H);
-    ttv.view.frame = CGRectMake(2 * View_W, 0, View_W, View_H - BTN_BG_H);
-    
-    [self.horizontalSV addSubview:ftv.view];
-    [self.horizontalSV addSubview:stv.view];
-    [self.horizontalSV addSubview:ttv.view];
-    self.tableV = (UITableView *)ftv.view;
+    NSInteger count = self.childVCArr.count;
+    if (count) {
+        _childArr = _childVCArr;
+    } else {
+        self.view.backgroundColor = [UIColor yellowColor];
+        FirstTController *ftv = [[FirstTController alloc] init];
+        SecondTController *stv = [[SecondTController alloc] init];
+        ThirdTController *ttv = [[ThirdTController alloc] init];
+        _childArr = @[ftv,stv,ttv];
+    }
+    _cvcCount = _childArr.count;
+    for (int i = 0; i < _childArr.count; i++) {
+        FirstTController *ftv = _childArr[i];
+        if (i == 0) {
+            self.tableV = (UITableView *)ftv.view;
+        }
+        ftv.delegate = self;
+        [self addChildViewController:ftv];
+        ftv.view.frame = CGRectMake(i * View_W, 0, View_W, View_H - BTN_BG_H);
+        [self.horizontalSV addSubview:ftv.view];
+    }
     //都加在垂直的scrollview上
     [self.view addSubview:self.horizontalSV];
     [self.view addSubview:self.headView];
@@ -76,7 +81,7 @@
         _horizontalSV.delegate = self;
         _horizontalSV.pagingEnabled = YES;
         _horizontalSV.showsHorizontalScrollIndicator = NO;
-        _horizontalSV.contentSize = CGSizeMake(View_W * 3, 0);
+        _horizontalSV.contentSize = CGSizeMake(View_W * _cvcCount, 0);
     }
     return _horizontalSV;
 }
@@ -98,12 +103,11 @@
         _bar.frame = CGRectMake(0, (headView_H - BTN_BG_H), View_W, BTN_BG_H);
         _bar.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.5];
         CGFloat w = View_W;
-        for (int i = 0; i < 3; i++) {
-            NSArray *titleArr = @[@"btn_one", @"btn_two", @"btn_three"];
+        for (int i = 0; i < _cvcCount; i++) {
             UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-            btn.frame = CGRectMake(i * w / 3, 0, w / 3, BTN_BG_H);
+            btn.frame = CGRectMake(i * w / _cvcCount, 0, w / _cvcCount, BTN_BG_H);
             btn.titleLabel.font = [UIFont systemFontOfSize:15.0];
-            [btn setTitle:titleArr[i] forState:UIControlStateNormal];
+            [btn setTitle:[NSString stringWithFormat:@"btn_%zd", i] forState:UIControlStateNormal];
             [btn setTitle:@"被选中" forState:UIControlStateSelected];
             btn.backgroundColor = [UIColor colorWithRed:arc4random_uniform(255) / 255.0 green:arc4random_uniform(255) / 255.0 blue:arc4random_uniform(255) / 255.0 alpha:1.0];
             [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -120,7 +124,7 @@
 /** 指示条 */
 - (UIView *)indicatorView {
     if (!_indicatorView) {
-        _indicatorView = [[UIView alloc] initWithFrame:CGRectMake(0, BTN_BG_H - 1.5, View_W / 3, 1.5)];
+        _indicatorView = [[UIView alloc] initWithFrame:CGRectMake(0, BTN_BG_H - 1.5, View_W / _cvcCount, 1.5)];
         _indicatorView.backgroundColor = [UIColor redColor];
     }
     return _indicatorView;
@@ -129,6 +133,7 @@
 - (void)tableViewContentOffset:(CGFloat)tableViewY withTableView:(UITableView *)tableView{
     self.tableV = tableView;
     CGRect frame = self.headView.frame;
+    //tableViewY有初始值（设置了UIEdgeIntset）为 -(headView_H - BTN_BG_H)
     _preTOffsetY = tableViewY;
     if (tableViewY > -(headView_H - BTN_BG_H) ) {
         frame.origin.y = -((headView_H - BTN_BG_H) + tableViewY);
@@ -166,9 +171,9 @@
         self.tableV = (UITableView *)self.childViewControllers[index].view;
         self.tableV.contentOffset = CGPointMake(0, tableOSY);
         CGRect frame = self.indicatorView.frame;
-        frame.origin.x = index * View_W / 3;
+        frame.origin.x = index * View_W / _cvcCount;
         self.indicatorView.frame = frame;
-        if (offSetX < 0 || offSetX > 3 * w) return;
+        if (offSetX < 0 || offSetX > _cvcCount * w) return;
         for (UIView *view in self.bar.subviews) {
             if ([view isKindOfClass:[UIButton class]]) {
                 UIButton *btn = (UIButton *)view;
@@ -192,3 +197,4 @@
 }
 
 @end
+

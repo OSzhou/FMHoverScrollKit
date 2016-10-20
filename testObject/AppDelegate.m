@@ -9,6 +9,11 @@
 #import "AppDelegate.h"
 #import "TestViewController.h"
 #import "FirstTController.h"
+#import "FMBaseViewController.h"
+#import "SecondTController.h"
+#import "ThirdTController.h"
+#import "FourTController.h"
+#import "FiveTController.h"
 
 @interface AppDelegate ()
 
@@ -21,7 +26,15 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = [[TestViewController alloc] init];
+//    self.window.rootViewController = [[TestViewController alloc] init];
+    FMBaseViewController *bvc = [[FMBaseViewController alloc] init];
+    FirstTController *ftv = [[FirstTController alloc] init];
+    SecondTController *stv = [[SecondTController alloc] init];
+    ThirdTController *ttv = [[ThirdTController alloc] init];
+    FourTController *v3 = [[FourTController alloc] init];
+    FiveTController *v4 = [[FiveTController alloc] init];
+    bvc.childVCArr = @[ftv, stv, ttv, v3, v4];
+    self.window.rootViewController = bvc;
     [self.window makeKeyAndVisible];
     return YES;
 }

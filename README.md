@@ -1,7 +1,8 @@
 # WYYKTScroll
-## 1.工程引入FMBaseViewController, 并添加要自定义的controller
-## 2.注意：自定义的controller 必须继承于FMATController, 并且子控制器暂时只支持UITableViewController
-## 3.自定义的子控制器必须实现此方法（及其方法内容）如下：
+    这是一个控件悬停的UI效果实现，类似于网易云课堂的详情页UI效果
+### 1.工程引入FMBaseViewController, 并添加要自定义的controller
+### 2.注意：自定义的controller 必须继承于FMATController, 并且子控制器暂时只支持UITableViewController
+### 3.自定义的子控制器必须实现此方法（及其方法内容）如下：
 
 ````
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -10,13 +11,13 @@
     }
 }
 ````
-*测试效果在AppDelegate.m 的launch函数中添加如下代码：
+* 测试效果在AppDelegate.m 的launch函数中添加如下代码：
 ````
 FMBaseViewController *bvc = [[FMBaseViewController alloc] init];
     self.window.rootViewController = bvc;
     [self.window makeKeyAndVisible];
 ````
-*自定义子controller初始化后传入该数组childVCArr，示例代码如下：
+* 自定义子controller初始化后传入该数组childVCArr，示例代码如下：
 ````
  FMATController *ftv = [[FMATController alloc] init];
     FMBTController *stv = [[FMBTController alloc] init];
@@ -25,9 +26,9 @@ FMBaseViewController *bvc = [[FMBaseViewController alloc] init];
     FiveTController *v4 = [[FiveTController alloc] init];
     bvc.childVCArr = @[ftv, stv, ttv, v3, v4];
 ````
-    ###最好不要超过5个， 暂不支持滑动（以后可能添加，敬请期待！）
-*headView上的内容可自定义添加，通过 ftc.headView可拿到head部分的视图添加自己的空间。
-*支持cocoaPods 安装 
+####最好不要超过5个， 暂不支持滑动（以后可能添加，敬请期待！）
+* headView上的内容可自定义添加，通过 ftc.headView可拿到head部分的视图添加自己的空间。
+* 支持cocoaPods 安装 
 ````
 pod search WYTest
 在pPodfile中添加

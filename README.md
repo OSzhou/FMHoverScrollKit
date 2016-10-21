@@ -1,8 +1,9 @@
 # WYYKTScroll
-    这是一个控件悬停的UI效果实现，类似于网易云课堂的详情页UI效果
-### 1.工程引入FMBaseViewController, 并添加要自定义的controller
-### 2.注意：自定义的controller 必须继承于FMATController, 并且子控制器暂时只支持UITableViewController
-### 3.自定义的子控制器必须实现此方法（及其方法内容）如下：
+这是一个控件悬停的UI效果实现，类似于网易云课堂的详情页UI效果
+
+#### 1.工程引入FMBaseViewController, 并添加要自定义的controller
+#### 2.注意：自定义的controller 必须继承于FMATController, 并且子控制器暂时只支持UITableViewController
+#### 3.自定义的子控制器必须实现此方法（及其方法内容）如下：
 
 ````
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

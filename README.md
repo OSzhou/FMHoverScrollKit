@@ -28,11 +28,11 @@ FMBaseViewController *bvc = [[FMBaseViewController alloc] init];
     bvc.childVCArr = @[ftv, stv, ttv, v3, v4];
 ````
 ####子控制器最好不要超过5个， 暂不支持滑动（以后可能添加，敬请期待！）
-* headView上的内容可自定义添加，通过 ftc.headView可拿到head部分的视图添加自己的空间。
+* headView上的内容可自定义添加，通过 ftc.headView可拿到head部分的视图添加自己的控件。
 * 支持cocoaPods 安装 
 ````
 pod search WYTest
-在pPodfile中添加
+在Podfile中添加
 pod "WYTest"
 pod install || pod update
 ````

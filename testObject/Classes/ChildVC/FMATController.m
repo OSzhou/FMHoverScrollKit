@@ -7,11 +7,11 @@
 //
 
 #import "FMATController.h"
-#import "FMTestCell.h"
 
 @interface FMATController ()
 @end
 
+static NSString  *ID = @"test1";
 @implementation FMATController
 
 - (void)viewDidLoad {
@@ -28,6 +28,7 @@
 //    tableview.dataSource = self;
 //    self.view = tableview;
 //    self.view.backgroundColor = [UIColor grayColor];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:ID];
 
 }
 
@@ -38,24 +39,20 @@
 
 #pragma mark - Table view data source
 
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//    return 3;
-//}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 10;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 150;
+    return 100;
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    FMTestCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ID"];
-    if (!cell) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([FMTestCell class]) owner:nil options:nil] lastObject];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    }
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
+    // Configure the cell...
+    cell.textLabel.text = [NSString stringWithFormat:@"test1 --- %zd", indexPath.row];
+    
     return cell;
 }
 

@@ -16,8 +16,6 @@
 		BACEE4281DAC8BC30061CA95 /* testObjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BACEE4271DAC8BC30061CA95 /* testObjectUITests.m */; };
 		E519BAE01DB89B5500AB74CD /* FMATController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BAD31DB89B5500AB74CD /* FMATController.m */; };
 		E519BAE11DB89B5500AB74CD /* FMBTController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BAD51DB89B5500AB74CD /* FMBTController.m */; };
-		E519BAE21DB89B5500AB74CD /* FMTestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BAD71DB89B5500AB74CD /* FMTestCell.m */; };
-		E519BAE31DB89B5500AB74CD /* FMTestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E519BAD81DB89B5500AB74CD /* FMTestCell.xib */; };
 		E519BAE41DB89B5500AB74CD /* FMCTController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BADA1DB89B5500AB74CD /* FMCTController.m */; };
 		E519BAE51DB89B5500AB74CD /* HeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BADD1DB89B5500AB74CD /* HeadView.m */; };
 		E519BAE61DB89B5500AB74CD /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BADF1DB89B5500AB74CD /* TestViewController.m */; };
@@ -63,9 +61,6 @@
 		E519BAD31DB89B5500AB74CD /* FMATController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMATController.m; sourceTree = "<group>"; };
 		E519BAD41DB89B5500AB74CD /* FMBTController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMBTController.h; sourceTree = "<group>"; };
 		E519BAD51DB89B5500AB74CD /* FMBTController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMBTController.m; sourceTree = "<group>"; };
-		E519BAD61DB89B5500AB74CD /* FMTestCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMTestCell.h; sourceTree = "<group>"; };
-		E519BAD71DB89B5500AB74CD /* FMTestCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMTestCell.m; sourceTree = "<group>"; };
-		E519BAD81DB89B5500AB74CD /* FMTestCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FMTestCell.xib; sourceTree = "<group>"; };
 		E519BAD91DB89B5500AB74CD /* FMCTController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMCTController.h; sourceTree = "<group>"; };
 		E519BADA1DB89B5500AB74CD /* FMCTController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMCTController.m; sourceTree = "<group>"; };
 		E519BADC1DB89B5500AB74CD /* HeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadView.h; sourceTree = "<group>"; };
@@ -194,9 +189,6 @@
 				E519BAD31DB89B5500AB74CD /* FMATController.m */,
 				E519BAD41DB89B5500AB74CD /* FMBTController.h */,
 				E519BAD51DB89B5500AB74CD /* FMBTController.m */,
-				E519BAD61DB89B5500AB74CD /* FMTestCell.h */,
-				E519BAD71DB89B5500AB74CD /* FMTestCell.m */,
-				E519BAD81DB89B5500AB74CD /* FMTestCell.xib */,
 				E519BAD91DB89B5500AB74CD /* FMCTController.h */,
 				E519BADA1DB89B5500AB74CD /* FMCTController.m */,
 			);
@@ -316,7 +308,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BACEE4121DAC8BC30061CA95 /* LaunchScreen.storyboard in Resources */,
-				E519BAE31DB89B5500AB74CD /* FMTestCell.xib in Resources */,
 				BACEE40F1DAC8BC30061CA95 /* Assets.xcassets in Resources */,
 				BACEE40D1DAC8BC30061CA95 /* Main.storyboard in Resources */,
 			);
@@ -348,7 +339,6 @@
 				E519BAEC1DB8B06400AB74CD /* FourTController.m in Sources */,
 				E519BAF21DB8B0D700AB74CD /* SixTController.m in Sources */,
 				E519BAE01DB89B5500AB74CD /* FMATController.m in Sources */,
-				E519BAE21DB89B5500AB74CD /* FMTestCell.m in Sources */,
 				E519BAE91DB8A25C00AB74CD /* FMBaseViewController.m in Sources */,
 				E519BAE51DB89B5500AB74CD /* HeadView.m in Sources */,
 				E519BAE11DB89B5500AB74CD /* FMBTController.m in Sources */,

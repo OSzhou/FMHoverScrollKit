@@ -1,23 +1,25 @@
+
 //
-//  FMCTController.m
+//  FMT3ViewController.m
 //  testObject
 //
-//  Created by Windy on 16/10/13.
+//  Created by Windy on 2016/10/21.
 //  Copyright © 2016年 Windy. All rights reserved.
 //
 
-#import "FMCTController.h"
+#import "FMT3ViewController.h"
 
-@interface FMCTController ()
+@interface FMT3ViewController ()
 
 @end
 
-@implementation FMCTController
+static NSString  *ID = @"FM3";
+@implementation FMT3ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"test3"];
+    self.tableViewStyle = FMTableViewStylePlain;
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:ID];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,16 +33,18 @@
     return 10;
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 100;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"test3" forIndexPath:indexPath];
-    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
     // Configure the cell...
-    cell.textLabel.text = [NSString stringWithFormat:@"test3 --- %zd", indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"FMtest3 --- %zd", indexPath.row];
     
     return cell;
 }

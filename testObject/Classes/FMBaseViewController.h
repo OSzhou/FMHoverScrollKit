@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FMATController.h"
 #import "HeadView.h"
+#import "FMParentViewController.h"
 
 @interface FMBaseViewController : UIViewController
 

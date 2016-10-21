@@ -14,15 +14,12 @@
 		BACEE4121DAC8BC30061CA95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BACEE4101DAC8BC30061CA95 /* LaunchScreen.storyboard */; };
 		BACEE41D1DAC8BC30061CA95 /* testObjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BACEE41C1DAC8BC30061CA95 /* testObjectTests.m */; };
 		BACEE4281DAC8BC30061CA95 /* testObjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BACEE4271DAC8BC30061CA95 /* testObjectUITests.m */; };
-		E519BAE01DB89B5500AB74CD /* FMATController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BAD31DB89B5500AB74CD /* FMATController.m */; };
-		E519BAE11DB89B5500AB74CD /* FMBTController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BAD51DB89B5500AB74CD /* FMBTController.m */; };
-		E519BAE41DB89B5500AB74CD /* FMCTController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BADA1DB89B5500AB74CD /* FMCTController.m */; };
 		E519BAE51DB89B5500AB74CD /* HeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BADD1DB89B5500AB74CD /* HeadView.m */; };
-		E519BAE61DB89B5500AB74CD /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BADF1DB89B5500AB74CD /* TestViewController.m */; };
 		E519BAE91DB8A25C00AB74CD /* FMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BAE81DB8A25C00AB74CD /* FMBaseViewController.m */; };
-		E519BAEC1DB8B06400AB74CD /* FourTController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BAEB1DB8B06400AB74CD /* FourTController.m */; };
-		E519BAEF1DB8B07A00AB74CD /* FiveTController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BAEE1DB8B07A00AB74CD /* FiveTController.m */; };
-		E519BAF21DB8B0D700AB74CD /* SixTController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BAF11DB8B0D700AB74CD /* SixTController.m */; };
+		E519BB381DB9E88A00AB74CD /* FMParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BB371DB9E88A00AB74CD /* FMParentViewController.m */; };
+		E519BB4E1DBA291B00AB74CD /* FMT1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BB491DBA291B00AB74CD /* FMT1ViewController.m */; };
+		E519BB4F1DBA291B00AB74CD /* FMT2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BB4B1DBA291B00AB74CD /* FMT2ViewController.m */; };
+		E519BB501DBA291B00AB74CD /* FMT3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BB4D1DBA291B00AB74CD /* FMT3ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,24 +54,18 @@
 		BACEE4231DAC8BC30061CA95 /* testObjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testObjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BACEE4271DAC8BC30061CA95 /* testObjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testObjectUITests.m; sourceTree = "<group>"; };
 		BACEE4291DAC8BC30061CA95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E519BAD21DB89B5500AB74CD /* FMATController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMATController.h; sourceTree = "<group>"; };
-		E519BAD31DB89B5500AB74CD /* FMATController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMATController.m; sourceTree = "<group>"; };
-		E519BAD41DB89B5500AB74CD /* FMBTController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMBTController.h; sourceTree = "<group>"; };
-		E519BAD51DB89B5500AB74CD /* FMBTController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMBTController.m; sourceTree = "<group>"; };
-		E519BAD91DB89B5500AB74CD /* FMCTController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMCTController.h; sourceTree = "<group>"; };
-		E519BADA1DB89B5500AB74CD /* FMCTController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMCTController.m; sourceTree = "<group>"; };
 		E519BADC1DB89B5500AB74CD /* HeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadView.h; sourceTree = "<group>"; };
 		E519BADD1DB89B5500AB74CD /* HeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadView.m; sourceTree = "<group>"; };
-		E519BADE1DB89B5500AB74CD /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
-		E519BADF1DB89B5500AB74CD /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		E519BAE71DB8A25C00AB74CD /* FMBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMBaseViewController.h; sourceTree = "<group>"; };
 		E519BAE81DB8A25C00AB74CD /* FMBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMBaseViewController.m; sourceTree = "<group>"; };
-		E519BAEA1DB8B06400AB74CD /* FourTController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourTController.h; sourceTree = "<group>"; };
-		E519BAEB1DB8B06400AB74CD /* FourTController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourTController.m; sourceTree = "<group>"; };
-		E519BAED1DB8B07A00AB74CD /* FiveTController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiveTController.h; sourceTree = "<group>"; };
-		E519BAEE1DB8B07A00AB74CD /* FiveTController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiveTController.m; sourceTree = "<group>"; };
-		E519BAF01DB8B0D700AB74CD /* SixTController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SixTController.h; sourceTree = "<group>"; };
-		E519BAF11DB8B0D700AB74CD /* SixTController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SixTController.m; sourceTree = "<group>"; };
+		E519BB361DB9E88A00AB74CD /* FMParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMParentViewController.h; sourceTree = "<group>"; };
+		E519BB371DB9E88A00AB74CD /* FMParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMParentViewController.m; sourceTree = "<group>"; };
+		E519BB481DBA291B00AB74CD /* FMT1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMT1ViewController.h; sourceTree = "<group>"; };
+		E519BB491DBA291B00AB74CD /* FMT1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMT1ViewController.m; sourceTree = "<group>"; };
+		E519BB4A1DBA291B00AB74CD /* FMT2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMT2ViewController.h; sourceTree = "<group>"; };
+		E519BB4B1DBA291B00AB74CD /* FMT2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMT2ViewController.m; sourceTree = "<group>"; };
+		E519BB4C1DBA291B00AB74CD /* FMT3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMT3ViewController.h; sourceTree = "<group>"; };
+		E519BB4D1DBA291B00AB74CD /* FMT3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMT3ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,12 +124,6 @@
 				BACEE4101DAC8BC30061CA95 /* LaunchScreen.storyboard */,
 				BACEE4131DAC8BC30061CA95 /* Info.plist */,
 				BACEE4021DAC8BC20061CA95 /* Supporting Files */,
-				E519BAEA1DB8B06400AB74CD /* FourTController.h */,
-				E519BAEB1DB8B06400AB74CD /* FourTController.m */,
-				E519BAED1DB8B07A00AB74CD /* FiveTController.h */,
-				E519BAEE1DB8B07A00AB74CD /* FiveTController.m */,
-				E519BAF01DB8B0D700AB74CD /* SixTController.h */,
-				E519BAF11DB8B0D700AB74CD /* SixTController.m */,
 			);
 			path = testObject;
 			sourceTree = "<group>";
@@ -174,8 +159,6 @@
 			children = (
 				E519BAD11DB89B5500AB74CD /* ChildVC */,
 				E519BADB1DB89B5500AB74CD /* HeadView */,
-				E519BADE1DB89B5500AB74CD /* TestViewController.h */,
-				E519BADF1DB89B5500AB74CD /* TestViewController.m */,
 				E519BAE71DB8A25C00AB74CD /* FMBaseViewController.h */,
 				E519BAE81DB8A25C00AB74CD /* FMBaseViewController.m */,
 			);
@@ -185,12 +168,14 @@
 		E519BAD11DB89B5500AB74CD /* ChildVC */ = {
 			isa = PBXGroup;
 			children = (
-				E519BAD21DB89B5500AB74CD /* FMATController.h */,
-				E519BAD31DB89B5500AB74CD /* FMATController.m */,
-				E519BAD41DB89B5500AB74CD /* FMBTController.h */,
-				E519BAD51DB89B5500AB74CD /* FMBTController.m */,
-				E519BAD91DB89B5500AB74CD /* FMCTController.h */,
-				E519BADA1DB89B5500AB74CD /* FMCTController.m */,
+				E519BB361DB9E88A00AB74CD /* FMParentViewController.h */,
+				E519BB371DB9E88A00AB74CD /* FMParentViewController.m */,
+				E519BB481DBA291B00AB74CD /* FMT1ViewController.h */,
+				E519BB491DBA291B00AB74CD /* FMT1ViewController.m */,
+				E519BB4A1DBA291B00AB74CD /* FMT2ViewController.h */,
+				E519BB4B1DBA291B00AB74CD /* FMT2ViewController.m */,
+				E519BB4C1DBA291B00AB74CD /* FMT3ViewController.h */,
+				E519BB4D1DBA291B00AB74CD /* FMT3ViewController.m */,
 			);
 			path = ChildVC;
 			sourceTree = "<group>";
@@ -334,17 +319,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E519BAE41DB89B5500AB74CD /* FMCTController.m in Sources */,
+				E519BB501DBA291B00AB74CD /* FMT3ViewController.m in Sources */,
 				BACEE4071DAC8BC20061CA95 /* AppDelegate.m in Sources */,
-				E519BAEC1DB8B06400AB74CD /* FourTController.m in Sources */,
-				E519BAF21DB8B0D700AB74CD /* SixTController.m in Sources */,
-				E519BAE01DB89B5500AB74CD /* FMATController.m in Sources */,
 				E519BAE91DB8A25C00AB74CD /* FMBaseViewController.m in Sources */,
 				E519BAE51DB89B5500AB74CD /* HeadView.m in Sources */,
-				E519BAE11DB89B5500AB74CD /* FMBTController.m in Sources */,
-				E519BAE61DB89B5500AB74CD /* TestViewController.m in Sources */,
 				BACEE4041DAC8BC20061CA95 /* main.m in Sources */,
-				E519BAEF1DB8B07A00AB74CD /* FiveTController.m in Sources */,
+				E519BB4E1DBA291B00AB74CD /* FMT1ViewController.m in Sources */,
+				E519BB4F1DBA291B00AB74CD /* FMT2ViewController.m in Sources */,
+				E519BB381DB9E88A00AB74CD /* FMParentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

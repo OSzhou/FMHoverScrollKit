@@ -7,13 +7,10 @@
 //
 
 #import "AppDelegate.h"
-#import "TestViewController.h"
-#import "FMATController.h"
 #import "FMBaseViewController.h"
-#import "FMBTController.h"
-#import "FMCTController.h"
-#import "FourTController.h"
-#import "FiveTController.h"
+#import "FMT1ViewController.h"
+#import "FMT2ViewController.h"
+#import "FMT3ViewController.h"
 
 @interface AppDelegate ()
 
@@ -26,14 +23,11 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-//    self.window.rootViewController = [[TestViewController alloc] init];
     FMBaseViewController *bvc = [[FMBaseViewController alloc] init];
-    FMATController *ftv = [[FMATController alloc] init];
-    FMBTController *stv = [[FMBTController alloc] init];
-    FMCTController *ttv = [[FMCTController alloc] init];
-    FourTController *v3 = [[FourTController alloc] init];
-    FiveTController *v4 = [[FiveTController alloc] init];
-    bvc.childVCArr = @[ftv, stv, ttv, v3, v4];
+    FMT1ViewController *t1 = [[FMT1ViewController alloc] init];
+    FMT2ViewController *t2 = [[FMT2ViewController alloc] initWithTableViewStyle:FMTableViewStyleGrouped];
+    FMT3ViewController *t3= [[FMT3ViewController alloc] init];
+    bvc.childVCArr = @[t1, t2, t3];
     self.window.rootViewController = bvc;
     [self.window makeKeyAndVisible];
     return YES;

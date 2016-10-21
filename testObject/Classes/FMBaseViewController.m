@@ -7,14 +7,15 @@
 //
 
 #import "FMBaseViewController.h"
-#import "FMBTController.h"
-#import "FMCTController.h"
+#import "FMT1ViewController.h"
+#import "FMT2ViewController.h"
+#import "FMT3ViewController.h"
 
 #define View_W [UIScreen mainScreen].bounds.size.width
 #define View_H [UIScreen mainScreen].bounds.size.height
 #define BTN_BG_H 50
 #define headView_H 250
-@interface FMBaseViewController () <UIScrollViewDelegate, UITableViewDelegate, tableViewOneDelegate>
+@interface FMBaseViewController () <UIScrollViewDelegate, UITableViewDelegate, parentTableViewDelegate>
 @property (nonatomic, strong) UIView *bar;
 @property (nonatomic, strong) UIScrollView *horizontalSV;
 @property (nonatomic, strong) UITableView *tableV;
@@ -32,21 +33,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _preTOffsetY = -200;
     NSInteger count = self.childVCArr.count;
     if (count) {
         _childArr = _childVCArr;
     } else {
         self.view.backgroundColor = [UIColor yellowColor];
-        FMATController *ftv = [[FMATController alloc] init];
-        FMBTController *stv = [[FMBTController alloc] init];
-        FMCTController *ttv = [[FMCTController alloc] init];
-        _childArr = @[ftv,stv,ttv];
+        FMT1ViewController *t1 = [[FMT1ViewController alloc] init];
+        FMT2ViewController *t2 = [[FMT2ViewController alloc] init];
+        FMT3ViewController *t3 = [[FMT3ViewController alloc] init];
+        _childArr = @[t1,t2,t3];
     }
     _cvcCount = _childArr.count;
     for (int i = 0; i < _childArr.count; i++) {
-        FMATController *ftv = _childArr[i];
+        FMParentViewController *ftv = _childArr[i];
         if (i == 0) {
-            self.tableV = (UITableView *)ftv.view;
+            self.tableV = (UITableView *)ftv.tableView;
         }
         ftv.delegate = self;
         [self addChildViewController:ftv];
@@ -165,7 +167,8 @@
             tableOSY = -200;
         }
         NSInteger index = offSetX / w;
-        self.tableV = (UITableView *)self.childViewControllers[index].view;
+        FMParentViewController *ftv = self.childViewControllers[index];
+        self.tableV = (UITableView *)ftv.tableView;
         self.tableV.contentOffset = CGPointMake(0, tableOSY);
         CGRect frame = self.indicatorView.frame;
         frame.origin.x = index * View_W / _cvcCount;

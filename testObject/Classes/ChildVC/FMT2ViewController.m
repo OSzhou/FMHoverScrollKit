@@ -1,19 +1,18 @@
 //
-//  FMBTController.m
+//  FMT2ViewController.m
 //  testObject
 //
-//  Created by Windy on 16/10/13.
+//  Created by Windy on 2016/10/21.
 //  Copyright © 2016年 Windy. All rights reserved.
 //
 
-#import "FMBTController.h"
-
-@interface FMBTController ()
+#import "FMT2ViewController.h"
+@interface FMT2ViewController ()
 
 @end
 
-static NSString  *ID = @"test2";
-@implementation FMBTController
+static NSString  *ID = @"FM2";
+@implementation FMT2ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,6 +30,9 @@ static NSString  *ID = @"test2";
     return 10;
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 100;
 }
@@ -39,7 +41,7 @@ static NSString  *ID = @"test2";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
     // Configure the cell...
-    cell.textLabel.text = [NSString stringWithFormat:@"test2 --- %zd", indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"FMtest2 --- %zd", indexPath.row];
     
     return cell;
 }

@@ -1,35 +1,23 @@
 //
-//  FMATController.m
+//  FMT1ViewController.m
 //  testObject
 //
-//  Created by Windy on 16/10/11.
+//  Created by Windy on 2016/10/21.
 //  Copyright © 2016年 Windy. All rights reserved.
 //
 
-#import "FMATController.h"
+#import "FMT1ViewController.h"
 
-@interface FMATController ()
+@interface FMT1ViewController ()
+
 @end
 
-static NSString  *ID = @"test1";
-@implementation FMATController
+static NSString  *ID = @"FM1";
+@implementation FMT1ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.view.backgroundColor = [UIColor cyanColor];
-    
-//    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([FMTestCell class]) bundle:nil] forCellReuseIdentifier:@"ID"];
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.contentInset = UIEdgeInsetsMake(200, 0, 0, 0);
-    self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(200, 0, 0, 0);
-//    UITableView *tableview = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStyleGrouped];
-//    tableview.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-//    tableview.delegate = self;
-//    tableview.dataSource = self;
-//    self.view = tableview;
-//    self.view.backgroundColor = [UIColor grayColor];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:ID];
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,6 +31,9 @@ static NSString  *ID = @"test1";
     return 10;
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 100;
 }
@@ -51,7 +42,7 @@ static NSString  *ID = @"test1";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
     // Configure the cell...
-    cell.textLabel.text = [NSString stringWithFormat:@"test1 --- %zd", indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"FMtest1 --- %zd", indexPath.row];
     
     return cell;
 }

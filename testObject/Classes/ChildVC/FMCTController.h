@@ -1,13 +1,13 @@
 //
-//  SecondTController.h
+//  FMCTController.h
 //  testObject
 //
 //  Created by Windy on 16/10/13.
 //  Copyright © 2016年 Windy. All rights reserved.
 //
 
-#import "FirstTController.h"
+#import "FMATController.h"
 
-@interface SecondTController : FirstTController
+@interface FMCTController : FMATController
 
 @end

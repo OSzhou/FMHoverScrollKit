@@ -1,5 +1,5 @@
 //
-//  TestCell.h
+//  FMTestCell.h
 //  testObject
 //
 //  Created by Windy on 16/10/12.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TestCell : UITableViewCell
+@interface FMTestCell : UITableViewCell
 
 @end

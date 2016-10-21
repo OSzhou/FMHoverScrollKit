@@ -1,18 +1,18 @@
 //
-//  ThirdTController.m
+//  FMCTController.m
 //  testObject
 //
 //  Created by Windy on 16/10/13.
 //  Copyright © 2016年 Windy. All rights reserved.
 //
 
-#import "ThirdTController.h"
+#import "FMCTController.h"
 
-@interface ThirdTController ()
+@interface FMCTController ()
 
 @end
 
-@implementation ThirdTController
+@implementation FMCTController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

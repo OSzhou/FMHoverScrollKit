@@ -1,19 +1,19 @@
 //
-//  SecondTController.m
+//  FMBTController.m
 //  testObject
 //
 //  Created by Windy on 16/10/13.
 //  Copyright © 2016年 Windy. All rights reserved.
 //
 
-#import "SecondTController.h"
+#import "FMBTController.h"
 
-@interface SecondTController ()
+@interface FMBTController ()
 
 @end
 
 static NSString  *ID = @"test2";
-@implementation SecondTController
+@implementation FMBTController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

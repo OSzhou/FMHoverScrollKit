@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FMATController.h"
+#import "HeadView.h"
 
 @interface FMBaseViewController : UIViewController
 
 /** 传入的子控制器的数组 ps:不可变数组, 最多不要超过5个（暂不支持滑动）*/
 @property (nonatomic, strong) NSArray *childVCArr;
+@property (nonatomic, strong) HeadView *headView;
 
 @end

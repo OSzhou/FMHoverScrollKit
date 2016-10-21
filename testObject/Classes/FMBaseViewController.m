@@ -7,10 +7,8 @@
 //
 
 #import "FMBaseViewController.h"
-#import "FirstTController.h"
-#import "SecondTController.h"
-#import "ThirdTController.h"
-#import "HeadView.h"
+#import "FMBTController.h"
+#import "FMCTController.h"
 
 #define View_W [UIScreen mainScreen].bounds.size.width
 #define View_H [UIScreen mainScreen].bounds.size.height
@@ -18,7 +16,6 @@
 #define headView_H 250
 @interface FMBaseViewController () <UIScrollViewDelegate, UITableViewDelegate, tableViewOneDelegate>
 @property (nonatomic, strong) UIView *bar;
-@property (nonatomic, strong) HeadView *headView;
 @property (nonatomic, strong) UIScrollView *horizontalSV;
 @property (nonatomic, strong) UITableView *tableV;
 /** 指示条 */
@@ -40,14 +37,14 @@
         _childArr = _childVCArr;
     } else {
         self.view.backgroundColor = [UIColor yellowColor];
-        FirstTController *ftv = [[FirstTController alloc] init];
-        SecondTController *stv = [[SecondTController alloc] init];
-        ThirdTController *ttv = [[ThirdTController alloc] init];
+        FMATController *ftv = [[FMATController alloc] init];
+        FMBTController *stv = [[FMBTController alloc] init];
+        FMCTController *ttv = [[FMCTController alloc] init];
         _childArr = @[ftv,stv,ttv];
     }
     _cvcCount = _childArr.count;
     for (int i = 0; i < _childArr.count; i++) {
-        FirstTController *ftv = _childArr[i];
+        FMATController *ftv = _childArr[i];
         if (i == 0) {
             self.tableV = (UITableView *)ftv.view;
         }

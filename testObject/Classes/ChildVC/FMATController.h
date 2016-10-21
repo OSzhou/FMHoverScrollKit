@@ -1,5 +1,5 @@
 //
-//  FirstTController.h
+//  FMATController.h
 //  testObject
 //
 //  Created by Windy on 16/10/11.
@@ -14,7 +14,7 @@
 
 @end
 
-@interface FirstTController : UITableViewController
+@interface FMATController : UITableViewController
 
 @property (nonatomic, weak) id <tableViewOneDelegate> delegate;
 

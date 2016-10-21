@@ -1,24 +1,24 @@
 //
-//  FirstTController.m
+//  FMATController.m
 //  testObject
 //
 //  Created by Windy on 16/10/11.
 //  Copyright © 2016年 Windy. All rights reserved.
 //
 
-#import "FirstTController.h"
-#import "TestCell.h"
+#import "FMATController.h"
+#import "FMTestCell.h"
 
-@interface FirstTController ()
+@interface FMATController ()
 @end
 
-@implementation FirstTController
+@implementation FMATController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    self.view.backgroundColor = [UIColor cyanColor];
     
-//    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TestCell class]) bundle:nil] forCellReuseIdentifier:@"ID"];
+//    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([FMTestCell class]) bundle:nil] forCellReuseIdentifier:@"ID"];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.contentInset = UIEdgeInsetsMake(200, 0, 0, 0);
     self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(200, 0, 0, 0);
@@ -51,9 +51,9 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    TestCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ID"];
+    FMTestCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ID"];
     if (!cell) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([TestCell class]) owner:nil options:nil] lastObject];
+        cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([FMTestCell class]) owner:nil options:nil] lastObject];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return cell;

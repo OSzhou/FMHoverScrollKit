@@ -6,8 +6,8 @@
 //  Copyright © 2016年 Windy. All rights reserved.
 //
 
-#import "FirstTController.h"
+#import "FMATController.h"
 
-@interface SixTController : FirstTController
+@interface SixTController : FMATController
 
 @end

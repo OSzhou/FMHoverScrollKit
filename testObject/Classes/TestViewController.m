@@ -7,9 +7,9 @@
 //
 
 #import "TestViewController.h"
-#import "FirstTController.h"
-#import "SecondTController.h"
-#import "ThirdTController.h"
+#import "FMATController.h"
+#import "FMBTController.h"
+#import "FMCTController.h"
 #import "HeadView.h"
 
 #define View_W [UIScreen mainScreen].bounds.size.width
@@ -32,9 +32,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor yellowColor];
-    FirstTController *ftv = [[FirstTController alloc] init];
-    SecondTController *stv = [[SecondTController alloc] init];
-    ThirdTController *ttv = [[ThirdTController alloc] init];
+    FMATController *ftv = [[FMATController alloc] init];
+    FMBTController *stv = [[FMBTController alloc] init];
+    FMCTController *ttv = [[FMCTController alloc] init];
     ftv.delegate = self;
     stv.delegate = self;
     ttv.delegate = self;

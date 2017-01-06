@@ -53,6 +53,7 @@
         ftv.delegate = self;
         [self addChildViewController:ftv];
         ftv.view.frame = CGRectMake(i * View_W, 0, View_W, View_H - BTN_BG_H);
+        ftv.tableView.frame = CGRectMake(0, 0, View_W, View_H - BTN_BG_H);
         [self.horizontalSV addSubview:ftv.view];
     }
     //都加在垂直的scrollview上
@@ -159,7 +160,7 @@
         CGFloat w = View_W;
         CGFloat offSetX = scrollView.contentOffset.x;
         CGFloat tableOSY = 0;
-        if ((int)_preTOffsetY > -(headView_H - BTN_BG_H) &&  (int)_preTOffsetY < 0) {
+        if ((int)_preTOffsetY > -(headView_H - BTN_BG_H) && (int)_preTOffsetY < 0) {
             tableOSY = (int)self.tableV.contentOffset.y;
         } else if ((int)_preTOffsetY >= 0) {
             tableOSY = 0;

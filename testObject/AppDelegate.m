@@ -25,6 +25,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     FMBaseViewController *bvc = [[FMBaseViewController alloc] init];
     FMT1ViewController *t1 = [[FMT1ViewController alloc] init];
+    t1.tableViewStyle = FMTableViewStyleGrouped;
     FMT2ViewController *t2 = [[FMT2ViewController alloc] initWithTableViewStyle:FMTableViewStyleGrouped];
     FMT3ViewController *t3= [[FMT3ViewController alloc] init];
     bvc.childVCArr = @[t1, t2, t3];

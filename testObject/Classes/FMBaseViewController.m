@@ -27,6 +27,8 @@
 @property (nonatomic, assign) NSInteger cvcCount;
 /** 上个tableView的偏移量 */
 @property (nonatomic, assign) CGFloat preTOffsetY;
+/** 顶部图片 */
+@property (nonatomic, strong) UIImageView *headImageView;
 @end
 
 @implementation FMBaseViewController
@@ -91,7 +93,11 @@
     if (!_headView) {
         _headView = [[HeadView alloc] init];
         _headView.frame = CGRectMake(0, 0, View_W, headView_H);
-        [_headView addSubview:[[UISwitch alloc] init]];
+        _headImageView = [[UIImageView alloc] initWithFrame:_headView.bounds];
+#warning 通过设置这个Mode，改变图片的高或宽（其中任意一个）能使图片等比例缩放
+        _headImageView.contentMode = UIViewContentModeScaleAspectFill;
+        _headImageView.image = [UIImage imageNamed:@"picture_2"];
+        [_headView addSubview:_headImageView];
         _headView.backgroundColor = [UIColor grayColor];
     }
     return _headView;
@@ -100,7 +106,7 @@
 - (UIView *)bar {
     if (!_bar) {
         _bar = [[UIView alloc] init];
-        _bar.frame = CGRectMake(0, (headView_H - BTN_BG_H), View_W, BTN_BG_H);
+        _bar.frame = CGRectMake(0, (CGRectGetHeight(self.headView.frame) - BTN_BG_H), View_W, BTN_BG_H);
         _bar.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.5];
         CGFloat w = View_W;
         for (int i = 0; i < _cvcCount; i++) {
@@ -143,9 +149,18 @@
         }
         self.headView.frame = frame;
     } else {
+        // pull down stretching
         frame.origin.y = 0;
-        self.headView.frame = frame;
+        frame.size.height = -_preTOffsetY + BTN_BG_H;
+//        self.headView.frame = frame;
+        [self resetTableViewContentOffsetYWithFrame:frame];
     }
+}
+
+- (void)resetTableViewContentOffsetYWithFrame:(CGRect)frame {
+    self.headView.frame = CGRectMake(0, 0, CGRectGetWidth(frame), CGRectGetHeight(frame));
+    _bar.frame = CGRectMake(0, (CGRectGetHeight(self.headView.frame) - BTN_BG_H), View_W, BTN_BG_H);
+    _headImageView.frame = CGRectMake(0, 0, CGRectGetWidth(frame), CGRectGetHeight(frame));
 }
 
 - (void)btnClick:(UIButton *)sender {
@@ -160,6 +175,7 @@
         CGFloat w = View_W;
         CGFloat offSetX = scrollView.contentOffset.x;
         CGFloat tableOSY = 0;
+        //TODO:
         if ((int)_preTOffsetY > -(headView_H - BTN_BG_H) && (int)_preTOffsetY < 0) {
             tableOSY = (int)self.tableV.contentOffset.y;
         } else if ((int)_preTOffsetY >= 0) {

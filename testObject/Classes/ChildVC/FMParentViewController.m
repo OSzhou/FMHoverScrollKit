@@ -27,8 +27,8 @@
     return self;
 }
 
-- (FMTableViewStyle)tableViewStyle {
-    return _tableViewStyle;
+- (void)setTableViewStyle:(FMTableViewStyle)tableViewStyle {
+    _tableViewStyle = tableViewStyle;
 }
 
 /** tableView */

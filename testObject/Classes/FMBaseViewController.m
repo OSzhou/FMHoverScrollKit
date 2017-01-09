@@ -176,9 +176,9 @@
         CGFloat offSetX = scrollView.contentOffset.x;
         CGFloat tableOSY = 0;
         //TODO:
-        if ((int)_preTOffsetY > -(headView_H - BTN_BG_H) && (int)_preTOffsetY < 0) {
+        if ((int)_preTOffsetY > -(headView_H - BTN_BG_H) && (int)_preTOffsetY <= 0) {
             tableOSY = (int)self.tableV.contentOffset.y;
-        } else if ((int)_preTOffsetY >= 0) {
+        } else if ((int)_preTOffsetY > 0) {
             tableOSY = 0;
         } else {
             tableOSY = -200;
@@ -186,7 +186,10 @@
         NSInteger index = offSetX / w;
         FMParentViewController *ftv = self.childViewControllers[index];
         self.tableV = (UITableView *)ftv.tableView;
-        self.tableV.contentOffset = CGPointMake(0, tableOSY);
+        if (((int)_preTOffsetY > 0) && (self.tableV.contentOffset.y > 0)) {
+        } else {
+            self.tableV.contentOffset = CGPointMake(0, tableOSY);
+        }
         CGRect frame = self.indicatorView.frame;
         frame.origin.x = index * View_W / _cvcCount;
         self.indicatorView.frame = frame;

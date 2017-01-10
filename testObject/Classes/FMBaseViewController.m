@@ -189,28 +189,28 @@
 - (void)tableViewDidEndDragging:(UITableView *)tableView withContentOffset:(CGFloat)offsetY {
     //判断bar是否在顶部
     if (offsetY > 0) {//在
-//        for (int i = 0; i < _cvcCount; i++) {
-//            FMParentViewController *ftv = _childArr[i];
-//            if ([ftv.tableView isEqual:self.tableV]) {
-//                continue;
-//            } else {
-//                CGFloat Y = ftv.tableView.contentOffset.y;
-//                if (Y > 0) {
-//                } else
-//                ftv.tableView.contentOffset = CGPointMake(0, 0);
-//            }
-//        }
+      /*  for (int i = 0; i < _cvcCount; i++) {
+            FMParentViewController *ftv = _childArr[i];
+            if ([ftv.tableView isEqual:self.tableV]) {
+                continue;
+            } else {
+                CGFloat Y = ftv.tableView.contentOffset.y;
+                if (Y > 0) {
+                } else
+                ftv.tableView.contentOffset = CGPointMake(0, 0);
+            }
+        }*/
         // code review
-        [self scrollToVisibleViewPositionWith:offsetY barIsTop:NO];
+        [self scrollToVisibleViewPositionWith:offsetY barIsTop:YES];
     } else {//不在
-//        for (int i = 0; i < _cvcCount; i++) {
-//            FMParentViewController *ftv = _childArr[i];
-//            if ([ftv.tableView isEqual:self.tableV]) {
-//                continue;
-//            } else {
-//                ftv.tableView.contentOffset = CGPointMake(0, offsetY);
-//            }
-//        }
+  /*      for (int i = 0; i < _cvcCount; i++) {
+            FMParentViewController *ftv = _childArr[i];
+            if ([ftv.tableView isEqual:self.tableV]) {
+                continue;
+            } else {
+                ftv.tableView.contentOffset = CGPointMake(0, offsetY);
+            }
+        }*/
         // code review
         [self scrollToVisibleViewPositionWith:offsetY barIsTop:NO];
     }

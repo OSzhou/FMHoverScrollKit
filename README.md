@@ -6,12 +6,15 @@
 * 子控制器类型1 ：FMTableViewStylePlain 初始化代码如下：
 ````
 FMT2ViewController *t2 = [[FMT2ViewController alloc] initWithTableViewStyle:FMTableViewStylePlain];
-或者
+或者（default）
 FMT1ViewController *t1 = [[FMT1ViewController alloc] init];
 ````
 * 子控制器类型2：FMTableViewStyleGroup 初始化代码如下：
 ````
 FMT2ViewController *t2 = [[FMT2ViewController alloc] initWithTableViewStyle:FMTableViewStyleGrouped];
+或者（用属性修改）
+FMT1ViewController *t2 = [[FMT1ViewController alloc] init];
+t2.tableViewStyle = FMTableViewStyleGrouped;
 ````
 #### 3.头部视图是否可以拉伸：
 

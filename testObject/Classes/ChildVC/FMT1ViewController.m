@@ -38,7 +38,6 @@ static NSString  *ID = @"FM1";
     return 100;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
     // Configure the cell...
@@ -46,11 +45,4 @@ static NSString  *ID = @"FM1";
     
     return cell;
 }
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(tableViewContentOffset:withTableView:)]) {
-        [self.delegate tableViewContentOffset:scrollView.contentOffset.y withTableView:self.tableView];
-    }
-}
-
 @end

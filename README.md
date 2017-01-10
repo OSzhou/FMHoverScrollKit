@@ -2,7 +2,7 @@
 这是一个控件悬停的UI效果实现，类似于网易云课堂的详情页UI效果
 ###
 #### 1.工程引入FMBaseViewController, 并添加要自定义的controller
-#### 2.注意：自定义的controller 必须继承于FMBaseViewController.h, 并且子控制器暂时只支持UITableViewController
+#### 2.注意：自定义的controller 必须继承于FMParentViewController.h, 并且子控制器暂时只支持UITableViewController
 * 子控制器类型1 ：FMTableViewStylePlain 初始化代码如下：
 ````
 FMT2ViewController *t2 = [[FMT2ViewController alloc] initWithTableViewStyle:FMTableViewStylePlain];
@@ -13,14 +13,10 @@ FMT1ViewController *t1 = [[FMT1ViewController alloc] init];
 ````
 FMT2ViewController *t2 = [[FMT2ViewController alloc] initWithTableViewStyle:FMTableViewStyleGrouped];
 ````
-#### 3.自定义的子控制器必须实现此方法（及其方法内容）如下：
+#### 3.头部视图是否可以拉伸：
 
 ````
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(tableViewContentOffset:withTableView:)]) {
-        [self.delegate tableViewContentOffset:scrollView.contentOffset.y withTableView:self.tableView];
-    }
-}
+isStretch 属性（default is YES）
 ````
 * 测试效果查看，在AppDelegate.m 的launch函数中添加（或替换）如下代码：
 ````

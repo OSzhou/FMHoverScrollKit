@@ -10,9 +10,7 @@
 #import "FMConst.h"
 
 @implementation HeadView
-{
-  CGFloat _sumOffsetY;
-}
+
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     
@@ -35,7 +33,6 @@
     if (offsetY + self.frame.origin.y > 0) {
         offsetY = 0;
     }
-    _sumOffsetY += offsetY;
     self.transform = CGAffineTransformTranslate(self.transform, 0, offsetY);
     
     //    self.transform = CGAffineTransformMakeTranslation(offsetX, 0);
@@ -43,8 +40,7 @@
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [[NSNotificationCenter defaultCenter] postNotificationName:HeadViewTouchEndNotification object:nil userInfo:@{@"offsetY":@(_sumOffsetY)}];
-    _sumOffsetY = 0.0f;
+    [[NSNotificationCenter defaultCenter] postNotificationName:HeadViewTouchEndNotification object:nil userInfo:nil];
 }
 
 @end

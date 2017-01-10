@@ -18,10 +18,10 @@ typedef NS_ENUM(NSInteger, FMTableViewStyle) {
 //    FMViewControllerStyle
 //};
 
-@protocol parentTableViewDelegate <NSObject>
+@protocol ParentTableViewDelegate <NSObject>
 
 - (void)tableViewContentOffset:(CGFloat)tableViewY withTableView:(UITableView *)tableView;
-
+- (void)tableViewDidEndDragging:(UITableView *)tableView withContentOffset:(CGFloat)offsetY;
 @end
 
 @interface FMParentViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
@@ -31,7 +31,7 @@ typedef NS_ENUM(NSInteger, FMTableViewStyle) {
 @property (nonatomic, assign)  FMTableViewStyle tableViewStyle;
 /** controller Style */
 //@property (nonatomic, assign) FMControllerStyle controllerStyle;
-@property (nonatomic, weak) id <parentTableViewDelegate> delegate;
+@property (nonatomic, weak) id <ParentTableViewDelegate> delegate;
 
 - (instancetype)initWithTableViewStyle:(FMTableViewStyle)tableViewStyle;
 

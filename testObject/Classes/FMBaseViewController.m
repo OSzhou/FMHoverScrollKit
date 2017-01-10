@@ -16,7 +16,7 @@
 #define View_H [UIScreen mainScreen].bounds.size.height
 #define BTN_BG_H 50
 #define headView_H 250
-@interface FMBaseViewController () <UIScrollViewDelegate, UITableViewDelegate, parentTableViewDelegate>
+@interface FMBaseViewController () <UIScrollViewDelegate, UITableViewDelegate, ParentTableViewDelegate>
 @property (nonatomic, strong) UIView *bar;
 @property (nonatomic, strong) UIScrollView *horizontalSV;
 @property (nonatomic, strong) UITableView *tableV;
@@ -76,17 +76,20 @@
 }
 
 - (void)endNotification:(NSNotification *)noti {
-    NSDictionary *dict = noti.userInfo;
-    NSNumber *offsetY = dict[@"offsetY"];
-    CGFloat Y = [offsetY integerValue];
-    NSLog(@"22222 --- %f", Y);
+    for (int i = 0; i < _cvcCount; i++) {
+        FMParentViewController *ftv = _childArr[i];
+        if ([ftv.tableView isEqual:self.tableV]) {
+            continue;
+        } else {
+            ftv.tableView.contentOffset = self.tableV.contentOffset.y < -200 ? CGPointMake(0, -200) : self.tableV.contentOffset;
+        }
+    }
 }
 
 - (void)notification:(NSNotification *)noti {
     NSDictionary *dict = noti.userInfo;
     NSNumber *offsetY = dict[@"offsetY"];
     CGFloat Y = [offsetY integerValue];
-    NSLog(@"11111 --- %f", Y);
     CGFloat tableVOffset = self.tableV.contentOffset.y;
     self.tableV.contentOffset = CGPointMake(0, tableVOffset - Y);
 }
@@ -159,25 +162,71 @@
 }
 #pragma mark --- tableViewOneDelegate
 - (void)tableViewContentOffset:(CGFloat)tableViewY withTableView:(UITableView *)tableView{
-    self.tableV = tableView;
-    CGRect frame = self.headView.frame;
-    //tableViewY有初始值（设置了UIEdgeIntset）为 -(headView_H - BTN_BG_H)
-    _preTOffsetY = tableViewY;
-    if (tableViewY > -(headView_H - BTN_BG_H) ) {
-        frame.origin.y = -((headView_H - BTN_BG_H) + tableViewY);
-        if (tableViewY > 0) {
-            frame.origin.y = -(headView_H - BTN_BG_H);
-        } else {
-        }
-        self.headView.frame = frame;
-    } else {
-        // pull down stretching
-        frame.origin.y = 0;
-        if (_isStretch) {
-            frame.size.height = -_preTOffsetY + BTN_BG_H;
-            [self resetTableViewContentOffsetYWithFrame:frame];
-        } else {
+    if ([tableView isEqual:self.tableV]) {
+        CGRect frame = self.headView.frame;
+        //tableViewY有初始值（设置了UIEdgeIntset）为 -(headView_H - BTN_BG_H)
+        _preTOffsetY = tableViewY;
+        if (tableViewY > -(headView_H - BTN_BG_H) ) {
+            frame.origin.y = -((headView_H - BTN_BG_H) + tableViewY);
+            if (tableViewY > 0) {
+                frame.origin.y = -(headView_H - BTN_BG_H);
+            } else {
+            }
             self.headView.frame = frame;
+        } else {
+            // pull down stretching
+            frame.origin.y = 0;
+            if (_isStretch) {
+                frame.size.height = -_preTOffsetY + BTN_BG_H;
+                [self resetTableViewContentOffsetYWithFrame:frame];
+            } else {
+                self.headView.frame = frame;
+            }
+        }
+    }
+}
+
+- (void)tableViewDidEndDragging:(UITableView *)tableView withContentOffset:(CGFloat)offsetY {
+    //判断bar是否在顶部
+    if (offsetY > 0) {//在
+//        for (int i = 0; i < _cvcCount; i++) {
+//            FMParentViewController *ftv = _childArr[i];
+//            if ([ftv.tableView isEqual:self.tableV]) {
+//                continue;
+//            } else {
+//                CGFloat Y = ftv.tableView.contentOffset.y;
+//                if (Y > 0) {
+//                } else
+//                ftv.tableView.contentOffset = CGPointMake(0, 0);
+//            }
+//        }
+        // code review
+        [self scrollToVisibleViewPositionWith:offsetY barIsTop:NO];
+    } else {//不在
+//        for (int i = 0; i < _cvcCount; i++) {
+//            FMParentViewController *ftv = _childArr[i];
+//            if ([ftv.tableView isEqual:self.tableV]) {
+//                continue;
+//            } else {
+//                ftv.tableView.contentOffset = CGPointMake(0, offsetY);
+//            }
+//        }
+        // code review
+        [self scrollToVisibleViewPositionWith:offsetY barIsTop:NO];
+    }
+}
+
+- (void)scrollToVisibleViewPositionWith:(CGFloat)offsetY barIsTop:(BOOL)isTop {
+    for (int i = 0; i < _cvcCount; i++) {
+        FMParentViewController *ftv = _childArr[i];
+        if ([ftv.tableView isEqual:self.tableV]) {
+            continue;
+        } else {
+            CGFloat Y = ftv.tableView.contentOffset.y;
+            if (isTop && (Y > 0)) {
+            } else {
+                ftv.tableView.contentOffset = CGPointMake(0, offsetY > 0 ? 0 : offsetY);
+            }
         }
     }
 }
@@ -196,11 +245,10 @@
 }
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
-    if ((scrollView = self.horizontalSV)) {
+    if (scrollView == self.horizontalSV) {
         CGFloat w = View_W;
         CGFloat offSetX = scrollView.contentOffset.x;
         CGFloat tableOSY = 0;
-        //TODO:
         if ((int)_preTOffsetY > -(headView_H - BTN_BG_H) && (int)_preTOffsetY <= 0) {
             tableOSY = (int)self.tableV.contentOffset.y;
         } else if ((int)_preTOffsetY > 0) {

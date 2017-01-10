@@ -79,4 +79,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(tableViewContentOffset:withTableView:)]) {
+        [self.delegate tableViewContentOffset:scrollView.contentOffset.y withTableView:self.tableView];
+    }
+}
+
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
+    CGFloat y = targetContentOffset->y;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(tableViewDidEndDragging:withContentOffset:)]) {
+        [self.delegate tableViewDidEndDragging:self.tableView withContentOffset:y];
+    }
+}
+
+
 @end

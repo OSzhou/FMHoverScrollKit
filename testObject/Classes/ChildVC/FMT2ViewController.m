@@ -46,10 +46,4 @@ static NSString  *ID = @"FM2";
     return cell;
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(tableViewContentOffset:withTableView:)]) {
-        [self.delegate tableViewContentOffset:scrollView.contentOffset.y withTableView:self.tableView];
-    }
-}
-
 @end

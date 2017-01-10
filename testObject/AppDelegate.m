@@ -24,6 +24,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     FMBaseViewController *bvc = [[FMBaseViewController alloc] init];
+//    bvc.isStretch = NO;
     FMT1ViewController *t1 = [[FMT1ViewController alloc] init];
     t1.tableViewStyle = FMTableViewStyleGrouped;
     FMT2ViewController *t2 = [[FMT2ViewController alloc] initWithTableViewStyle:FMTableViewStyleGrouped];

@@ -15,5 +15,7 @@
 /** 传入的子控制器的数组 ps:不可变数组, 最多不要超过5个（暂不支持滑动）*/
 @property (nonatomic, strong) NSArray *childVCArr;
 @property (nonatomic, strong) HeadView *headView;
+/** 是否允许headView缩放，默认YES */
+@property (nonatomic, assign) BOOL isStretch;
 
 @end

@@ -10,6 +10,7 @@
 #import "FMT1ViewController.h"
 #import "FMT2ViewController.h"
 #import "FMT3ViewController.h"
+#import "FMConst.h"
 
 #define View_W [UIScreen mainScreen].bounds.size.width
 #define View_H [UIScreen mainScreen].bounds.size.height
@@ -30,12 +31,19 @@
 /** 顶部图片 */
 @property (nonatomic, strong) UIImageView *headImageView;
 @end
-
+//*** 有时候bar在顶部时，有时点击会突然跳回，是因为触发了tableViewe的scrollToTop属性 ***
 @implementation FMBaseViewController
+
+- (instancetype)init {
+    if (self = [super init]) {
+        _preTOffsetY = -200;
+        _isStretch = YES;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _preTOffsetY = -200;
     NSInteger count = self.childVCArr.count;
     if (count) {
         _childArr = _childVCArr;
@@ -63,16 +71,30 @@
     [self.view addSubview:self.headView];
     [self.headView addSubview:self.bar];
     [self.bar addSubview:self.indicatorView];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notification:) name:@"headView" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notification:) name:HeadViewTouchMoveNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(endNotification:) name:HeadViewTouchEndNotification object:nil];
+}
+
+- (void)endNotification:(NSNotification *)noti {
+    NSDictionary *dict = noti.userInfo;
+    NSNumber *offsetY = dict[@"offsetY"];
+    CGFloat Y = [offsetY integerValue];
+    NSLog(@"22222 --- %f", Y);
 }
 
 - (void)notification:(NSNotification *)noti {
     NSDictionary *dict = noti.userInfo;
     NSNumber *offsetY = dict[@"offsetY"];
     CGFloat Y = [offsetY integerValue];
+    NSLog(@"11111 --- %f", Y);
     CGFloat tableVOffset = self.tableV.contentOffset.y;
     self.tableV.contentOffset = CGPointMake(0, tableVOffset - Y);
 }
+
+- (void)setIsStretch:(BOOL)isStretch {
+    _isStretch = isStretch;
+}
+
 #pragma mark --- 懒加载区
 - (UIScrollView *)horizontalSV {
     if (!_horizontalSV) {
@@ -151,9 +173,12 @@
     } else {
         // pull down stretching
         frame.origin.y = 0;
-        frame.size.height = -_preTOffsetY + BTN_BG_H;
-//        self.headView.frame = frame;
-        [self resetTableViewContentOffsetYWithFrame:frame];
+        if (_isStretch) {
+            frame.size.height = -_preTOffsetY + BTN_BG_H;
+            [self resetTableViewContentOffsetYWithFrame:frame];
+        } else {
+            self.headView.frame = frame;
+        }
     }
 }
 

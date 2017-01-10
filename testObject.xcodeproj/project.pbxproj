@@ -20,6 +20,7 @@
 		E519BB4E1DBA291B00AB74CD /* FMT1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BB491DBA291B00AB74CD /* FMT1ViewController.m */; };
 		E519BB4F1DBA291B00AB74CD /* FMT2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BB4B1DBA291B00AB74CD /* FMT2ViewController.m */; };
 		E519BB501DBA291B00AB74CD /* FMT3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BB4D1DBA291B00AB74CD /* FMT3ViewController.m */; };
+		E522F2131E2477B20003312E /* FMConst.m in Sources */ = {isa = PBXBuildFile; fileRef = E522F2121E2477B10003312E /* FMConst.m */; };
 		E5E377411DDC48FD00B34B01 /* UIButton+FMExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E377401DDC48FD00B34B01 /* UIButton+FMExtension.m */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,8 @@
 		E519BB4B1DBA291B00AB74CD /* FMT2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMT2ViewController.m; sourceTree = "<group>"; };
 		E519BB4C1DBA291B00AB74CD /* FMT3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMT3ViewController.h; sourceTree = "<group>"; };
 		E519BB4D1DBA291B00AB74CD /* FMT3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMT3ViewController.m; sourceTree = "<group>"; };
+		E522F2111E2477B10003312E /* FMConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMConst.h; sourceTree = "<group>"; };
+		E522F2121E2477B10003312E /* FMConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMConst.m; sourceTree = "<group>"; };
 		E5E3773F1DDC48FD00B34B01 /* UIButton+FMExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+FMExtension.h"; sourceTree = "<group>"; };
 		E5E377401DDC48FD00B34B01 /* UIButton+FMExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+FMExtension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -198,6 +201,8 @@
 			children = (
 				E5E3773F1DDC48FD00B34B01 /* UIButton+FMExtension.h */,
 				E5E377401DDC48FD00B34B01 /* UIButton+FMExtension.m */,
+				E522F2111E2477B10003312E /* FMConst.h */,
+				E522F2121E2477B10003312E /* FMConst.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -334,6 +339,7 @@
 			files = (
 				E519BB501DBA291B00AB74CD /* FMT3ViewController.m in Sources */,
 				BACEE4071DAC8BC20061CA95 /* AppDelegate.m in Sources */,
+				E522F2131E2477B20003312E /* FMConst.m in Sources */,
 				E519BAE91DB8A25C00AB74CD /* FMBaseViewController.m in Sources */,
 				E519BAE51DB89B5500AB74CD /* HeadView.m in Sources */,
 				E5E377411DDC48FD00B34B01 /* UIButton+FMExtension.m in Sources */,

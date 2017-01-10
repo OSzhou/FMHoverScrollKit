@@ -42,6 +42,7 @@
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.contentInset = UIEdgeInsetsMake(200, 0, 0, 0);
         _tableView.scrollIndicatorInsets = UIEdgeInsetsMake(200, 0, 0, 0);
+        _tableView.scrollsToTop = NO;
         _tableView.delegate = self;
         _tableView.dataSource = self;
     }

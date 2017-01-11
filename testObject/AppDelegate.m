@@ -24,7 +24,13 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     FMBaseViewController *bvc = [[FMBaseViewController alloc] init];
+//    bvc.indicatorColor = [UIColor yellowColor];
+//    bvc.isIndicatorHidden = YES;
+//    bvc.headImage_H = 100;
+//    bvc.button_H = 30;
+//    bvc.headImageName = @"picture_3";
 //    bvc.isStretch = NO;
+//    [bvc.headView addSubview:[[UISwitch alloc] init]];
     FMT1ViewController *t1 = [[FMT1ViewController alloc] init];
     t1.tableViewStyle = FMTableViewStyleGrouped;
     FMT2ViewController *t2 = [[FMT2ViewController alloc] initWithTableViewStyle:FMTableViewStyleGrouped];

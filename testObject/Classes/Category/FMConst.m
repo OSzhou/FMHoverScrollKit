@@ -9,3 +9,4 @@
 
 NSString *const HeadViewTouchMoveNotification = @"headViewTouchMoveNotification";
 NSString *const HeadViewTouchEndNotification = @"headViewTouchEndNotification";
+CGFloat const headImage_H = 200.f;

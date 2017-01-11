@@ -10,3 +10,4 @@
 
 UIKIT_EXTERN NSString *const HeadViewTouchMoveNotification;
 UIKIT_EXTERN NSString *const HeadViewTouchEndNotification;
+UIKIT_EXTERN CGFloat const headImage_H;

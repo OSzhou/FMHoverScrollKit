@@ -14,8 +14,6 @@
 
 #define View_W [UIScreen mainScreen].bounds.size.width
 #define View_H [UIScreen mainScreen].bounds.size.height
-#define BTN_BG_H 50
-#define headView_H 250
 @interface FMBaseViewController () <UIScrollViewDelegate, UITableViewDelegate, ParentTableViewDelegate>
 @property (nonatomic, strong) UIView *bar;
 @property (nonatomic, strong) UIScrollView *horizontalSV;
@@ -30,14 +28,20 @@
 @property (nonatomic, assign) CGFloat preTOffsetY;
 /** 顶部图片 */
 @property (nonatomic, strong) UIImageView *headImageView;
+
 @end
-//*** 有时候bar在顶部时，有时点击会突然跳回，是因为触发了tableViewe的scrollToTop属性 ***
+//*** 有时候bar在顶部时，有时点击会突然跳回，是因为触发了tableViewe的scrollToTop属性 已关闭，需要此功能的请自行打开***
 @implementation FMBaseViewController
 
 - (instancetype)init {
     if (self = [super init]) {
-        _preTOffsetY = -200;
+        _preTOffsetY = -200.f;//默认值
+        _headImage_H = 200.f;//默认值
+        _button_H = 50.f;//默认值
         _isStretch = YES;
+        //此示例资源图较大，不需要者，自行删除
+        _headImageName = @"FMPicture.bundle/picture_2";
+        _indicatorColor = [UIColor redColor];
     }
     return self;
 }
@@ -57,19 +61,20 @@
     _cvcCount = _childArr.count;
     for (int i = 0; i < _childArr.count; i++) {
         FMParentViewController *ftv = _childArr[i];
+        ftv.delegate = self;//注意代码顺序，代理设置要放在前面
         if (i == 0) {
             self.tableV = (UITableView *)ftv.tableView;
         }
-        ftv.delegate = self;
         [self addChildViewController:ftv];
-        ftv.view.frame = CGRectMake(i * View_W, 0, View_W, View_H - BTN_BG_H);
-        ftv.tableView.frame = CGRectMake(0, 0, View_W, View_H - BTN_BG_H);
+        ftv.view.frame = CGRectMake(i * View_W, 0, View_W, View_H - _button_H);
+        ftv.tableView.frame = CGRectMake(0, 0, View_W, View_H - _button_H);
         [self.horizontalSV addSubview:ftv.view];
     }
     //都加在垂直的scrollview上
     [self.view addSubview:self.horizontalSV];
     [self.view addSubview:self.headView];
     [self.headView addSubview:self.bar];
+    _isIndicatorHidden?:
     [self.bar addSubview:self.indicatorView];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notification:) name:HeadViewTouchMoveNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(endNotification:) name:HeadViewTouchEndNotification object:nil];
@@ -81,7 +86,7 @@
         if ([ftv.tableView isEqual:self.tableV]) {
             continue;
         } else {
-            ftv.tableView.contentOffset = self.tableV.contentOffset.y < -200 ? CGPointMake(0, -200) : self.tableV.contentOffset;
+            ftv.tableView.contentOffset = self.tableV.contentOffset.y < -_headImage_H ? CGPointMake(0, -_headImage_H) : self.tableV.contentOffset;
         }
     }
 }
@@ -98,11 +103,31 @@
     _isStretch = isStretch;
 }
 
+- (void)setHeadImageName:(NSString *)headImageName {
+    _headImageName = headImageName;
+}
+
+- (void)setHeadImage_H:(CGFloat)headImage_H {
+    _headImage_H = headImage_H;
+}
+
+- (void)setButton_H:(CGFloat)button_H {
+    _button_H = button_H;
+}
+
+- (void)setIndicatorColor:(UIColor *)indicatorColor {
+    _indicatorColor = indicatorColor;
+}
+
+- (void)setIsIndicatorHidden:(BOOL)isIndicatorHidden {
+    _isIndicatorHidden = isIndicatorHidden;
+}
+
 #pragma mark --- 懒加载区
 - (UIScrollView *)horizontalSV {
     if (!_horizontalSV) {
-        _horizontalSV = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 50, self.view.frame.size.width, View_H - BTN_BG_H)];
-        _horizontalSV.backgroundColor = [UIColor cyanColor];
+        _horizontalSV = [[UIScrollView alloc] initWithFrame:CGRectMake(0, _button_H, self.view.frame.size.width, View_H - _button_H)];
+        _horizontalSV.backgroundColor = [UIColor clearColor];
         _horizontalSV.bounces = NO;
         _horizontalSV.alwaysBounceHorizontal = YES;
         _horizontalSV.delegate = self;
@@ -117,26 +142,28 @@
 - (HeadView *)headView {
     if (!_headView) {
         _headView = [[HeadView alloc] init];
-        _headView.frame = CGRectMake(0, 0, View_W, headView_H);
-        _headImageView = [[UIImageView alloc] initWithFrame:_headView.bounds];
+        _headView.frame = CGRectMake(0, 0, View_W, _headImage_H + _button_H);
+        _headImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, View_W, _headImage_H)];
+        //裁剪去由于Mode引起的图片超出视图原定范围部分
+        _headImageView.clipsToBounds = YES;
 #warning 通过设置这个Mode，改变图片的高或宽（其中任意一个）能使图片等比例缩放
         _headImageView.contentMode = UIViewContentModeScaleAspectFill;
-        _headImageView.image = [UIImage imageNamed:@"picture_2"];
+        _headImageView.image = [UIImage imageNamed:_headImageName];
         [_headView addSubview:_headImageView];
         _headView.backgroundColor = [UIColor grayColor];
     }
     return _headView;
 }
-/** butBGView */
+/** butBGView (在此根据要求自定义按钮)*/
 - (UIView *)bar {
     if (!_bar) {
         _bar = [[UIView alloc] init];
-        _bar.frame = CGRectMake(0, (CGRectGetHeight(self.headView.frame) - BTN_BG_H), View_W, BTN_BG_H);
+        _bar.frame = CGRectMake(0, (CGRectGetHeight(self.headView.frame) - _button_H), View_W, _button_H);
         _bar.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.5];
         CGFloat w = View_W;
         for (int i = 0; i < _cvcCount; i++) {
             UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-            btn.frame = CGRectMake(i * w / _cvcCount, 0, w / _cvcCount, BTN_BG_H);
+            btn.frame = CGRectMake(i * w / _cvcCount, 0, w / _cvcCount, _button_H);
             btn.titleLabel.font = [UIFont systemFontOfSize:15.0];
             [btn setTitle:[NSString stringWithFormat:@"btn_%zd", i] forState:UIControlStateNormal];
             [btn setTitle:@"被选中" forState:UIControlStateSelected];
@@ -155,8 +182,8 @@
 /** 指示条 */
 - (UIView *)indicatorView {
     if (!_indicatorView) {
-        _indicatorView = [[UIView alloc] initWithFrame:CGRectMake(0, BTN_BG_H - 1.5, View_W / _cvcCount, 1.5)];
-        _indicatorView.backgroundColor = [UIColor redColor];
+        _indicatorView = [[UIView alloc] initWithFrame:CGRectMake(0, _button_H - 1.5, View_W / _cvcCount, 1.5)];
+        _indicatorView.backgroundColor = _indicatorColor;
     }
     return _indicatorView;
 }
@@ -166,10 +193,10 @@
         CGRect frame = self.headView.frame;
         //tableViewY有初始值（设置了UIEdgeIntset）为 -(headView_H - BTN_BG_H)
         _preTOffsetY = tableViewY;
-        if (tableViewY > -(headView_H - BTN_BG_H) ) {
-            frame.origin.y = -((headView_H - BTN_BG_H) + tableViewY);
+        if (tableViewY > -(_headImage_H) ) {
+            frame.origin.y = -(_headImage_H + tableViewY);
             if (tableViewY > 0) {
-                frame.origin.y = -(headView_H - BTN_BG_H);
+                frame.origin.y = -(_headImage_H);
             } else {
             }
             self.headView.frame = frame;
@@ -177,7 +204,7 @@
             // pull down stretching
             frame.origin.y = 0;
             if (_isStretch) {
-                frame.size.height = -_preTOffsetY + BTN_BG_H;
+                frame.size.height = -_preTOffsetY + _button_H;
                 [self resetTableViewContentOffsetYWithFrame:frame];
             } else {
                 self.headView.frame = frame;
@@ -231,9 +258,13 @@
     }
 }
 
+- (CGFloat)tableViewContentInsetOfTopWith:(UITableView *)tableView {
+    return _headImage_H;
+}
+
 - (void)resetTableViewContentOffsetYWithFrame:(CGRect)frame {
     self.headView.frame = CGRectMake(0, 0, CGRectGetWidth(frame), CGRectGetHeight(frame));
-    _bar.frame = CGRectMake(0, (CGRectGetHeight(self.headView.frame) - BTN_BG_H), View_W, BTN_BG_H);
+    _bar.frame = CGRectMake(0, (CGRectGetHeight(self.headView.frame) - _button_H), View_W, _button_H);
     _headImageView.frame = CGRectMake(0, 0, CGRectGetWidth(frame), CGRectGetHeight(frame));
 }
 
@@ -249,12 +280,12 @@
         CGFloat w = View_W;
         CGFloat offSetX = scrollView.contentOffset.x;
         CGFloat tableOSY = 0;
-        if ((int)_preTOffsetY > -(headView_H - BTN_BG_H) && (int)_preTOffsetY <= 0) {
+        if ((int)_preTOffsetY > -(_headImage_H) && (int)_preTOffsetY <= 0) {
             tableOSY = (int)self.tableV.contentOffset.y;
         } else if ((int)_preTOffsetY > 0) {
             tableOSY = 0;
         } else {
-            tableOSY = -200;
+            tableOSY = -_headImage_H;
         }
         NSInteger index = offSetX / w;
         FMParentViewController *ftv = self.childViewControllers[index];

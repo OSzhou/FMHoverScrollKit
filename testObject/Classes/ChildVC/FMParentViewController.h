@@ -22,6 +22,7 @@ typedef NS_ENUM(NSInteger, FMTableViewStyle) {
 
 - (void)tableViewContentOffset:(CGFloat)tableViewY withTableView:(UITableView *)tableView;
 - (void)tableViewDidEndDragging:(UITableView *)tableView withContentOffset:(CGFloat)offsetY;
+- (CGFloat)tableViewContentInsetOfTopWith:(UITableView *)tableView;
 @end
 
 @interface FMParentViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>

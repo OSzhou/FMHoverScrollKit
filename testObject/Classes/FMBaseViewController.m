@@ -123,6 +123,10 @@
     _isIndicatorHidden = isIndicatorHidden;
 }
 
+- (void)setBtnBackColor:(UIColor *)btnBackColor {
+    _btnBackColor = btnBackColor;
+}
+
 #pragma mark --- 懒加载区
 - (UIScrollView *)horizontalSV {
     if (!_horizontalSV) {
@@ -154,6 +158,11 @@
     }
     return _headView;
 }
+
+- (void)setBtnTitleArr:(NSArray *)btnTitleArr {
+    _btnTitleArr = btnTitleArr;
+}
+
 /** butBGView (在此根据要求自定义按钮)*/
 - (UIView *)bar {
     if (!_bar) {
@@ -165,9 +174,9 @@
             UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
             btn.frame = CGRectMake(i * w / _cvcCount, 0, w / _cvcCount, _button_H);
             btn.titleLabel.font = [UIFont systemFontOfSize:15.0];
-            [btn setTitle:[NSString stringWithFormat:@"btn_%zd", i] forState:UIControlStateNormal];
+            [btn setTitle:_btnTitleArr.count > 0 ? _btnTitleArr[i] : [NSString stringWithFormat:@"btn_%zd", i] forState:UIControlStateNormal];
             [btn setTitle:@"被选中" forState:UIControlStateSelected];
-            btn.backgroundColor = [UIColor colorWithRed:arc4random_uniform(255) / 255.0 green:arc4random_uniform(255) / 255.0 blue:arc4random_uniform(255) / 255.0 alpha:1.0];
+            btn.backgroundColor = _btnBackColor ?: [UIColor colorWithRed:arc4random_uniform(255) / 255.0 green:arc4random_uniform(255) / 255.0 blue:arc4random_uniform(255) / 255.0 alpha:1.0];
             [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
             btn.tag = 100 + i;
             if (i == 0) {

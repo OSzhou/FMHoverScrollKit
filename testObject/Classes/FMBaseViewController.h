@@ -28,4 +28,9 @@
 @property (nonatomic, strong) UIColor *indicatorColor;
 /** 是否隐藏指示条 */
 @property (nonatomic, assign) BOOL isIndicatorHidden;
+/** button的名称 */
+@property (nonatomic, strong) NSArray *btnTitleArr;
+/** button的背景颜色 */
+@property (nonatomic, strong) UIColor *btnBackColor;
+
 @end

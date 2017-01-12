@@ -2,6 +2,20 @@
 这是一个控件悬停的UI效果实现，类似于网易云课堂的详情页UI效果
 ###
 #### 1.工程引入FMBaseViewController, 并添加要自定义的controller
+
+* 有关头部image及button的相关设置通过，FMBaseViewController的属性进行设置，示例代码如下：
+````
+FMBaseViewController *bvc = [[FMBaseViewController alloc] init];
+bvc.btnBackColor = [UIColor cyanColor];
+bvc.btnTitleArr = @[@"张三", @"李四", @"王五"];
+bvc.indicatorColor = [UIColor yellowColor];
+bvc.isIndicatorHidden = YES;
+bvc.headImage_H = 100;
+bvc.button_H = 30;
+bvc.headImageName = @"picture_3";
+bvc.isStretch = NO;
+````
+
 #### 2.注意：自定义的controller 必须继承于FMParentViewController.h, 并且子控制器暂时只支持UITableViewController
 * 子控制器类型1 ：FMTableViewStylePlain 初始化代码如下：
 ````

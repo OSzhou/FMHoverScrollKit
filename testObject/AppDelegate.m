@@ -24,6 +24,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     FMBaseViewController *bvc = [[FMBaseViewController alloc] init];
+//    bvc.btnBackColor = [UIColor cyanColor];
+//    bvc.btnTitleArr = @[@"张三", @"李四", @"王五"];
 //    bvc.indicatorColor = [UIColor yellowColor];
 //    bvc.isIndicatorHidden = YES;
 //    bvc.headImage_H = 100;

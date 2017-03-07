@@ -130,6 +130,7 @@
 #pragma mark --- 懒加载区
 - (UIScrollView *)horizontalSV {
     if (!_horizontalSV) {
+        //_horizontalSV 的y值 是 _button_H 所以tableView 的topContentInset只需要_headImage_H就可以了
         _horizontalSV = [[UIScrollView alloc] initWithFrame:CGRectMake(0, _button_H, self.view.frame.size.width, View_H - _button_H)];
         _horizontalSV.backgroundColor = [UIColor clearColor];
         _horizontalSV.bounces = NO;

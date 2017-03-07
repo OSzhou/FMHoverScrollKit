@@ -81,7 +81,6 @@ static const CGFloat FMDefaultTopMargin = 200.f;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    
     return cell;
 }
 
@@ -102,6 +101,5 @@ static const CGFloat FMDefaultTopMargin = 200.f;
         [self.delegate tableViewDidEndDragging:self.tableView withContentOffset:y];
     }
 }
-
 
 @end

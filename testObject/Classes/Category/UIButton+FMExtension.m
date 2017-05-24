@@ -14,9 +14,36 @@
 @property(nonatomic, assign) NSTimeInterval fm_acceptEventTime;
 
 @end
+/** 关联关键字 */
 static const char *UIControl_multipleClickInterval = "fm_multipleClickInterval";
 static const char *UIControl_acceptEventTime = "fm_acceptEventTime";
 @implementation UIButton (FMExtension)
+
+/**
+ 
+ 分类中用@property定义变量，只会生成变量的getter，setter方法的声明，不能生成方法实现和带下划线
+ 的成员变量。有没有解决方案呢？有，通过运行时建立关联引用。
+ 
+ enum {
+ OBJC_ASSOCIATION_ASSIGN = 0, //关联对象的属性是弱引用
+ 
+ OBJC_ASSOCIATION_RETAIN_NONATOMIC = 1, //关联对象的属性是强引用并且关联对象不使用原子性
+ 
+ OBJC_ASSOCIATION_COPY_NONATOMIC = 3, //关联对象的属性是copy并且关联对象不使用原子性
+ 
+ OBJC_ASSOCIATION_RETAIN = 01401, //关联对象的属性是copy并且关联对象使用原子性
+ 
+ OBJC_ASSOCIATION_COPY = 01403 //关联对象的属性是copy并且关联对象使用原子性
+ };
+ /✨✨✨✨✨✨✨✨✨/
+  UIView(frame)分类不用runtime动态绑定的原因是：我们只需要用到自己定义属性的setter，
+ getter方法去设置，返回UIView ***“本身就有的属性”***。而正常情况下，自己定义的属性，
+ setter是设置自定义属性的值，getter也是返回自定义属性的值,而此时分类是没有 “_” 开头
+ 的自定义属性字
+ 段的，必须动态绑定
+ /✨✨✨✨✨✨✨✨✨/
+ */
+
 //动态关联对象
 - (void)setFm_multipleClickInterval:(NSTimeInterval)fm_multipleClickInterval {
     //四个参数：源对象，关键字，关联的对象和一个关联策略

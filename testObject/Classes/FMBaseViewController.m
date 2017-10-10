@@ -153,7 +153,7 @@
         _headImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, View_W, _headImage_H)];
         //裁剪去由于Mode引起的图片超出视图原定范围部分
         _headImageView.clipsToBounds = YES;
-#warning 通过设置这个Mode，改变图片的高或宽（其中任意一个）能使图片等比例缩放
+//#warning 通过设置这个Mode，改变图片的高或宽（其中任意一个）能使图片等比例缩放
         _headImageView.contentMode = UIViewContentModeScaleAspectFill;
         _headImageView.image = [UIImage imageNamed:_headImageName];
         [_headView addSubview:_headImageView];

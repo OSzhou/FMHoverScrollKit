@@ -30,10 +30,10 @@ static const char *UIControl_acceptEventTime = "fm_acceptEventTime";
 @implementation UIButton (FMExtension)
 
 + (void)swizzleOriginalAndSwizzledMethodForClass:(Class)theClass {
-    Method swizzledMethod = class_getInstanceMethod(self, @selector());
-    if (fm_addMethod(theClass, @selector(), swizzledMethod)) {
-        fm_methodSwizzling(theClass, @selector(), @selector());
-    }
+//    Method swizzledMethod = class_getInstanceMethod(self, @selector());
+//    if (fm_addMethod(theClass, @selector(), swizzledMethod)) {
+//        fm_methodSwizzling(theClass, @selector(), @selector());
+//    }
 }
 
 /**

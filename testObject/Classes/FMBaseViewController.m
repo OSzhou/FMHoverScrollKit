@@ -66,9 +66,10 @@
             self.tableV = (UITableView *)ftv.tableView;
         }
         [self addChildViewController:ftv];
-        ftv.view.frame = CGRectMake(i * View_W, 0, View_W, View_H - _button_H);
-        ftv.tableView.frame = CGRectMake(0, 0, View_W, View_H - _button_H);
-        [self.horizontalSV addSubview:ftv.view];
+        //在这添加达不到懒加载的效果
+//        ftv.view.frame = CGRectMake(i * View_W, 0, View_W, View_H - _button_H);
+//        ftv.tableView.frame = CGRectMake(0, 0, View_W, View_H - _button_H);
+//        [self.horizontalSV addSubview:ftv.view];
     }
     //都加在垂直的scrollview上
     [self.view addSubview:self.horizontalSV];
@@ -78,6 +79,7 @@
     [self.bar addSubview:self.indicatorView];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notification:) name:HeadViewTouchMoveNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(endNotification:) name:HeadViewTouchEndNotification object:nil];
+     [self scrollViewDidEndScrollingAnimation:self.horizontalSV];
 }
 
 - (void)endNotification:(NSNotification *)noti {
@@ -318,6 +320,11 @@
                 }
             }
         }
+        //已下四行代码，使页面用到时再加载，达到懒加载的目的
+        if ([ftv isViewLoaded]) return;
+        ftv.view.frame = CGRectMake(index * View_W, 0, View_W, View_H - _button_H);
+        ftv.tableView.frame = CGRectMake(0, 0, View_W, View_H - _button_H);
+        [self.horizontalSV addSubview:ftv.view];
     }
 }
 

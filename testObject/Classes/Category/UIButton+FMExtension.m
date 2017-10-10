@@ -9,15 +9,15 @@
 #import "UIButton+FMExtension.h"
 #import <objc/runtime.h>
 //reference to AF
-static inline BOOL fm_addMethod(Class theClass, SEL selector, Method method) {
-    return class_addMethod(theClass, selector, method_getImplementation(method), method_getTypeEncoding(method));
-}
-
-static inline void fm_methodSwizzling(Class theClass, SEL originalSelector, SEL swizzledSelector){
-    Method originalMethod = class_getInstanceMethod(theClass, originalSelector);
-    Method swizzledMethod = class_getInstanceMethod(theClass, swizzledSelector);
-    method_exchangeImplementations(originalMethod, swizzledMethod);
-}
+//static inline BOOL fm_addMethod(Class theClass, SEL selector, Method method) {
+//    return class_addMethod(theClass, selector, method_getImplementation(method), method_getTypeEncoding(method));
+//}
+//
+//static inline void fm_methodSwizzling(Class theClass, SEL originalSelector, SEL swizzledSelector){
+//    Method originalMethod = class_getInstanceMethod(theClass, originalSelector);
+//    Method swizzledMethod = class_getInstanceMethod(theClass, swizzledSelector);
+//    method_exchangeImplementations(originalMethod, swizzledMethod);
+//}
 
 @interface UIButton ()
 /** 记录上一次接收点击事件的时间 */
@@ -29,12 +29,12 @@ static const char *UIControl_multipleClickInterval = "fm_multipleClickInterval";
 static const char *UIControl_acceptEventTime = "fm_acceptEventTime";
 @implementation UIButton (FMExtension)
 
-+ (void)swizzleOriginalAndSwizzledMethodForClass:(Class)theClass {
+//+ (void)swizzleOriginalAndSwizzledMethodForClass:(Class)theClass {
 //    Method swizzledMethod = class_getInstanceMethod(self, @selector());
 //    if (fm_addMethod(theClass, @selector(), swizzledMethod)) {
 //        fm_methodSwizzling(theClass, @selector(), @selector());
 //    }
-}
+//}
 
 /**
  

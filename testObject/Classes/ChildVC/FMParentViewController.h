@@ -19,8 +19,9 @@ typedef NS_ENUM(NSInteger, FMTableViewStyle) {
 //};
 
 @protocol ParentTableViewDelegate <NSObject>
-
+/** 一直拖拽时的y计算返回 */
 - (void)tableViewContentOffset:(CGFloat)tableViewY withTableView:(UITableView *)tableView;
+/** 惯性滑动停止的y计算 */
 - (void)tableViewDidEndDragging:(UITableView *)tableView withContentOffset:(CGFloat)offsetY;
 - (CGFloat)tableViewContentInsetOfTopWith:(UITableView *)tableView;
 @end

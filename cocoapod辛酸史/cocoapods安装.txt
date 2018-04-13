@@ -1,0 +1,47 @@
+
+------------------------cocoapods安装：-----------------
+
+# 卸载操作
+$ sudo gem uninstall cocoapods
+# 安装
+$ sudo gem install cocoapods
+
+更新：
+
+3.4、解析Podfile，安装第三方框架
+$ pod install
+3.5、解析Podfile，升级第三方框架
+$ pod update
+注意，如果使用CocoaPods过程中出现了莫名其妙的问题，执行以下命令。
+
+$ sudo gem update --system
+$ sudo gem install cocoapods
+$ pod setup
+
+---------------------------问题&参考网址-------------------------
+
+//pod 国内镜像
+https://code.aliyun.com/Magi/CocoaPods.git 
+//手动安装博客
+https://www.cnblogs.com/wntd/p/7348943.html
+//阿里手动repo
+https://blog.csdn.net/fengsh998/article/details/52172741
+
+//错误：使用git报错error: RPC failed; HTTP 504 curl 22 The requested URL returned error: 504 Gateway Time-out
+办法：
+https://blog.csdn.net/u011452278/article/details/76855113
+(git clone --depth=1  https://code.aliyun.com/Magi/CocoaPods.git)
+
+//安装辛酸史
+http://www.cocoachina.com/bbs/read.php?tid=1706084
+
+-------------------------Homebrew安装：------------------
+// 移除默认的源
+$ gem sources --remove https://rubygems.org/
+// 添加国内的源
+$ gem sources -a https://gems.ruby-china.org/
+// 查看源
+$ gem sources -l
+
+https://gems.ruby-china.org
+# 确保只有 gems.ruby-china.org

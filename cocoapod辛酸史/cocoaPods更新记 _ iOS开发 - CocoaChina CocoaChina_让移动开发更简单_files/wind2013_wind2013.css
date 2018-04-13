@@ -1,0 +1,256 @@
+
+body{font-size:9pt;background-color:#FFFFFF;font-family:"Lucida Grande","Lucida Sans Unicode",Arial,Verdana,sans-serif; color:#333;background:#f7f7f7 url(http://cdn.cocimg.com/bbs/images/wind2013/all_bg.gif) repeat-x; min-width:1100px;}
+h3,h2{display:inline;}
+/**
+
+div{border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;}
+**/
+h2 a{color:#000;font-size:14px;}
+h3 a{color:#444444;font-size:14px;}
+.subject{ font-size:12px;} /*列表标题*/
+.v-in input{vertical-align:baseline;} /*列表下滑线对齐*/
+h4{margin:20px 0 10px;font-size:1.1em}
+/*a link 基本连接颜色*/
+a{text-decoration:none;color:#000;}
+a:hover{text-decoration:underline;}
+
+.yinying{-moz-box-shadow:0 6px 12px #333333;box-shadow:0 6px 12px #333333;-webkit-box-shadow:0 6px 12px #333333;padding-bottom:5px;}
+/*内补丁*/
+.pdD{padding:.3em .5em}
+.p10{padding:10px;}
+/*main color 数值自定义*/
+/*.f_one,.t_one,.r_one{background:#ffffff }*/
+.f_two,.t_two,.r_two{background:#ffffff }
+/*按钮*/
+.btn{background:url(http://cdn.cocimg.com/bbs/images/forum_images/btn.jpg) no-repeat;cursor:pointer;}
+.btn,.bt{border-width:1px;cursor:pointer;padding:.1em 1em;*padding:0 1em;font-size:14px; line-height:130%;border:none;height:26px;width:90px;}
+.bt{cursor:pointer;background:url(http://cdn.cocimg.com/bbs/images/forum_images/bt1.jpg) no-repeat;margin-left:10px;}
+.bt1{height:26px;width:90px;background:url(http://cdn.cocimg.com/bbs/images/forum_images/bt1.jpg) no-repeat;border-width:1px;cursor:pointer;padding:.1em 1em;*padding:0 1em;font-size:14px; line-height:130%;border:none;}
+/*伪类按钮*/
+.bta{cursor:pointer;color:#000;padding:2px 8px;background:#ffffff;margin:2px;height:25px;white-space:nowrap;border:1px solid #E0E0E0;-moz-border-radius:2px;-khtml-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;}
+.abtn2 a{border:1px solid #fbfdff;padding:2px 4px 1px;color:#555;}
+.abtn2 a:hover{border:1px solid #2195d2;color:#2195d2;text-decoration:none;background:#fff;}
+/*form*/
+textarea,input,select{font:12px Arial;}
+.select{height:25px;width:164px;/*background:url(http://cdn.cocimg.com/bbs/images/forum_images/search_bj.jpg) no-repeat;*/border:1px solid #bbb;}
+.input{height:28px;width:205px;background:url(http://cdn.cocimg.com/bbs/images/forum_images/input_text.jpg) no-repeat;border:none;padding-left:8px;font-size:14px;vertical-align:middle;color:#000;overflow:hidden;}
+.input[type="search"]{border: 0 none!important;}
+.input[type="file"]{background:none}
+textarea{border: 1px solid; border-color: #c0c0c0 #ededed #ededed #c0c0c0;}
+
+/*全局*/
+.new_topbar{width:98%;margin:auto;min-width:800px;overflow:hidden;}
+#header{width:98%;background:url(http://cdn.cocimg.com/bbs/images/wind2013/bg.png) 0 -2px repeat-x}
+	#head{width:98%;margin:0 auto;}
+	#nav{width:99.9%;margin:auto;height:34px; border:1px solid #6B6B6B;}
+#main{width:98%;margin:0 auto;}  /*内容*/
+#footer{padding:20px 0 30px;width:98%;margin:0 auto;}
+	.bottom{margin:0 auto 10px;border:1px solid #E0E0E0;background:#ffffff;}
+	.bottom ul{ padding:5px; margin:0; list-style:none;}
+	.bottom ul li{ padding:0 10px 0 0;display:inline;}
+	.bottom ul li a{white-space:nowrap;}
+/*位置*/
+#breadCrumb{height:45px;background:url(http://cdn.cocimg.com/bbs/images/forum_images/tatle.png) repeat-x 0 0;margin-top:15px;}
+#breadCrumb a{margin-left:5px;}
+#breadCrumb strong{float:left;padding-top:8px;}
+#breadCrumb span{line-height:40px;}
+#breadCrumb span img{margin-left:20px;margin-top:-3px;}
+.bc{height:45px;background:url(http://cdn.cocimg.com/bbs/images/forum_images/tatle.png) repeat-x 0 0;margin-top:15px;overflow:auto;zoom:1;}
+
+
+/*公告*/
+.noticebg{background:#FFF 0 -10px repeat-x;}
+	#notice{padding:10px;background:url(http://cdn.cocimg.com/bbs/images/wind2013/file/anc.png) 12px 12px no-repeat;}
+	#notice li{list-style:none;float:left;white-space:nowrap;padding-left:1.6em;height:18px;}
+	#notice a{padding-right:.5em;}
+/*文字ad*/
+.ad-text{margin:0 auto 8px;border-bottom:0;background:#ffffff;}
+.ad-text{padding:.4em .6em;}
+/*.ad-text .tr3 td,.ad-text .tr3 th{border-bottom:1px solid #000000;padding:.4em .6em;}*/
+/*栏目导航*/
+
+.nav-left,.nav-right{width:0px;height:35px;}
+.nav-left{ background-position:0 0;_margin-right:-3px;}
+.nav-right{ background-position:0 -70px;_margin-left:-3px;}
+#nav-global_old{display:none}
+#nav-global{ background-position:0 -35px;height:35px;overflow:hidden;}
+	#nav-global ul{font-size:14px;padding-left:10px;}
+		#nav-global li,#nav-global li a{ color:#FFF;}
+		#nav-global li{margin:5px 0 0 0;float:left;}
+		#nav-global li a{float:left;color:#FFF;padding:0 10px;height:27px;line-height:23px;outline:none;font-weight:700;}
+		#nav-global li a:hover{color:#ffea00; text-decoration:none;}
+		
+	#td_mymenu,#td_mymenu_old{background:url(http://cdn.cocimg.com/bbs/images/wind2013/shortcut.gif) 0 0 no-repeat;color:#555; }/*快捷导航*/
+	#td_mymenu_old{background-position:0px bottom;color:#888;}
+	#nav-s{background:url(http://cdn.cocimg.com/bbs/images/wind2013/nav-search.png) no-repeat;width:270px;height:24px;overflow:hidden; float:right;_margin-left:-3px; margin:5px;}
+		#nav-s .fr{margin:9px 20px 0 0;*margin:11px 20px 0 0;line-height:14px;}
+		.s-btn,.s-input{background:none;border:0 none;}
+		.s-btn{ cursor:pointer;width:35px;height:31px;line-height:28px; margin:0; padding:0; display:block; float:left;}
+		
+		.s-input{height:18px;padding:3px 1px 0 15px;width:138px;margin:6px 0 0 4px;float:left; border:0 none!important;}
+		#nav-s input{border: 0 none!important;-webkit-border-radius:9px;-webkit-border-image:url(http://cdn.cocimg.com/bbs/images/wind2013/searchfield_border.png)}
+.index-info{background:#ffffff;width:98%;margin:-5px auto;}
+	.index-info td{padding:3px 0 2px 10px;line-height:24px;}
+	.index-info a{margin-right:10px;white-space:nowrap;}
+.forum-info{background:#ffffff;padding:8px 10px 6px 10px;line-height:1;border-bottom:1px solid #E0E0E0;}
+/*用户登录*/
+.user-table td{padding:1em 1em .5em 2em;}
+.y{height:35px;width:100%;line-height:35px;border-bottom:1px solid #c2c5ca;padding-top:15px}
+.y span{float:left;margin-left:15px;color:#405095;font-size:18px;}
+.y font{float:right;margin-right:15px;font-size:14px;color:#1e1e1e;line-height:35px;}
+.y font a{color:#405095;}
+.cc1 dt{width:130px;float:left;margin-left:20px;font-size:14px;color:#333;text-align:right;padding-right:20px}
+.cc1 dd{float:left;width:auto;color:#444;font-size:14px;margin-right:5px;}
+.cc1 dd a,.cc1 dd span{font-size:12px;color:#666}
+.cc1{height:40px;line-height:28px;}
+/*table*/
+.t table{width:100%;overflow:hidden;height:42px;}
+.t3{margin:5px auto;}
+.t5{border:1px solid #bbb;}
+.t,.t5{height:auto; overflow:hidden;}
+.t1{height:auto;}
+/*table head*/
+/*.h{border-bottom:1px solid #FFFFFF;background:#f0f0f0 url(http://cdn.cocimg.com/bbs/images/wind2013/header_apple.png) repeat-x;text-align:left;color:#3366cc;padding:2px 10px 0; line-height:220%;}*/
+.h{background:url(http://cdn.cocimg.com/bbs/images/forum_images/center_bj.png) repeat-x 0 0;height:42px;}
+.h span{font-weight:normal;line-height:42px;font-size:16px;color:#000;}
+.h b{line-height:42px;font-size:16px;color:#000;margin-left:7px;font-weight:bold;}
+.h span a{color:#36c;}
+.co{color:#36c;}
+
+.h h2 a{font-size:16px;color:#000;line-height:42px;margin-left:8px;font-weight:bold}
+.closeicon{margin-top:.3em}
+.cate_fold{padding:0 5px 0 5px;margin-bottom:2px;text-decoration:none;}
+.cate_fold:hover{text-decoration:none;}
+/*table tr1*/
+.forum_center table{width:100%;}
+.cc_s_fix table tr td span,
+.cc_s_fix table tr td span span,
+.cc_s_fix table tr td span span a {white-space: nowrap}
+.tr1 th{padding:5px 10px;text-align:left;vertical-align:top;font-weight:normal;}
+.tr1 td.td1{border-bottom:1px solid #bbb;}
+/*table tr2*/
+.tr2{line-height:35px;height:35px;border-top:1px solid #bbb;border-bottom:1px solid #bbb;}
+.tr2 td,.tr2 th{font-weight:bold;}
+/*table tr3*/
+.forum_center{margin-top:-10px;}
+.tr3 td, .tr3 th{padding:.6em;line-height:1.5;border-bottom:1px solid #bbb;}
+.tr3 th{text-align:left;font-weight:normal;}
+.z .tr3:hover{background:#ffffff ;}
+.tr td,.tr th{padding:2px}
+
+
+/*.tr td,.tr th{padding:2px}*/
+.tr5 td{border-right:1px solid #E0E0E0;border-bottom:0px solid #E0E0E0;padding-left:.5em;}/*帖子表格*/
+/*浏览页*/
+h1,.read_h1{font-size:16px;margin:15px;color:#3366cc; font-weight:700;line-height:1;}
+.honor{color:#777;padding:0 10px 5px 10px;overflow:hidden;}
+.tpc_content{padding:0 15px 20px 15px;margin:0;line-height:2em;}
+.tpc_content font{line-height:1.5em;}
+.tpc_content a{text-decoration:none;color:#0070AF;}
+.tpc_content a:hover{text-decoration:underline}
+.tpc_content ol{list-style-type:decimal;}
+.tpc_content ul{list-style-type:disc;}
+.tips{background:#ffffff;border:1px solid #E0E0E0;padding:3px 5px;}
+.tips2{padding:10px 0;border-top:1px dashed #E0E0E0;}
+.tips,.tips2{margin:5px 15px 5px 15px;text-align:left;line-height:24px;float:left;display:inline;}
+.tips2 li{list-style:none;width:30%;height:24px;min-width:210px;margin:0 10px 0 0;float:left;overflow:hidden;text-overflow:ellipsis;}
+.tiptop{border-bottom:1px solid #c0c0c0 ;padding:8px 0 0 1px;height:27px;line-height:27px;margin-left:15px;}
+.tipad{margin:20px 0 10px;}
+.tipad .fr a{color:#888;}
+blockquote{padding-left:1em;}
+.blockquote3{clear:left;border:1px dashed #CCC;background:#f7f7f7 url(http://cdn.cocimg.com/bbs/images/blockquote3.png) right top no-repeat;margin:10px 0 0;padding:5px 10px;}
+.blockquote3 .quote{color:#999;font-size:12px;}
+.blockquote3 .text{padding:0 10px 10px 10px;}
+.blockquote{zoom:1;padding:5px 8px 5px;line-height:1.3;border:1px solid #fcefbb;background:#fffff3;color:#000;margin:0 15px;}
+.block-img{background:#fffae1 url(http://cdn.cocimg.com/bbs/images/attention.png) 8px 6px no-repeat;padding-left:28px;margin:0 15px 10px;}
+.blockquote2{border: 1px solid; border-color: #c0c0c0 #ededed #ededed #c0c0c0;margin:0px;padding:0 0 0 2em;line-height:2em;overflow:hidden;background:#fff}
+.blockquote2 ol{margin:0 0 0 1.5em;padding:0;}
+.blockquote2 ol li{border-left:1px solid #ccc;background:#f7f7f7;padding-left:10px;font-size:12px;list-style-type:decimal-leading-zero;padding-right:1em;}
+.blockquote2 ol li:hover{background:#fff;color:#008ef1;}
+.blockquote2 ol li{list-style-type:decimal;}
+.blockquote2 pre span{width:auto!important;display:block;}
+.read_form{border-top:1px solid #E0E0E0;border-left:1px solid #E0E0E0;background:#ffffff;}
+.read_form td{height:20px;padding:0 5px;border-right:1px solid #E0E0E0;border-bottom:1px solid #E0E0E0;}
+/*pages*/
+.pages a,.pages b,.pages .pagesone{display:block;float:left;margin-right:3px;}
+.pages b{height:26px;width:28px;}
+.pages a{line-height:26px;}
+.pages b,.pages a:hover{text-decoration:none}
+.pages .pagesone span{float:left;margin:0 5px;line-height:26px;}
+.pages .c{width:1px;}
+.pages button{height:24px;width:24px;margin:1px 0 0 3px;float:left;background:url(http://cdn.cocimg.com/bbs/images/forum_images/go.jpg) no-repeat;border:none;color:#fff;}
+.pages .fn{height:26px;width:70px;background:url(http://cdn.cocimg.com/bbs/images/forum_images/list_number_a1bj.jpg) no-repeat;}
+.pages .fn:hover{background:url(http://cdn.cocimg.com/bbs/images/forum_images/list_number_a1hoverbj.jpg) no-repeat;}
+/*5像素圆角*/
+.y-bg2,.y-bg3,.y-bg4{background:#ffffff;}
+.y-bg{margin:0 4px;border-top:1px solid #E0E0E0;}
+.y-bg2{margin:0 2px;height:1px;border:2px solid #E0E0E0;border-top:0;border-bottom:0;overflow:hidden;}
+.y-bg3{margin:0 1px;height:2px;border:1px solid #E0E0E0;border-top:0;border-bottom:0;overflow:hidden;}
+.y-bg4{padding:0 10px;border:1px solid #E0E0E0;border-top:0;border-bottom:0;overflow:hidden;}
+/*menu*/
+.menu{position:absolute;background:#fff;border:1px solid #E0E0E0;}
+.menu a{display:block;padding:4px 8px;}
+/*下拉框*/
+.menu-post{border:1px solid #E0E0E0;}
+.menu-post .menu-b{background:#ffffff;border:3px solid #E0E0E0;}
+.menu_tasksA .menu-b{border-width:8px;}
+/*弹出框 popout*/
+.popoutContent{background:#ffffff;border:1px solid #E0E0E0;}
+.bgcorner1,.bgcorner2,.bgcorner3,.bgcorner4,.pobg1,.pobg2,.pobg3,.pobg4{filter:Alpha(opacity=90);_filter:Alpha(opacity=90);opacity:.9;overflow:hidden; z-index:1005; line-height:0 }
+.bgcorner1,.bgcorner2,.bgcorner3,.bgcorner4{width:5px;height:5px;background:#E0E0E0;}
+
+.pobg1,.pobg2,.pobg3,.pobg4{ background:#E0E0E0;}
+.pobg1{height:5px; }
+.pobg2{width:5px;}
+.pobg3{height:5px;}
+.pobg4{width:5px;}
+.popoutContent td{padding:.5em .6em;border-bottom:1px solid #E0E0E0;}
+.popoutContent td td{border-bottom:none;padding:.3em 1em .3em 0;}
+/*span color 数值自定义*/
+.black,.black a{color:#333}
+.s1{color:#008000;} /*绿*/
+.s2{color:#984B98;} /*紫*/
+.s3{color:#36c;} /*蓝*/
+.s4,.s4 a{color:#3366cc;} /*蓝*/
+.s5 a{color:#3366cc;}
+.gray,.gray a{color:#4d4d4d;} /*次要字颜色*/
+.gray{font-weight:normal;}
+.gray2,.gray2 a{color:#bbbbbb;}
+.red{color:#ff0000;}/*红*/
+/*登录*/
+.mr5{margin-right:5px;}
+a.select_arrow{background:url(http://cdn.cocimg.com/bbs/images/select_arrow.gif) no-repeat;display:block;text-indent:-2000em;height:15px;width:15px;margin:0 2px 0 0;overflow:hidden;}
+a.select_arrow:hover{background:url(http://cdn.cocimg.com/bbs/images/select_arrow_over.gif) no-repeat;}
+.sel_name li{border-bottom:1px solid #E0E0E0;}
+/*tab*/
+.t table {height:39px}
+.forum_content_tatleleft {background:url(../../images/wind2013/bbsjpg.jpg?123) no-repeat;height:39px}
+.forum_content_tatleright {background:url(../../images/wind2013/bbsjpg.jpg?123) right -100px no-repeat;height:39px}
+.forum_content_bottom, .forum_content_bottomleft, .forum_content_bottomright {background:url(../../images/wind2013/bbsjpg.jpg?123) no-repeat;height:11px}
+.forum_content_bottom {background-position:center -89px;background-repeat:repeat-x;}
+.forum_content_bottomleft {background-position:0 -39px}
+.forum_content_bottomright {background-position:right -139px}
+.forum_center_left, .forum_center_right {background:none}
+.forum_come font a {line-height:15px!important}
+
+.pages .fn {
+height: 26px;
+width: 70px;
+background: url(../../images/forum_images/list_number_a1bj.jpg) no-repeat;}
+.pages .fn:hover {
+background: url(../../images/forum_images/list_number_a1hoverbj.jpg) no-repeat;
+} /*自定义css*/
+
+.forum_come span {line-height:33px!important}
+.forum_come_n a {line-height:33px!important}
+.top_lcon {margin-top:10px!important}
+.top_pic {margin-top:5px!important}
+.forum_button {height:33px!important}
+.forum_come_text {margin-top:6px!important}
+
+.forum_come font a {line-height:15px!important}
+
+.search1 {background:url(http://cdn.cocimg.com/bbs/images/wind2013/searchbg.png) no-repeat;width:235px;height:36px;position:absolute;top:3px;right:5px;z-index:100 }
+.search1 input {border:none;background:none; outline:none;color:#fff; vertical-align:middle;line-height:26px;padding:0}
+
+

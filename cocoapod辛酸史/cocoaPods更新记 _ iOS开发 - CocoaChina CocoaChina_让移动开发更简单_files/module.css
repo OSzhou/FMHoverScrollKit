@@ -1,0 +1,127 @@
+/*
+by baiyuli 
+*/
+
+/******error-404******/
+.container{min-height:100%;height: auto !important;height: 100%; /*IE6不识别min-height*/}
+.error-404 .main{height:300px; padding-bottom:80px}
+.error-footer{position:relative;  margin-top:-80px; height:80px; width:100%}/*固定footer*/
+.error{ width:630px; margin:0 auto; margin-top:10%; background:url(../images/error-404.png) no-repeat; height:289px  }
+.error-text{  float:left; margin-top:105px; margin-left:312px;}
+.error-text h3{ font-size:32px; font-weight:bold;color:#3f3f3f; letter-spacing:5px}
+.error-text p{color:#888; font-size:14px; height:58px; line-height:58px}
+.error .btn{width:134px; height:40px;text-align:center; display:block;background:#eaeaeb; border-radius:5px; color:#aaaaad; font-size:18px; line-height:17px; padding-top:14px; letter-spacing:2px; text-decoration:none}
+.error .btn span{ font-size:12px; letter-spacing:0}
+.error .btn-highlight{ background:#ffa200; color:#fff; margin-left:45px}
+.error .btn:hover{background:#ffa200; color:#fff;}
+.orange{color:#eb6100 !important;}
+
+/******登录******/
+.login{ width:978px; border:solid 1px #d9dce8; margin:26px 0; padding:0 10px; color:#464646; overflow:hidden; background:url(../images/login_bg.jpg) no-repeat bottom right; margin-right:0}
+.login h3{ font-size:16px; height:39px; line-height:39px; border-bottom:solid 1px #d9dce8}
+.login .login-left{padding:0 119px 0 109px; margin:30px 0; width:260px;border-right:solid 1px #d9dce8; float:left }
+.login input[type=text],.login input[type=password]{ width:236px; height:36px; border:solid 1px #d9dce8; border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px;padding:0 12px; margin-bottom:20px; color:#464646}
+.login-left .remember{ margin-top:-10px}
+.login-left .remember input{ vertical-align:-3px; margin-right:5px}
+.login-left .remember a{ float:right; color:#83beff}
+.login-left .btn{ background:url(../images/login.png) 0 0; width:260px; height:36px; margin-top:20px; font-size:16px; color:#fff; font-weight:bold;}
+.login-left .third{position:relative; margin-top:26px}
+.login-left .third hr{border:none 0; border-top:solid 1px #d9dce8;}
+.login-left .third p{position:absolute; top:-12px; left:82px; background:#fff; padding:5px;}
+.login-left .third-icon{ text-align:center; margin-top:21px; margin-bottom:21px}
+.login-left .third-icon .qq{ background:url(../images/login.png) -138px -67px ;width:30px; height:30px; display:inline-block; margin-right:10px}
+.login-left .third-icon .github{ background:url(../images/login.png) -169px -67px ;width:30px; height:30px; display:inline-block }
+.login-left .no-account{ text-align:center; padding:10px 0 20px;}
+.login-left .no-account a{ color:#83beff}
+.login-middle{float:left; margin-top:60px; margin-left:58px; margin-right:55px}
+.login-middle span{ background:url(../images/login.png) 0 -37px; width:137px; height:137px; display:block; margin-bottom:8px}
+.login-middle p{ text-align:center}
+.login-right h4{ font-size:16px; margin:76px 0 5px}
+.login-right p{ line-height:24px; font-size:13px}
+.login-wrap .middle{ padding-bottom:247px}
+.login-footer{position:relative;  margin-top:-247px; height:247px; width:100%}/*固定footer*/
+
+/******注册******/
+.register .register-tips{ position:relative}
+.register .register-tips span{color:#eb6100; position:absolute;display:block; left:0;top:41px;font-size:11px; text-align:left ; width:379px}
+
+/******绑定******/
+.bound .no-account{ padding:0 0 12px 0 !important; font-size:11px; text-align:left; width:110%}
+.bound .bound-both{ line-height:20px; padding:64px 0 20px;}
+
+/******job******/
+.middle-left{ width:700px;float:left}
+.middle-right{ width:280px; float:right}
+.crumbs{ height:36px; line-height:36px}
+.crumbs,.crumbs a{ color:#888}
+.crumbs a:hover{color:#eb6100;}
+.crumbs span{ margin:0 6px}
+.margin0-r{ margin-right:0 !important}
+.noborder-b{ border-bottom:none 0 !important}
+/*职位介绍*/
+.position-info .article-title{ margin:11px 0 43px; line-height:38px; font-size:24px}
+.position-info .part-title{ padding-bottom:8px; font-size:18px; border-bottom:solid 1px #e2e2e6}
+.position-info .part-title span{float:right; font-size:12px; margin-top:6px; color:#888 }
+.position-info h4{ margin-bottom:48px}
+.position-info h4 .amount{ color:#ff6d07; font-size:24px; height:60px; line-height:60px; display:block}
+.position-info h4 .intro{ width:25%;font-size:16px; display:inline-table; text-align:center}
+.position-info h4 .intro-first{ text-align:left; width:21%}
+.position-info .part-title a{ font-size:16px; float:right; margin-top:3px}
+.position-info .btn-wrap{ text-align:center; height:50px; margin-top:36px; margin-bottom:77px}
+.position-info .description dt{ font-size:18px; margin:21px 0 14px}
+.position-info .description dd{ line-height:24px; font-size:14px; border-bottom:solid 1px #e2e2e6; padding-bottom:17px}
+.position-info .btn-job{ background:url(../images/job.png) 0 0;width:150px; height:50px; font-size:20px; letter-spacing:2px; color:#fff; vertical-align:middle; margin-right:20px; cursor:pointer}
+.position-info .btn-collect{background:url(../images/job.png) -151px 0; width:50px; height:50px; display:inline-block; vertical-align:middle}
+.position-info .btn-selected{background:url(../images/job.png) -202px 0; width:50px; height:50px}
+/*感兴趣的职位*/
+.position-taste .part-title{ font-size:18px;padding-bottom:8px;border-bottom:solid 1px #3a3a3a}
+.position-taste .part-title .change{float:right; font-size:16px; margin-top:4px ; color:#888; }
+.position-taste .part-title .change:hover{color:#eb6100;}
+.position-taste li{ padding:23px 0 18px; overflow:hidden ;border-bottom:solid 1px #e2e2e6}
+.position-taste p{ float:left;}
+.position-taste p a{ font-size:16px; margin-bottom:10px; display:block}
+.position-taste p span{ font-size:14px; margin-right:35px; color:#888 ;}
+.position-taste .amount{color:#ff6d07; font-size:18px; float:right; margin-top:12px }
+textarea{ width:100%; height:108px; resize:none; border:solid 1px #e2e2e6; margin-top:50px; padding:3px}
+.comment{ background:url(../images/job.png) 0 -51px; width:120px; height:30px; font-size:16px; color:#fff; letter-spacing:2px; float:right; margin-top:18px; line-height:30px}
+/*该公司简介*/
+.company-logo a{background:url(../images/company-logo.png) ; width:75px; height:75px; display:block; margin:20px auto 0 ; }
+.company-intro{border:1px solid #e2e2e6; margin-top:20px; padding:8px}
+.company-intro h3{ font-size:14px;border-bottom:solid 1px #e2e2e6; padding:2px 0 8px}
+.company-intro p{ line-height:24px; margin-top:5px}
+.job-ad{ margin-top:20px}
+/*该公司更多职位*/
+.part-wrap{border:1px solid #e2e2e6; margin-top:20px;}
+.part-wrap h3{height:28px; line-height:29px;border-bottom:1px solid #e2e2e6; background:#fafafa; color:#464646; font-size:16px; text-indent:10px;}
+.part-wrap h3 span{ font-size:12px}
+.part-wrap ul.position-list{ width:260px; margin:0 auto;}
+.part-wrap ul.position-list li{ height:49px; border-bottom:1px solid #ddd; background:url(../images/sq-inc.png) no-repeat 0 22px;text-indent: 10px; line-height:49px}
+.part-wrap ul.position-list li a{ display:block; font-size:14px; overflow: hidden;text-overflow: ellipsis; white-space: nowrap; display:block; width:100%;}
+/*名企热招*/
+.recruit{ margin-top:20px;}
+.recruit h3{ font-size:18px;padding-bottom:8px;border-bottom:solid 1px #3a3a3a}
+.recruit .company-img{ background:url(../images/job-company.png); width:131px; height:91px; display:inline-block; margin-top:20px}
+.recruit a.company-img.img01{background-position:0 0; margin-right:14px}
+.recruit a.company-img.img02{background-position:-149px 0}
+.recruit a.company-img.img03{background-position:0 -110px; margin-right:14px}
+.recruit a.company-img.img04{background-position:-149px -110px}
+.recruit a.company-img.img05{background-position:0 -221px; margin-right:14px}
+.recruit a.company-img.img06{background-position:-149px -221px}
+.recruit a.company-img.img07{background-position:0 -330px; margin-right:14px}
+.recruit a.company-img.img08{background-position:-149px -330px}
+.recruit a.company-img.img09{background-position:0 -439px; margin-right:14px}
+.recruit a.company-img.img10{background-position:-149px -439px}
+
+/*咨讯详情*/
+.part-wrap ul.info-list{ padding:5px 0 8px}
+.part-wrap ul.info-list li{ height:24px; background:url(../images/sq-inc.png) no-repeat 0 11px;text-indent: 10px; line-height:24px; width:330px; float:left; margin:0 10px}
+.related-hot{ padding:0 10px}
+.related-hot li{padding:10px 0}
+.related-hot img{width:76px; height:50px}
+.related-intro{ height:31px; overflow:hidden; margin-top:-2px}
+.hits{color:#888;  margin-top:7px}
+.hits span{ background:#f39800; margin-left:5px; padding:0 4px; color:#fff;}
+.related-comment{ padding:10px}
+.related-comment li{ line-height:22px;border-bottom:1px solid #e2e2e6; padding:5px 0}
+.related-comment p a,.related-comment p span{ color:#888; margin-right:5px}
+.related-comment p a:hover{ color:#eb6100}

@@ -12,6 +12,16 @@ $ sudo gem install cocoapods
 $ pod install
 3.5、解析Podfile，升级第三方框架
 $ pod update
+
+pod仓库更新
+pod repo update
+
+使用本地安装不更新仓库
+
+pod install --verbose --no-repo-update
+
+pod update --verbose --no-repo-update
+
 注意，如果使用CocoaPods过程中出现了莫名其妙的问题，执行以下命令。
 
 $ sudo gem update --system

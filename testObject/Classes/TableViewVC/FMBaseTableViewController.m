@@ -1,21 +1,21 @@
 //
-//  FMParentViewController.m
+//  FMBaseTableViewController.m
 //  testObject
 //
 //  Created by Windy on 2016/10/21.
 //  Copyright © 2016年 Windy. All rights reserved.
 //
 
-#import "FMParentViewController.h"
+#import "FMBaseTableViewController.h"
 
 static const CGFloat FMDefaultTopMargin = 200.f;
-@interface FMParentViewController ()
+@interface FMBaseTableViewController ()
 
 - (CGFloat)topMargin;
 
 @end
 
-@implementation FMParentViewController
+@implementation FMBaseTableViewController
 
 - (instancetype)init {
     if (self = [super init]) {
@@ -87,6 +87,12 @@ static const CGFloat FMDefaultTopMargin = 200.f;
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(tableViewDidEndDecelerating:)]) {
+        [self.delegate tableViewDidEndDecelerating:self.tableView];
+    }
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

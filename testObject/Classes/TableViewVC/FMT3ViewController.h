@@ -1,13 +1,13 @@
 //
-//  FMT1ViewController.h
+//  FMT3ViewController.h
 //  testObject
 //
 //  Created by Windy on 2016/10/21.
 //  Copyright © 2016年 Windy. All rights reserved.
 //
 
-#import "FMParentViewController.h"
+#import "FMBaseTableViewController.h"
 
-@interface FMT1ViewController : FMParentViewController
+@interface FMT3ViewController : FMBaseTableViewController
 
 @end

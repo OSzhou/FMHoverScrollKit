@@ -16,13 +16,14 @@
 		BACEE4281DAC8BC30061CA95 /* testObjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BACEE4271DAC8BC30061CA95 /* testObjectUITests.m */; };
 		E519BAE51DB89B5500AB74CD /* HeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BADD1DB89B5500AB74CD /* HeadView.m */; };
 		E519BAE91DB8A25C00AB74CD /* FMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BAE81DB8A25C00AB74CD /* FMBaseViewController.m */; };
-		E519BB381DB9E88A00AB74CD /* FMParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BB371DB9E88A00AB74CD /* FMParentViewController.m */; };
-		E519BB4E1DBA291B00AB74CD /* FMT1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BB491DBA291B00AB74CD /* FMT1ViewController.m */; };
-		E519BB4F1DBA291B00AB74CD /* FMT2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BB4B1DBA291B00AB74CD /* FMT2ViewController.m */; };
-		E519BB501DBA291B00AB74CD /* FMT3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519BB4D1DBA291B00AB74CD /* FMT3ViewController.m */; };
 		E522F2131E2477B20003312E /* FMConst.m in Sources */ = {isa = PBXBuildFile; fileRef = E522F2121E2477B10003312E /* FMConst.m */; };
 		E522F2151E24E5350003312E /* FMPicture.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E522F2141E24E5350003312E /* FMPicture.bundle */; };
 		E5E377411DDC48FD00B34B01 /* UIButton+FMExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E377401DDC48FD00B34B01 /* UIButton+FMExtension.m */; };
+		FAFC8917210EEDED007AC126 /* FMT2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFC890E210EEDED007AC126 /* FMT2ViewController.m */; };
+		FAFC8918210EEDED007AC126 /* FMBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFC8910210EEDED007AC126 /* FMBaseTableViewController.m */; };
+		FAFC8919210EEDED007AC126 /* FMT3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFC8911210EEDED007AC126 /* FMT3ViewController.m */; };
+		FAFC891A210EEDED007AC126 /* FMT1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFC8913210EEDED007AC126 /* FMT1ViewController.m */; };
+		FAFC891D210EF0A0007AC126 /* FMBaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFC891C210EF0A0007AC126 /* FMBaseCollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,19 +62,21 @@
 		E519BADD1DB89B5500AB74CD /* HeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadView.m; sourceTree = "<group>"; };
 		E519BAE71DB8A25C00AB74CD /* FMBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMBaseViewController.h; sourceTree = "<group>"; };
 		E519BAE81DB8A25C00AB74CD /* FMBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMBaseViewController.m; sourceTree = "<group>"; };
-		E519BB361DB9E88A00AB74CD /* FMParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMParentViewController.h; sourceTree = "<group>"; };
-		E519BB371DB9E88A00AB74CD /* FMParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMParentViewController.m; sourceTree = "<group>"; };
-		E519BB481DBA291B00AB74CD /* FMT1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMT1ViewController.h; sourceTree = "<group>"; };
-		E519BB491DBA291B00AB74CD /* FMT1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMT1ViewController.m; sourceTree = "<group>"; };
-		E519BB4A1DBA291B00AB74CD /* FMT2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMT2ViewController.h; sourceTree = "<group>"; };
-		E519BB4B1DBA291B00AB74CD /* FMT2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMT2ViewController.m; sourceTree = "<group>"; };
-		E519BB4C1DBA291B00AB74CD /* FMT3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMT3ViewController.h; sourceTree = "<group>"; };
-		E519BB4D1DBA291B00AB74CD /* FMT3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMT3ViewController.m; sourceTree = "<group>"; };
 		E522F2111E2477B10003312E /* FMConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMConst.h; sourceTree = "<group>"; };
 		E522F2121E2477B10003312E /* FMConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMConst.m; sourceTree = "<group>"; };
 		E522F2141E24E5350003312E /* FMPicture.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FMPicture.bundle; sourceTree = "<group>"; };
 		E5E3773F1DDC48FD00B34B01 /* UIButton+FMExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+FMExtension.h"; sourceTree = "<group>"; };
 		E5E377401DDC48FD00B34B01 /* UIButton+FMExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+FMExtension.m"; sourceTree = "<group>"; };
+		FAFC890E210EEDED007AC126 /* FMT2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMT2ViewController.m; sourceTree = "<group>"; };
+		FAFC890F210EEDED007AC126 /* FMT1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMT1ViewController.h; sourceTree = "<group>"; };
+		FAFC8910210EEDED007AC126 /* FMBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMBaseTableViewController.m; sourceTree = "<group>"; };
+		FAFC8911210EEDED007AC126 /* FMT3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMT3ViewController.m; sourceTree = "<group>"; };
+		FAFC8912210EEDED007AC126 /* FMT2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMT2ViewController.h; sourceTree = "<group>"; };
+		FAFC8913210EEDED007AC126 /* FMT1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMT1ViewController.m; sourceTree = "<group>"; };
+		FAFC8914210EEDED007AC126 /* FMT3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMT3ViewController.h; sourceTree = "<group>"; };
+		FAFC8915210EEDED007AC126 /* FMBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMBaseTableViewController.h; sourceTree = "<group>"; };
+		FAFC891B210EF0A0007AC126 /* FMBaseCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMBaseCollectionViewController.h; sourceTree = "<group>"; };
+		FAFC891C210EF0A0007AC126 /* FMBaseCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMBaseCollectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,29 +168,15 @@
 		E519BAD01DB89B5500AB74CD /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FAFC8916210EEDED007AC126 /* CollectionViewVC */,
+				FAFC890D210EEDED007AC126 /* TableViewVC */,
 				E522F2141E24E5350003312E /* FMPicture.bundle */,
 				E5E3773B1DDC476C00B34B01 /* Category */,
-				E519BAD11DB89B5500AB74CD /* ChildVC */,
 				E519BADB1DB89B5500AB74CD /* HeadView */,
 				E519BAE71DB8A25C00AB74CD /* FMBaseViewController.h */,
 				E519BAE81DB8A25C00AB74CD /* FMBaseViewController.m */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		E519BAD11DB89B5500AB74CD /* ChildVC */ = {
-			isa = PBXGroup;
-			children = (
-				E519BB361DB9E88A00AB74CD /* FMParentViewController.h */,
-				E519BB371DB9E88A00AB74CD /* FMParentViewController.m */,
-				E519BB481DBA291B00AB74CD /* FMT1ViewController.h */,
-				E519BB491DBA291B00AB74CD /* FMT1ViewController.m */,
-				E519BB4A1DBA291B00AB74CD /* FMT2ViewController.h */,
-				E519BB4B1DBA291B00AB74CD /* FMT2ViewController.m */,
-				E519BB4C1DBA291B00AB74CD /* FMT3ViewController.h */,
-				E519BB4D1DBA291B00AB74CD /* FMT3ViewController.m */,
-			);
-			path = ChildVC;
 			sourceTree = "<group>";
 		};
 		E519BADB1DB89B5500AB74CD /* HeadView */ = {
@@ -208,6 +197,30 @@
 				E522F2121E2477B10003312E /* FMConst.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		FAFC890D210EEDED007AC126 /* TableViewVC */ = {
+			isa = PBXGroup;
+			children = (
+				FAFC8915210EEDED007AC126 /* FMBaseTableViewController.h */,
+				FAFC8910210EEDED007AC126 /* FMBaseTableViewController.m */,
+				FAFC890F210EEDED007AC126 /* FMT1ViewController.h */,
+				FAFC8913210EEDED007AC126 /* FMT1ViewController.m */,
+				FAFC8912210EEDED007AC126 /* FMT2ViewController.h */,
+				FAFC890E210EEDED007AC126 /* FMT2ViewController.m */,
+				FAFC8914210EEDED007AC126 /* FMT3ViewController.h */,
+				FAFC8911210EEDED007AC126 /* FMT3ViewController.m */,
+			);
+			path = TableViewVC;
+			sourceTree = "<group>";
+		};
+		FAFC8916210EEDED007AC126 /* CollectionViewVC */ = {
+			isa = PBXGroup;
+			children = (
+				FAFC891B210EF0A0007AC126 /* FMBaseCollectionViewController.h */,
+				FAFC891C210EF0A0007AC126 /* FMBaseCollectionViewController.m */,
+			);
+			path = CollectionViewVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +290,7 @@
 				TargetAttributes = {
 					BACEE3FE1DAC8BC20061CA95 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = BYM9SNKWJ3;
 					};
 					BACEE4171DAC8BC30061CA95 = {
 						CreatedOnToolsVersion = 7.3;
@@ -341,16 +355,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E519BB501DBA291B00AB74CD /* FMT3ViewController.m in Sources */,
+				FAFC891D210EF0A0007AC126 /* FMBaseCollectionViewController.m in Sources */,
 				BACEE4071DAC8BC20061CA95 /* AppDelegate.m in Sources */,
 				E522F2131E2477B20003312E /* FMConst.m in Sources */,
+				FAFC8919210EEDED007AC126 /* FMT3ViewController.m in Sources */,
 				E519BAE91DB8A25C00AB74CD /* FMBaseViewController.m in Sources */,
 				E519BAE51DB89B5500AB74CD /* HeadView.m in Sources */,
 				E5E377411DDC48FD00B34B01 /* UIButton+FMExtension.m in Sources */,
+				FAFC891A210EEDED007AC126 /* FMT1ViewController.m in Sources */,
+				FAFC8917210EEDED007AC126 /* FMT2ViewController.m in Sources */,
 				BACEE4041DAC8BC20061CA95 /* main.m in Sources */,
-				E519BB4E1DBA291B00AB74CD /* FMT1ViewController.m in Sources */,
-				E519BB4F1DBA291B00AB74CD /* FMT2ViewController.m in Sources */,
-				E519BB381DB9E88A00AB74CD /* FMParentViewController.m in Sources */,
+				FAFC8918210EEDED007AC126 /* FMBaseTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +509,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = NO;
+				DEVELOPMENT_TEAM = BYM9SNKWJ3;
 				INFOPLIST_FILE = testObject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -507,6 +523,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = NO;
+				DEVELOPMENT_TEAM = BYM9SNKWJ3;
 				INFOPLIST_FILE = testObject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

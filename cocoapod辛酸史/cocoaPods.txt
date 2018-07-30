@@ -1,0 +1,67 @@
+git 1.更换源
+- Gem是一个管理Ruby库和程序的标准包,它通过Ruby Gem(如:http://rubygems.org/)源来查找, 安装, 升级和卸载软件包
+ https://gems.ruby-china.org/
+- gem sources —-remove https://rubygems.org/
+- gem sources -a https://ruby.taobao.org/
+- gem source -l
+
+2.更新升级gem (以后出问题,尝试这个)
+- sudo gem update - -system
+
+3.安装
+- sudo gem install cocoapods
+
+4.更换repo镜像为国内服务器
+- pod repo remove master
+- pod repo add master https://gitcafe.com/akuandev/Specs.git
+- pod repo add master http://git.oschina.net/akuandev/Specs.git(不好使)
+
+5.第一次初始化(才用)第三方库信息 (以后出问题,尝试这个)
+- pod setup
+
+6.以后更新第三方库信息
+- pod update
+
+7.搜索
+- pod search
+
+8.新建Podfile
+- pod init
+
+- vim Podfile
+输入i可以进入编辑状态
+
+vim命令(百度很多)
+输入 dd (删除一行)
+
+platform(空格):iOS,(空格)单引号中间加 版本号
+pod 单引号+三方库名字
+esc:退出编辑模式
+:wq 保存并退出
+
+9.解析Podfile, 安装第三方框架
+- pod install
+
+10.解析Podfile, 升级第三方框架
+- pod update
+
+                           **********如果使用CocoaPods过程中出现了莫名其妙的问题*******
+- sudo gem update --system
+- sudo gem install cocoapods
+- pod setup
+1、pod install提速
+pod install --verbose --no-repo-update
+pod update --verbose --no-repo-update
+安装ruby
+$ rvm autolibs read-only
+$ rvm install ruby
+
+podspec 更新版本步骤
+
+1.代码修改后传到远程github仓库
+2.修改podspec文件中的version 版本号
+3.git tag (后跟版本号)& git push —-tags同步远程仓库版本号
+4.再次将本地的代码提交远程仓库（更新版本号）
+5.pod trunk push xxx.podspec 提交最新的podspec文件
+
+注意：提交的代码里最好不要有警告

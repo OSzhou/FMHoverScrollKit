@@ -6,8 +6,8 @@
 //  Copyright © 2016年 Windy. All rights reserved.
 //
 
-#import "FMParentViewController.h"
+#import "FMBaseTableViewController.h"
 
-@interface FMT2ViewController : FMParentViewController
+@interface FMT2ViewController : FMBaseTableViewController
 
 @end

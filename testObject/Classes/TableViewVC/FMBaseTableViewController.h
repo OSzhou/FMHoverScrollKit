@@ -1,5 +1,5 @@
 //
-//  FMParentViewController.h
+//  FMBaseTableViewController.h
 //  testObject
 //
 //  Created by Windy on 2016/10/21.
@@ -18,22 +18,24 @@ typedef NS_ENUM(NSInteger, FMTableViewStyle) {
 //    FMViewControllerStyle
 //};
 
-@protocol ParentTableViewDelegate <NSObject>
+@protocol BaseTableViewDelegate <NSObject>
 /** 一直拖拽时的y计算返回 */
 - (void)tableViewContentOffset:(CGFloat)tableViewY withTableView:(UITableView *)tableView;
 /** 惯性滑动停止的y计算 */
 - (void)tableViewDidEndDragging:(UITableView *)tableView withContentOffset:(CGFloat)offsetY;
 - (CGFloat)tableViewContentInsetOfTopWith:(UITableView *)tableView;
+/** tableView最终停止滑动 */
+- (void)tableViewDidEndDecelerating:(UITableView *)tableView;
 @end
 
-@interface FMParentViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface FMBaseTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 /** tableView */
 @property (nonatomic, strong) UITableView *tableView;
 /** tableView Style */
 @property (nonatomic, assign)  FMTableViewStyle tableViewStyle;
 /** controller Style */
 //@property (nonatomic, assign) FMControllerStyle controllerStyle;
-@property (nonatomic, weak) id <ParentTableViewDelegate> delegate;
+@property (nonatomic, weak) id <BaseTableViewDelegate> delegate;
 
 - (instancetype)initWithTableViewStyle:(FMTableViewStyle)tableViewStyle;
 

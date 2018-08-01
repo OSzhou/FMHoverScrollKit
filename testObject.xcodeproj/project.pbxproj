@@ -24,6 +24,7 @@
 		FAFC8919210EEDED007AC126 /* FMT3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFC8911210EEDED007AC126 /* FMT3ViewController.m */; };
 		FAFC891A210EEDED007AC126 /* FMT1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFC8913210EEDED007AC126 /* FMT1ViewController.m */; };
 		FAFC891D210EF0A0007AC126 /* FMBaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFC891C210EF0A0007AC126 /* FMBaseCollectionViewController.m */; };
+		FAFC89232110650C007AC126 /* FMC1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFC89222110650C007AC126 /* FMC1ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,8 @@
 		FAFC8915210EEDED007AC126 /* FMBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMBaseTableViewController.h; sourceTree = "<group>"; };
 		FAFC891B210EF0A0007AC126 /* FMBaseCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMBaseCollectionViewController.h; sourceTree = "<group>"; };
 		FAFC891C210EF0A0007AC126 /* FMBaseCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMBaseCollectionViewController.m; sourceTree = "<group>"; };
+		FAFC89212110650C007AC126 /* FMC1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMC1ViewController.h; sourceTree = "<group>"; };
+		FAFC89222110650C007AC126 /* FMC1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMC1ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +222,8 @@
 			children = (
 				FAFC891B210EF0A0007AC126 /* FMBaseCollectionViewController.h */,
 				FAFC891C210EF0A0007AC126 /* FMBaseCollectionViewController.m */,
+				FAFC89212110650C007AC126 /* FMC1ViewController.h */,
+				FAFC89222110650C007AC126 /* FMC1ViewController.m */,
 			);
 			path = CollectionViewVC;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAFC891D210EF0A0007AC126 /* FMBaseCollectionViewController.m in Sources */,
+				FAFC89232110650C007AC126 /* FMC1ViewController.m in Sources */,
 				BACEE4071DAC8BC20061CA95 /* AppDelegate.m in Sources */,
 				E522F2131E2477B20003312E /* FMConst.m in Sources */,
 				FAFC8919210EEDED007AC126 /* FMT3ViewController.m in Sources */,

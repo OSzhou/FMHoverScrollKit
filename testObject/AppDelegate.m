@@ -11,6 +11,7 @@
 #import "FMT1ViewController.h"
 #import "FMT2ViewController.h"
 #import "FMT3ViewController.h"
+#import "FMC1ViewController.h"
 
 @interface AppDelegate ()
 
@@ -24,6 +25,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     FMBaseViewController *bvc = [[FMBaseViewController alloc] init];
+    /** 属性设置 */
 //    bvc.btnBackColor = [UIColor cyanColor];
 //    bvc.btnTitleArr = @[@"张三", @"李四", @"王五"];
 //    bvc.indicatorColor = [UIColor yellowColor];
@@ -33,11 +35,24 @@
 //    bvc.headImageName = @"picture_3";
 //    bvc.isStretch = NO;
 //    [bvc.headView addSubview:[[UISwitch alloc] init]];
-    FMT1ViewController *t1 = [[FMT1ViewController alloc] init];
+    /** 全是tableView */
+    /*FMT1ViewController *t1 = [[FMT1ViewController alloc] init];
     t1.tableViewStyle = FMTableViewStyleGrouped;
     FMT2ViewController *t2 = [[FMT2ViewController alloc] initWithTableViewStyle:FMTableViewStyleGrouped];
     FMT3ViewController *t3= [[FMT3ViewController alloc] init];
-    bvc.childVCArr = @[t1, t2, t3];
+    bvc.childVCArr = @[t1, t2, t3];*/
+    /** 全是collectionView */
+    /*FMC1ViewController *c1 = [[FMC1ViewController alloc] init];
+    FMC1ViewController *c2 = [[FMC1ViewController alloc] init];
+    FMC1ViewController *c3 = [[FMC1ViewController alloc] init];
+    bvc.childVCArr = @[c1, c2, c3];*/
+    /** tableView & collectionView混合 */
+    FMT1ViewController *t1 = [[FMT1ViewController alloc] init];
+    t1.tableViewStyle = FMTableViewStyleGrouped;
+    FMC1ViewController *c1 = [[FMC1ViewController alloc] init];
+    FMT3ViewController *t3= [[FMT3ViewController alloc] init];
+    bvc.childVCArr = @[t1, c1, t3];
+    
     self.window.rootViewController = bvc;
     [self.window makeKeyAndVisible];
     return YES;

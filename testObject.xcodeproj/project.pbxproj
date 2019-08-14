@@ -295,7 +295,7 @@
 				TargetAttributes = {
 					BACEE3FE1DAC8BC20061CA95 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = BYM9SNKWJ3;
+						DevelopmentTeam = 6AS4N82Q9E;
 					};
 					BACEE4171DAC8BC30061CA95 = {
 						CreatedOnToolsVersion = 7.3;
@@ -515,7 +515,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				DEVELOPMENT_TEAM = BYM9SNKWJ3;
+				DEVELOPMENT_TEAM = 6AS4N82Q9E;
 				INFOPLIST_FILE = testObject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -529,7 +529,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				DEVELOPMENT_TEAM = BYM9SNKWJ3;
+				DEVELOPMENT_TEAM = 6AS4N82Q9E;
 				INFOPLIST_FILE = testObject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

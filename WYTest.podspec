@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "WYTest"
-  s.version      = "1.5.2"
+  s.version      = "1.5.3"
   s.summary      = " WYTest is iOS SDK for UI ."
 
   # This description is used to generate tags and improve search results.

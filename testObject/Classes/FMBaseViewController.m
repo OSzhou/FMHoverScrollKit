@@ -43,7 +43,6 @@
         _preTOffsetY = -200.f;//默认值
         _headImage_H = 200.f;//默认值
         _button_H = 50.f;//默认值
-        _isStretch = YES;
         //此示例资源图较大，不需要者，自行删除
         _headImageName = @"FMPicture.bundle/picture_2";
         _indicatorColor = [UIColor colorWithRed:0.14 green:0.18 blue:0.21 alpha:1.0];
@@ -255,7 +254,7 @@
 }
 
 - (void)resetHeaderViewFrameWith:(CGFloat)offSetY {
-    CGRect frame = CGRectMake(0, _barStop_H, View_W, _headImage_H + _button_H);;
+    CGRect frame = CGRectMake(0, _barStop_H, View_W, _headImage_H + _button_H);
     //tableViewY有初始值（设置了UIEdgeIntset）为 -(headView_H - BTN_BG_H)
     _preTOffsetY = offSetY;
     if (offSetY > -(_headImage_H)) {
@@ -273,7 +272,7 @@
             frame.size.height = -_preTOffsetY + _button_H;
             [self resetTableViewContentOffsetYWithFrame:frame];
         } else {
-            _headView.frame = frame;
+            _headView.frame = CGRectMake(0, _barStop_H, View_W, _headImage_H + _button_H);;
         }
     }
 }

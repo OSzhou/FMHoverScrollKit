@@ -19,7 +19,7 @@
 @property (nonatomic, strong) HeadView *headView;
 /** 转入的头部视图的image图片的名称 */
 @property (nonatomic, strong) NSString *headImageName;
-/** 是否允许headView缩放，默认YES */
+/** 是否允许headView缩放，默认NO */
 @property (nonatomic, assign) BOOL isStretch;
 /** 顶部图片高度 */
 @property (nonatomic, assign) CGFloat headImage_H;

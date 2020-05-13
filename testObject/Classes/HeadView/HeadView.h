@@ -10,4 +10,7 @@
 
 @interface HeadView : UIView
 
+/** bar悬停的位置 */
+@property (nonatomic, assign) CGFloat barStop_H;
+
 @end

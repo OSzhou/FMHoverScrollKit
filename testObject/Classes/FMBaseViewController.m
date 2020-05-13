@@ -39,6 +39,7 @@
 
 - (instancetype)init {
     if (self = [super init]) {
+        _barStop_H = [self isiPhoneX] ? 88.0 : 64.0;
         _preTOffsetY = -200.f;//默认值
         _headImage_H = 200.f;//默认值
         _button_H = 50.f;//默认值
@@ -48,6 +49,20 @@
         _indicatorColor = [UIColor redColor];
     }
     return self;
+}
+
+- (BOOL)isiPhoneX {
+    
+    if(@available(iOS 11.0, *)) {
+        UIWindow *keyWindow = [[[UIApplication sharedApplication] delegate] window];
+        
+        CGFloat bottomSafeInset = keyWindow.safeAreaInsets.bottom;
+        
+        if(bottomSafeInset == 34.0f|| bottomSafeInset == 21.0f) {
+            return YES;
+        }
+    }
+    return NO;
 }
 
 - (void)viewDidLoad {
@@ -71,6 +86,14 @@
                 self.currentShowV = (UICollectionView *)fcv.collectionView;
             }
             [self addChildViewController:fcv];
+            
+            //在这添加达不到懒加载的效果
+            if (!_shouldLazyLoad) {
+                fcv.view.frame = CGRectMake(i * View_W, 0, View_W, View_H - _button_H - _barStop_H);
+                fcv.collectionView.frame = CGRectMake(0, 0, View_W, View_H - _button_H - _barStop_H);
+                [self.horizontalSV addSubview:fcv.view];
+            }
+            
         } else if ([_childArr[i] isKindOfClass:[FMBaseTableViewController class]]) {
             FMBaseTableViewController *ftv = _childArr[i];
             ftv.delegate = self;//注意代码顺序，代理设置要放在前面
@@ -78,12 +101,18 @@
                 self.currentShowV = (UITableView *)ftv.tableView;
             }
             [self addChildViewController:ftv];
+            
+            //在这添加达不到懒加载的效果
+            if (!_shouldLazyLoad) {
+                ftv.view.frame = CGRectMake(i * View_W, 0, View_W, View_H - _button_H - _barStop_H);
+                ftv.tableView.frame = CGRectMake(0, 0, View_W, View_H - _button_H - _barStop_H);
+                [self.horizontalSV addSubview:ftv.view];
+            }
+            
         } else {
         }
-        //在这添加达不到懒加载的效果
-//        ftv.view.frame = CGRectMake(i * View_W, 0, View_W, View_H - _button_H);
-//        ftv.tableView.frame = CGRectMake(0, 0, View_W, View_H - _button_H);
-//        [self.horizontalSV addSubview:ftv.view];
+        
+        
     }
     //都加在垂直的scrollview上
     [self.view addSubview:self.horizontalSV];
@@ -123,6 +152,7 @@
     CGFloat Y = [offsetY integerValue];
     CGFloat tableVOffset = self.currentShowV.contentOffset.y;
     self.currentShowV.contentOffset = CGPointMake(0, tableVOffset - Y);
+    NSLog(@"Y --- %f", Y);
 }
 
 #pragma mark --- FMBaseTableViewDelegate
@@ -223,14 +253,14 @@
 }
 
 - (void)resetHeaderViewFrameWith:(CGFloat)offSetY {
-    CGRect frame = CGRectMake(0, 0, View_W, _headImage_H + _button_H);;
+    CGRect frame = CGRectMake(0, _barStop_H, View_W, _headImage_H + _button_H);;
     //tableViewY有初始值（设置了UIEdgeIntset）为 -(headView_H - BTN_BG_H)
     _preTOffsetY = offSetY;
-    if (offSetY > -(_headImage_H) ) {
+    if (offSetY > -(_headImage_H)) {
         if (offSetY > 0) {
-            frame.origin.y = -(_headImage_H);
+            frame.origin.y = -(_headImage_H) + _barStop_H;
         } else {
-            frame.origin.y = -(_headImage_H + offSetY);
+            frame.origin.y = -(_headImage_H + offSetY) + _barStop_H;
         }
         _headView.frame = frame;
         _bar.frame = CGRectMake(0, (CGRectGetHeight(_headView.frame) - _button_H), View_W, _button_H);
@@ -247,7 +277,7 @@
 }
 
 - (void)resetTableViewContentOffsetYWithFrame:(CGRect)frame {
-    self.headView.frame = CGRectMake(0, 0, CGRectGetWidth(frame), CGRectGetHeight(frame));
+    self.headView.frame = CGRectMake(0, _barStop_H, CGRectGetWidth(frame), CGRectGetHeight(frame));
     _bar.frame = CGRectMake(0, (CGRectGetHeight(self.headView.frame) - _button_H), View_W, _button_H);
     _headImageView.frame = CGRectMake(0, 0, CGRectGetWidth(frame), CGRectGetHeight(frame));
 }
@@ -293,11 +323,15 @@
             } else {
                 self.currentShowV.contentOffset = CGPointMake(0, tableOSY);
             }
-            //已下四行代码，使页面用到时再加载，达到懒加载的目的
-            if ([fcv isViewLoaded]) return;
-            fcv.view.frame = CGRectMake(index * View_W, 0, View_W, View_H - _button_H);
-            fcv.collectionView.frame = CGRectMake(0, 0, View_W, View_H - _button_H);
-            [self.horizontalSV addSubview:fcv.view];
+            
+            if (_shouldLazyLoad) {
+                //已下四行代码，使页面用到时再加载，达到懒加载的目的
+                if ([fcv isViewLoaded]) return;
+                fcv.view.frame = CGRectMake(index * View_W, 0, View_W, View_H - _button_H - _barStop_H);
+                fcv.collectionView.frame = CGRectMake(0, 0, View_W, View_H - _button_H - _barStop_H);
+                [self.horizontalSV addSubview:fcv.view];
+            }
+            
         } else if ([self.childViewControllers[index] isKindOfClass:[FMBaseTableViewController class]]) {
             FMBaseTableViewController *ftv = self.childViewControllers[index];
             self.currentShowV = (UITableView *)ftv.tableView;
@@ -305,11 +339,15 @@
             } else {
                 self.currentShowV.contentOffset = CGPointMake(0, tableOSY);
             }
-            //已下四行代码，使页面用到时再加载，达到懒加载的目的
-            if ([ftv isViewLoaded]) return;
-            ftv.view.frame = CGRectMake(index * View_W, 0, View_W, View_H - _button_H);
-            ftv.tableView.frame = CGRectMake(0, 0, View_W, View_H - _button_H);
-            [self.horizontalSV addSubview:ftv.view];
+            
+            if (_shouldLazyLoad) {
+                //已下四行代码，使页面用到时再加载，达到懒加载的目的
+                if ([ftv isViewLoaded]) return;
+                ftv.view.frame = CGRectMake(index * View_W, 0, View_W, View_H - _button_H - _barStop_H);
+                ftv.tableView.frame = CGRectMake(0, 0, View_W, View_H - _button_H - _barStop_H);
+                [self.horizontalSV addSubview:ftv.view];
+            }
+            
         } else {
         }
     }
@@ -352,7 +390,7 @@
 - (UIScrollView *)horizontalSV {
     if (!_horizontalSV) {
         //_horizontalSV 的y值 是 _button_H 所以tableView 的topContentInset只需要_headImage_H就可以了
-        _horizontalSV = [[UIScrollView alloc] initWithFrame:CGRectMake(0, _button_H, self.view.frame.size.width, View_H - _button_H)];
+        _horizontalSV = [[UIScrollView alloc] initWithFrame:CGRectMake(0, _button_H + _barStop_H, self.view.frame.size.width, View_H - _button_H -_barStop_H)];
         _horizontalSV.backgroundColor = [UIColor clearColor];
         _horizontalSV.bounces = NO;
         //        _horizontalSV.scrollEnabled = NO;
@@ -369,7 +407,8 @@
 - (HeadView *)headView {
     if (!_headView) {
         _headView = [[HeadView alloc] init];
-        _headView.frame = CGRectMake(0, 0, View_W, _headImage_H + _button_H);
+        _headView.barStop_H = _barStop_H;
+        _headView.frame = CGRectMake(0, _barStop_H, View_W, _headImage_H + _button_H);
         _headImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, View_W, (CGRectGetHeight(_headView.frame) - _button_H))];
         _headImageView.image = [UIImage imageNamed:_headImageName];
         //#warning 通过设置这个Mode，改变图片的高或宽（其中任意一个）能使图片等比例缩放

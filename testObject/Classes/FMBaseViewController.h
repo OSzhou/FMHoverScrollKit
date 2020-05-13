@@ -25,6 +25,8 @@
 @property (nonatomic, assign) CGFloat headImage_H;
 /** 按钮的高度 ps:宽度由按钮个数决定，平分屏幕宽度 */
 @property (nonatomic, assign) CGFloat button_H;
+/** bar悬停的位置 ps:默认为navigationBar + statusBar的高度 */
+@property (nonatomic, assign) CGFloat barStop_H;
 /** button下面指示条的颜色 */
 @property (nonatomic, strong) UIColor *indicatorColor;
 /** 是否隐藏指示条 */
@@ -33,5 +35,7 @@
 @property (nonatomic, strong) NSArray *btnTitleArr;
 /** button的背景颜色 */
 @property (nonatomic, strong) UIColor *btnBackColor;
+/** view 是否需要懒加载 */
+@property (nonatomic, assign) BOOL shouldLazyLoad;
 
 @end

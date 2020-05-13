@@ -30,7 +30,7 @@
     CGFloat offsetY = curP.y - preP.y;
     
     // 修改view的位置（frame,center,transform）
-    if (offsetY + self.frame.origin.y > 0) {
+    if (offsetY + self.frame.origin.y > _barStop_H) {
         offsetY = 0;
     }
     self.transform = CGAffineTransformTranslate(self.transform, 0, offsetY);

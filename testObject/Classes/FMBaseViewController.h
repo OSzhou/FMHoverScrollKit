@@ -33,9 +33,17 @@
 @property (nonatomic, assign) BOOL isIndicatorHidden;
 /** button的名称 */
 @property (nonatomic, strong) NSArray *btnTitleArr;
+/** button的选中名称 */
+@property (nonatomic, strong) NSArray *btnSelectedTitleArr;
+/** button的font */
+@property (nonatomic, strong) UIFont *btnFont;
+/** button的selected title color */
+@property (nonatomic, strong) UIColor *btnSelectedTitleColor;
+/** button的normal titl color*/
+@property (nonatomic, strong) UIColor *btnNormalTitleColor;
 /** button的背景颜色 */
 @property (nonatomic, strong) UIColor *btnBackColor;
-/** view 是否需要懒加载 */
+/** view 是否需要懒加载,ps:为YES时，子视图初次初始化时，若bar不在原位，会自动置回 */
 @property (nonatomic, assign) BOOL shouldLazyLoad;
 
 @end

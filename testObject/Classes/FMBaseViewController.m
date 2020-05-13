@@ -46,7 +46,9 @@
         _isStretch = YES;
         //此示例资源图较大，不需要者，自行删除
         _headImageName = @"FMPicture.bundle/picture_2";
-        _indicatorColor = [UIColor redColor];
+        _indicatorColor = [UIColor colorWithRed:0.14 green:0.18 blue:0.21 alpha:1.0];
+        _btnNormalTitleColor = [UIColor colorWithRed:0.56 green:0.65 blue:0.7 alpha:1.0];
+        _btnSelectedTitleColor = [UIColor colorWithRed:0.14 green:0.18 blue:0.21 alpha:1.0];
     }
     return self;
 }
@@ -152,7 +154,7 @@
     CGFloat Y = [offsetY integerValue];
     CGFloat tableVOffset = self.currentShowV.contentOffset.y;
     self.currentShowV.contentOffset = CGPointMake(0, tableVOffset - Y);
-    NSLog(@"Y --- %f", Y);
+    
 }
 
 #pragma mark --- FMBaseTableViewDelegate
@@ -435,9 +437,28 @@
         for (int i = 0; i < _cvcCount; i++) {
             UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
             btn.frame = CGRectMake(i * w / _cvcCount, 0, w / _cvcCount, _button_H);
-            btn.titleLabel.font = [UIFont systemFontOfSize:15.0];
+            
+            if (_btnFont) {
+                btn.titleLabel.font = _btnFont;
+            } else {
+                btn.titleLabel.font = [UIFont boldSystemFontOfSize:15.0];
+            }
+            
+            if (_btnNormalTitleColor){
+                [btn setTitleColor:_btnNormalTitleColor forState:UIControlStateNormal];
+            }
+            if (_btnSelectedTitleColor){
+                [btn setTitleColor:_btnSelectedTitleColor forState:UIControlStateSelected];
+            }
+            
             [btn setTitle:_btnTitleArr.count > 0 ? _btnTitleArr[i] : [NSString stringWithFormat:@"btn_%d", i] forState:UIControlStateNormal];
-            [btn setTitle:@"被选中" forState:UIControlStateSelected];
+            
+            if (_btnTitleArr && _btnTitleArr.count == _btnSelectedTitleArr.count) {
+                [btn setTitle:_btnSelectedTitleArr[i] forState:UIControlStateSelected];
+            } else {
+                [btn setTitle:[NSString stringWithFormat:@"selected_%d", i] forState:UIControlStateSelected];
+            }
+            
             btn.backgroundColor = _btnBackColor ?: [UIColor colorWithRed:arc4random_uniform(255) / 255.0 green:arc4random_uniform(255) / 255.0 blue:arc4random_uniform(255) / 255.0 alpha:1.0];
             [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
             btn.tag = 100 + i;
@@ -453,7 +474,7 @@
 /** 指示条 */
 - (UIView *)indicatorView {
     if (!_indicatorView) {
-        _indicatorView = [[UIView alloc] initWithFrame:CGRectMake(0, _button_H - 1.5, View_W / _cvcCount, 1.5)];
+        _indicatorView = [[UIView alloc] initWithFrame:CGRectMake(0, _button_H - 2.0, View_W / _cvcCount, 2.0)];
         _indicatorView.backgroundColor = _indicatorColor;
     }
     return _indicatorView;

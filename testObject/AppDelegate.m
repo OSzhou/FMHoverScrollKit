@@ -53,7 +53,7 @@
     FMT3ViewController *t3= [[FMT3ViewController alloc] init];
     bvc.childVCArr = @[t1, c1, t3];
     
-    self.window.rootViewController = bvc;
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:bvc];
     [self.window makeKeyAndVisible];
     return YES;
 }

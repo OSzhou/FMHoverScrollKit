@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FMScrollProtocol.h"
+#import "FMMixScrollProtocol.h"
 
 typedef NS_ENUM(NSInteger, FMTableViewStyle) {
     FMTableViewStylePlain,          // regular table view

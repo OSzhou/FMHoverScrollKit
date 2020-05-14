@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		978AF69E246CF187000CD97F /* FMMixScrollBaseDelegateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 978AF69D246CF187000CD97F /* FMMixScrollBaseDelegateManager.m */; };
+		978AF6A1246CF56C000CD97F /* FMMixScollFatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 978AF6A0246CF56C000CD97F /* FMMixScollFatherViewController.m */; };
 		BACEE4041DAC8BC20061CA95 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BACEE4031DAC8BC20061CA95 /* main.m */; };
 		BACEE4071DAC8BC20061CA95 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BACEE4061DAC8BC20061CA95 /* AppDelegate.m */; };
 		BACEE40D1DAC8BC30061CA95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BACEE40B1DAC8BC30061CA95 /* Main.storyboard */; };
@@ -45,7 +47,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		978AF69B246CEF72000CD97F /* FMScrollProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMScrollProtocol.h; sourceTree = "<group>"; };
+		978AF69B246CEF72000CD97F /* FMMixScrollProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMMixScrollProtocol.h; sourceTree = "<group>"; };
+		978AF69C246CF187000CD97F /* FMMixScrollBaseDelegateManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMMixScrollBaseDelegateManager.h; sourceTree = "<group>"; };
+		978AF69D246CF187000CD97F /* FMMixScrollBaseDelegateManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMMixScrollBaseDelegateManager.m; sourceTree = "<group>"; };
+		978AF69F246CF56C000CD97F /* FMMixScollFatherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMMixScollFatherViewController.h; sourceTree = "<group>"; };
+		978AF6A0246CF56C000CD97F /* FMMixScollFatherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMMixScollFatherViewController.m; sourceTree = "<group>"; };
 		BACEE3FF1DAC8BC20061CA95 /* testObject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testObject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BACEE4031DAC8BC20061CA95 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BACEE4051DAC8BC20061CA95 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -179,7 +185,11 @@
 				E519BADB1DB89B5500AB74CD /* HeadView */,
 				E519BAE71DB8A25C00AB74CD /* FMBaseViewController.h */,
 				E519BAE81DB8A25C00AB74CD /* FMBaseViewController.m */,
-				978AF69B246CEF72000CD97F /* FMScrollProtocol.h */,
+				978AF69F246CF56C000CD97F /* FMMixScollFatherViewController.h */,
+				978AF6A0246CF56C000CD97F /* FMMixScollFatherViewController.m */,
+				978AF69B246CEF72000CD97F /* FMMixScrollProtocol.h */,
+				978AF69C246CF187000CD97F /* FMMixScrollBaseDelegateManager.h */,
+				978AF69D246CF187000CD97F /* FMMixScrollBaseDelegateManager.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -369,7 +379,9 @@
 				E522F2131E2477B20003312E /* FMConst.m in Sources */,
 				FAFC8919210EEDED007AC126 /* FMT3ViewController.m in Sources */,
 				E519BAE91DB8A25C00AB74CD /* FMBaseViewController.m in Sources */,
+				978AF69E246CF187000CD97F /* FMMixScrollBaseDelegateManager.m in Sources */,
 				E519BAE51DB89B5500AB74CD /* HeadView.m in Sources */,
+				978AF6A1246CF56C000CD97F /* FMMixScollFatherViewController.m in Sources */,
 				E5E377411DDC48FD00B34B01 /* UIButton+FMExtension.m in Sources */,
 				FAFC891A210EEDED007AC126 /* FMT1ViewController.m in Sources */,
 				FAFC8917210EEDED007AC126 /* FMT2ViewController.m in Sources */,

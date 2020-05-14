@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FMScrollProtocol.h"
+#import "FMMixScrollProtocol.h"
 @interface FMBaseCollectionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 /** collectionView */

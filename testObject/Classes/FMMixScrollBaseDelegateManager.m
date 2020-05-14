@@ -278,8 +278,15 @@
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
     if (scrollView == self.horizontalSV) {
+        
         CGFloat w = FMView_W;
         CGFloat offSetX = scrollView.contentOffset.x;
+        NSInteger index = offSetX / w;
+        
+        if (index < _tOrcArr.count) {
+            self.currentShowV = _tOrcArr[index];
+        }
+        
         CGFloat tableOSY = 0;
         if ((int)_preTOffsetY > -(_config.headImage_H) && (int)_preTOffsetY <= 0) {
             tableOSY = (int)self.currentShowV.contentOffset.y;
@@ -288,7 +295,7 @@
         } else {
             tableOSY = -_config.headImage_H;
         }
-        NSInteger index = offSetX / w;
+        
         CGRect frame = self.indicatorView.frame;
         frame.origin.x = index * FMView_W / _cvcCount;
         self.indicatorView.frame = frame;

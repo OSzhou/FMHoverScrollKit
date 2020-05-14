@@ -16,7 +16,7 @@
 #import "FMMixScrollBaseDelegateManager.h"
 
 @interface AppDelegate ()
-@property (nonatomic, strong) FMMixScrollBaseDelegateManager *manager;
+
 @end
 
 @implementation AppDelegate
@@ -26,7 +26,7 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-    FMBaseViewController *bvc = [[FMBaseViewController alloc] init];
+//    FMBaseViewController *bvc = [[FMBaseViewController alloc] init];
     /** 属性设置 */
 //    bvc.btnBackColor = [UIColor cyanColor];
 //    bvc.btnTitleArr = @[@"张三", @"李四", @"王五"];
@@ -49,17 +49,13 @@
     FMC1ViewController *c3 = [[FMC1ViewController alloc] init];
     bvc.childVCArr = @[c1, c2, c3];*/
     /** tableView & collectionView混合 */
-    FMT1ViewController *t1 = [[FMT1ViewController alloc] init];
-    t1.tableViewStyle = FMTableViewStyleGrouped;
-    FMC1ViewController *c1 = [[FMC1ViewController alloc] init];
-    FMT3ViewController *t3= [[FMT3ViewController alloc] init];
-    bvc.childVCArr = @[t1, c1, t3];
+//    FMT1ViewController *t1 = [[FMT1ViewController alloc] init];
+//    t1.tableViewStyle = FMTableViewStyleGrouped;
+//    FMC1ViewController *c1 = [[FMC1ViewController alloc] init];
+//    FMT3ViewController *t3= [[FMT3ViewController alloc] init];
+//    bvc.childVCArr = @[t1, c1, t3];
     
     FMMixScollFatherViewController *fvc = [[FMMixScollFatherViewController alloc] init];
-    FMMixScrollConfig *config = [FMMixScrollConfig new];
-//    config.headImage_H = 500;
-    config.isTest = YES;
-    _manager = [[FMMixScrollBaseDelegateManager alloc] initWithConfig:config fatherController:fvc];
     
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:fvc];
     [self.window makeKeyAndVisible];

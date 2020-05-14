@@ -7,10 +7,6 @@
 //
 
 #import "FMMixScrollBaseDelegateManager.h"
-#import "FMT1ViewController.h"
-#import "FMT2ViewController.h"
-#import "FMT3ViewController.h"
-#import "FMC1ViewController.h"
 #import "FMConst.h"
 
 #define FMView_W [UIScreen mainScreen].bounds.size.width
@@ -48,7 +44,7 @@
 
 @end
 
-@interface FMMixScrollBaseDelegateManager () <UIScrollViewDelegate, UITableViewDelegate, FMBaseTableViewDelegate, FMBaseCollectionViewDelegate>
+@interface FMMixScrollBaseDelegateManager () <UIScrollViewDelegate, UITableViewDelegate>
 @property (nonatomic, strong) UIView *bar;
 @property (nonatomic, strong) UIScrollView *horizontalSV;
 @property (nonatomic, strong) FMMixScrollConfig *config;
@@ -59,7 +55,7 @@
 /** 指示条 */
 @property (nonatomic, strong) UIView *indicatorView;
 /** childVcArr */
-@property (nonatomic, strong) NSArray *childArr;
+@property (nonatomic, strong) NSArray *tOrcArr;
 /** childVcCount */
 @property (nonatomic, assign) NSInteger cvcCount;
 /** 上个tableView的偏移量 */
@@ -83,50 +79,20 @@
 
 - (void)configUI {
   
-    NSInteger count = self.config.childVCArr.count;
-    if (count) {
-        _childArr = _config.childVCArr;
-    } else {
-        FMT1ViewController *t1 = [[FMT1ViewController alloc] init];
-        FMT2ViewController *c2 = [[FMT2ViewController alloc] init];
-        FMT3ViewController *t3 = [[FMT3ViewController alloc] init];
-        _childArr = @[t1,c2,t3];
-    }
-    _cvcCount = _childArr.count;
-    for (int i = 0; i < _childArr.count; i++) {
-        if ([_childArr[i] isKindOfClass:[FMBaseCollectionViewController class]]) {
-            FMBaseCollectionViewController *fcv = _childArr[i];
-            fcv.delegate = self;//注意代码顺序，代理设置要放在前面
-            if (i == 0) {
-                self.currentShowV = (UICollectionView *)fcv.collectionView;
-            }
-            [self.fatherController addChildViewController:fcv];
-            
-            //在这添加达不到懒加载的效果
-            if (!_config.shouldLazyLoad) {
-                fcv.view.frame = CGRectMake(i * FMView_W, 0, FMView_W, FMView_H - _config.button_H - _config.barStop_H);
-                fcv.collectionView.frame = CGRectMake(0, 0, FMView_W, FMView_H - _config.button_H - _config.barStop_H);
-                [self.horizontalSV addSubview:fcv.view];
-            }
-            
-        } else if ([_childArr[i] isKindOfClass:[FMBaseTableViewController class]]) {
-            FMBaseTableViewController *ftv = _childArr[i];
-            ftv.delegate = self;//注意代码顺序，代理设置要放在前面
-            if (i == 0) {
-                self.currentShowV = (UITableView *)ftv.tableView;
-            }
-            [self.fatherController addChildViewController:ftv];
-            
-            //在这添加达不到懒加载的效果
-            if (!_config.shouldLazyLoad) {
-                ftv.view.frame = CGRectMake(i * FMView_W, 0, FMView_W, FMView_H - _config.button_H - _config.barStop_H);
-                ftv.tableView.frame = CGRectMake(0, 0, FMView_W, FMView_H - _config.button_H - _config.barStop_H);
-                [self.horizontalSV addSubview:ftv.view];
-            }
-            
-        } else {
-        }
+    _cvcCount = self.config.childVCArr.count;
+    _tOrcArr = _config.scrollTorCArr;
+    for (int i = 0; i < _cvcCount; i++) {
         
+        UIViewController *vc = _config.childVCArr[i];
+        [self.fatherController addChildViewController:vc];
+        
+        //在这添加达不到懒加载的效果
+        if (!_config.shouldLazyLoad) {
+            UIScrollView *sv = _config.scrollTorCArr[i];
+            vc.view.frame = CGRectMake(i * FMView_W, 0, FMView_W, FMView_H - _config.button_H - _config.barStop_H);
+            sv.frame = CGRectMake(0, 0, FMView_W, FMView_H - _config.button_H - _config.barStop_H);
+            [self.horizontalSV addSubview:vc.view];
+        }
         
     }
     //都加在垂直的scrollview上
@@ -142,19 +108,19 @@
 
 - (void)endNotification:(NSNotification *)noti {
     for (int i = 0; i < _cvcCount; i++) {
-        if ([_childArr[i] isKindOfClass:[FMBaseCollectionViewController class]]) {
-            FMBaseCollectionViewController *fcv = _childArr[i];
-            if ([fcv.collectionView isEqual:self.currentShowV]) {
+        if ([_tOrcArr[i] isKindOfClass:[UICollectionView class]]) {
+            UICollectionView *cv = _tOrcArr[i];
+            if ([cv isEqual:self.currentShowV]) {
                 continue;
             } else {
-                fcv.collectionView.contentOffset = self.currentShowV.contentOffset.y < -_config.headImage_H ? CGPointMake(0, -_config.headImage_H) : self.currentShowV.contentOffset;
+                cv.contentOffset = self.currentShowV.contentOffset.y < -_config.headImage_H ? CGPointMake(0, -_config.headImage_H) : self.currentShowV.contentOffset;
             }
-        } else if ([_childArr[i] isKindOfClass:[FMBaseTableViewController class]]) {
-            FMBaseTableViewController *ftv = _childArr[i];
-            if ([ftv.tableView isEqual:self.currentShowV]) {
+        } else if ([_tOrcArr[i] isKindOfClass:[UITableView class]]) {
+            UITableView *tv = _tOrcArr[i];
+            if ([tv isEqual:self.currentShowV]) {
                 continue;
             } else {
-                ftv.tableView.contentOffset = self.currentShowV.contentOffset.y < -_config.headImage_H ? CGPointMake(0, -_config.headImage_H) : self.currentShowV.contentOffset;
+                tv.contentOffset = self.currentShowV.contentOffset.y < -_config.headImage_H ? CGPointMake(0, -_config.headImage_H) : self.currentShowV.contentOffset;
             }
         } else {
         }
@@ -189,7 +155,7 @@
     //判断bar是否在顶部
     if (offsetY > 0) {//在
       /*  for (int i = 0; i < _cvcCount; i++) {
-            FMBaseTableViewController *ftv = _childArr[i];
+            FMBaseTableViewController *ftv = _tOrcArr[i];
             if ([ftv.tableView isEqual:self.tableV]) {
                 continue;
             } else {
@@ -203,7 +169,7 @@
         [self scrollToVisibleViewPositionWith:offsetY barIsTop:YES];
     } else {//不在
   /*      for (int i = 0; i < _cvcCount; i++) {
-            FMBaseTableViewController *ftv = _childArr[i];
+            FMBaseTableViewController *ftv = _tOrcArr[i];
             if ([ftv.tableView isEqual:self.tableV]) {
                 continue;
             } else {
@@ -240,26 +206,26 @@
 
 - (void)scrollToVisibleViewPositionWith:(CGFloat)offsetY barIsTop:(BOOL)isTop {
     for (int i = 0; i < _cvcCount; i++) {
-        if ([_childArr[i] isKindOfClass:[FMBaseCollectionViewController class]]) {
-            FMBaseCollectionViewController *fcv = _childArr[i];
-            if ([fcv.collectionView isEqual:self.currentShowV]) {
+        if ([_tOrcArr[i] isKindOfClass:[UICollectionView class]]) {
+            UICollectionView *cv = _tOrcArr[i];
+            if ([cv isEqual:self.currentShowV]) {
                 continue;
             } else {
-                CGFloat Y = fcv.collectionView.contentOffset.y;
+                CGFloat Y = cv.contentOffset.y;
                 if (isTop && (Y > 0)) {
                 } else {
-                    fcv.collectionView.contentOffset = CGPointMake(0, offsetY > 0 ? 0 : offsetY);
+                    cv.contentOffset = CGPointMake(0, offsetY > 0 ? 0 : offsetY);
                 }
             }
-        } else if ([_childArr[i] isKindOfClass:[FMBaseTableViewController class]]) {
-            FMBaseTableViewController *ftv = _childArr[i];
-            if ([ftv.tableView isEqual:self.currentShowV]) {
+        } else if ([_tOrcArr[i] isKindOfClass:[UITableView class]]) {
+            UITableView *tv = _tOrcArr[i];
+            if ([tv isEqual:self.currentShowV]) {
                 continue;
             } else {
-                CGFloat Y = ftv.tableView.contentOffset.y;
+                CGFloat Y = tv.contentOffset.y;
                 if (isTop && (Y > 0)) {
                 } else {
-                    ftv.tableView.contentOffset = CGPointMake(0, offsetY > 0 ? 0 : offsetY);
+                    tv.contentOffset = CGPointMake(0, offsetY > 0 ? 0 : offsetY);
                 }
             }
         } else {
@@ -297,6 +263,12 @@
     _headImageView.frame = CGRectMake(0, 0, CGRectGetWidth(frame), CGRectGetHeight(frame));
 }
 
+- (void)scrollToIndex:(NSInteger)index {
+    CGPoint offset = self.horizontalSV.contentOffset;
+    offset.x = index * FMView_W;
+    [self.horizontalSV setContentOffset:offset animated:YES];
+}
+
 - (void)btnClick:(UIButton *)sender {
     NSInteger index = sender.tag - 100;
     CGPoint offset = self.horizontalSV.contentOffset;
@@ -331,9 +303,9 @@
                 }
             }
         }
-        if ([self.fatherController.childViewControllers[index] isKindOfClass:[FMBaseCollectionViewController class]]) {
-            FMBaseCollectionViewController *fcv = self.fatherController.childViewControllers[index];
-            self.currentShowV = (UICollectionView *)fcv.collectionView;
+        if ([_tOrcArr[index] isKindOfClass:[UICollectionView class]]) {
+            UICollectionView *cv = (UICollectionView *)_tOrcArr[index];
+            self.currentShowV = cv;
             if (((int)_preTOffsetY > 0) && (self.currentShowV.contentOffset.y > 0)) {
             } else {
                 self.currentShowV.contentOffset = CGPointMake(0, tableOSY);
@@ -341,15 +313,16 @@
             
             if (_config.shouldLazyLoad) {
                 //已下四行代码，使页面用到时再加载，达到懒加载的目的
+                UIViewController *fcv = _fatherController.childViewControllers[index];
                 if ([fcv isViewLoaded]) return;
                 fcv.view.frame = CGRectMake(index * FMView_W, 0, FMView_W, FMView_H - _config.button_H - _config.barStop_H);
-                fcv.collectionView.frame = CGRectMake(0, 0, FMView_W, FMView_H - _config.button_H - _config.barStop_H);
+                cv.frame = CGRectMake(0, 0, FMView_W, FMView_H - _config.button_H - _config.barStop_H);
                 [self.horizontalSV addSubview:fcv.view];
             }
             
-        } else if ([self.fatherController.childViewControllers[index] isKindOfClass:[FMBaseTableViewController class]]) {
-            FMBaseTableViewController *ftv = self.fatherController.childViewControllers[index];
-            self.currentShowV = (UITableView *)ftv.tableView;
+        } else if ([_tOrcArr[index] isKindOfClass:[UITableView class]]) {
+            UITableView *tv = (UITableView *)_tOrcArr[index];
+            self.currentShowV = tv;
             if (((int)_preTOffsetY > 0) && (self.currentShowV.contentOffset.y > 0)) {
             } else {
                 self.currentShowV.contentOffset = CGPointMake(0, tableOSY);
@@ -357,9 +330,10 @@
             
             if (_config.shouldLazyLoad) {
                 //已下四行代码，使页面用到时再加载，达到懒加载的目的
+                UIViewController *ftv = self.fatherController.childViewControllers[index];
                 if ([ftv isViewLoaded]) return;
                 ftv.view.frame = CGRectMake(index * FMView_W, 0, FMView_W, FMView_H - _config.button_H - _config.barStop_H);
-                ftv.tableView.frame = CGRectMake(0, 0, FMView_W, FMView_H - _config.button_H - _config.barStop_H);
+                tv.frame = CGRectMake(0, 0, FMView_W, FMView_H - _config.button_H - _config.barStop_H);
                 [self.horizontalSV addSubview:ftv.view];
             }
             

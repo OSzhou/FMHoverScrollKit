@@ -45,4 +45,9 @@ static NSString  *ID = @"FM1";
     
     return cell;
 }
+
+- (void)dealloc {
+    
+}
+
 @end

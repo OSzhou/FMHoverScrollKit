@@ -9,13 +9,16 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "HeadView.h"
+#import "FMMixScrollProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FMMixScrollConfig : NSObject
 
 /** 传入的子控制器的数组 ps:不可变数组, 最多不要超过5个（暂不支持滑动）*/
-@property (nonatomic, strong) NSArray *childVCArr;
+@property (nonatomic, strong) NSArray <UIViewController *>*childVCArr;
+/** 传入的UITableView 或 UICollectionView数组 ps:不可变数组, 最多不要超过5个（暂不支持滑动）*/
+@property (nonatomic, strong) NSArray <UIScrollView *>*scrollTorCArr;
 /** 转入的头部视图的image图片的名称 */
 @property (nonatomic, strong) NSString *headImageName;
 /** 是否允许headView缩放，默认NO */
@@ -49,12 +52,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface FMMixScrollBaseDelegateManager : NSObject
+@interface FMMixScrollBaseDelegateManager : NSObject <FMBaseTableViewDelegate, FMBaseCollectionViewDelegate>
 
 /** 头部视图，可以自己向上面添加自定义的控件 */
 @property (nonatomic, strong) HeadView *headView;
 
 - (instancetype)initWithConfig:(FMMixScrollConfig *)config fatherController:(UIViewController *)fatherController;
+
+- (void)scrollToIndex:(NSInteger)index;
 
 @end
 

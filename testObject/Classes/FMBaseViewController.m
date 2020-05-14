@@ -15,7 +15,7 @@
 
 #define View_W [UIScreen mainScreen].bounds.size.width
 #define View_H [UIScreen mainScreen].bounds.size.height
-@interface FMBaseViewController () <UIScrollViewDelegate, UITableViewDelegate, BaseTableViewDelegate, BaseCollectionViewDelegate>
+@interface FMBaseViewController () <UIScrollViewDelegate, UITableViewDelegate, FMBaseTableViewDelegate, FMBaseCollectionViewDelegate>
 @property (nonatomic, strong) UIView *bar;
 @property (nonatomic, strong) UIScrollView *horizontalSV;
 //@property (nonatomic, strong) UITableView *tableV;

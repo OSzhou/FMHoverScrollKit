@@ -45,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		978AF69B246CEF72000CD97F /* FMScrollProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMScrollProtocol.h; sourceTree = "<group>"; };
 		BACEE3FF1DAC8BC20061CA95 /* testObject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testObject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BACEE4031DAC8BC20061CA95 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BACEE4051DAC8BC20061CA95 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -178,6 +179,7 @@
 				E519BADB1DB89B5500AB74CD /* HeadView */,
 				E519BAE71DB8A25C00AB74CD /* FMBaseViewController.h */,
 				E519BAE81DB8A25C00AB74CD /* FMBaseViewController.m */,
+				978AF69B246CEF72000CD97F /* FMScrollProtocol.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -312,6 +314,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);

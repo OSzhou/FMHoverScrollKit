@@ -57,6 +57,9 @@ NS_ASSUME_NONNULL_BEGIN
 /** 头部视图，可以自己向上面添加自定义的控件 */
 @property (nonatomic, strong) HeadView *headView;
 
+@property (nonatomic, strong) UIView *bar;
+@property (nonatomic, strong) UIScrollView *horizontalSV;
+
 - (instancetype)initWithConfig:(FMMixScrollConfig *)config fatherController:(UIViewController *)fatherController;
 
 - (void)scrollToIndex:(NSInteger)index;

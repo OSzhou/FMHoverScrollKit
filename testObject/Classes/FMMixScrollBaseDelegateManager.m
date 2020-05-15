@@ -44,8 +44,7 @@
 @end
 
 @interface FMMixScrollBaseDelegateManager () <UIScrollViewDelegate, UITableViewDelegate>
-@property (nonatomic, strong) UIView *bar;
-@property (nonatomic, strong) UIScrollView *horizontalSV;
+
 @property (nonatomic, strong) FMMixScrollConfig *config;
 /** 父控制器 必须有*/
 @property (nonatomic, weak) UIViewController *fatherController;
@@ -103,6 +102,16 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notification:) name:HeadViewTouchMoveNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(endNotification:) name:HeadViewTouchEndNotification object:nil];
      [self scrollViewDidEndScrollingAnimation:self.horizontalSV];
+    
+    NSArray *gestureArray = self.fatherController.navigationController.view.gestureRecognizers;
+    // 当是侧滑手势的时候设置scrollview需要此手势失效即可
+    for (UIGestureRecognizer *gesture in gestureArray) {
+        if ([gesture isKindOfClass:[UIScreenEdgePanGestureRecognizer class]]) {
+            [_horizontalSV.panGestureRecognizer requireGestureRecognizerToFail:gesture];
+            break;
+        }
+    }
+    
 }
 
 - (void)endNotification:(NSNotification *)noti {

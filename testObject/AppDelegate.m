@@ -14,6 +14,7 @@
 #import "FMC1ViewController.h"
 #import "FMMixScollFatherViewController.h"
 #import "FMMixScrollBaseDelegateManager.h"
+#import "FMTest1ViewController.h"
 
 @interface AppDelegate ()
 
@@ -55,8 +56,8 @@
 //    FMT3ViewController *t3= [[FMT3ViewController alloc] init];
 //    bvc.childVCArr = @[t1, c1, t3];
     
-    FMMixScollFatherViewController *fvc = [[FMMixScollFatherViewController alloc] init];
-    
+//    FMMixScollFatherViewController *fvc = [[FMMixScollFatherViewController alloc] init];
+    FMTest1ViewController *fvc = [[FMTest1ViewController alloc] init];
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:fvc];
     [self.window makeKeyAndVisible];
     return YES;

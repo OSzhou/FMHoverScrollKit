@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		978AF69E246CF187000CD97F /* FMMixScrollBaseDelegateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 978AF69D246CF187000CD97F /* FMMixScrollBaseDelegateManager.m */; };
 		978AF6A1246CF56C000CD97F /* FMMixScollFatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 978AF6A0246CF56C000CD97F /* FMMixScollFatherViewController.m */; };
+		978AF6C6246E50FF000CD97F /* FMTest1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 978AF6C5246E50FF000CD97F /* FMTest1ViewController.m */; };
+		978AF6C9246E511E000CD97F /* FMTest2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 978AF6C8246E511E000CD97F /* FMTest2ViewController.m */; };
 		BACEE4041DAC8BC20061CA95 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BACEE4031DAC8BC20061CA95 /* main.m */; };
 		BACEE4071DAC8BC20061CA95 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BACEE4061DAC8BC20061CA95 /* AppDelegate.m */; };
 		BACEE40D1DAC8BC30061CA95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BACEE40B1DAC8BC30061CA95 /* Main.storyboard */; };
@@ -52,6 +54,10 @@
 		978AF69D246CF187000CD97F /* FMMixScrollBaseDelegateManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMMixScrollBaseDelegateManager.m; sourceTree = "<group>"; };
 		978AF69F246CF56C000CD97F /* FMMixScollFatherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMMixScollFatherViewController.h; sourceTree = "<group>"; };
 		978AF6A0246CF56C000CD97F /* FMMixScollFatherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMMixScollFatherViewController.m; sourceTree = "<group>"; };
+		978AF6C4246E50FF000CD97F /* FMTest1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMTest1ViewController.h; sourceTree = "<group>"; };
+		978AF6C5246E50FF000CD97F /* FMTest1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMTest1ViewController.m; sourceTree = "<group>"; };
+		978AF6C7246E511E000CD97F /* FMTest2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMTest2ViewController.h; sourceTree = "<group>"; };
+		978AF6C8246E511E000CD97F /* FMTest2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMTest2ViewController.m; sourceTree = "<group>"; };
 		BACEE3FF1DAC8BC20061CA95 /* testObject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testObject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BACEE4031DAC8BC20061CA95 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BACEE4051DAC8BC20061CA95 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -114,6 +120,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		978AF6C3246E50A6000CD97F /* TestCode */ = {
+			isa = PBXGroup;
+			children = (
+				978AF6C4246E50FF000CD97F /* FMTest1ViewController.h */,
+				978AF6C5246E50FF000CD97F /* FMTest1ViewController.m */,
+				978AF6C7246E511E000CD97F /* FMTest2ViewController.h */,
+				978AF6C8246E511E000CD97F /* FMTest2ViewController.m */,
+			);
+			path = TestCode;
+			sourceTree = "<group>";
+		};
 		BACEE3F61DAC8BC20061CA95 = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +154,7 @@
 		BACEE4011DAC8BC20061CA95 /* testObject */ = {
 			isa = PBXGroup;
 			children = (
+				978AF6C3246E50A6000CD97F /* TestCode */,
 				E519BAD01DB89B5500AB74CD /* Classes */,
 				BACEE4051DAC8BC20061CA95 /* AppDelegate.h */,
 				BACEE4061DAC8BC20061CA95 /* AppDelegate.m */,
@@ -379,6 +397,7 @@
 				E522F2131E2477B20003312E /* FMConst.m in Sources */,
 				FAFC8919210EEDED007AC126 /* FMT3ViewController.m in Sources */,
 				E519BAE91DB8A25C00AB74CD /* FMBaseViewController.m in Sources */,
+				978AF6C9246E511E000CD97F /* FMTest2ViewController.m in Sources */,
 				978AF69E246CF187000CD97F /* FMMixScrollBaseDelegateManager.m in Sources */,
 				E519BAE51DB89B5500AB74CD /* HeadView.m in Sources */,
 				978AF6A1246CF56C000CD97F /* FMMixScollFatherViewController.m in Sources */,
@@ -386,6 +405,7 @@
 				FAFC891A210EEDED007AC126 /* FMT1ViewController.m in Sources */,
 				FAFC8917210EEDED007AC126 /* FMT2ViewController.m in Sources */,
 				BACEE4041DAC8BC20061CA95 /* main.m in Sources */,
+				978AF6C6246E50FF000CD97F /* FMTest1ViewController.m in Sources */,
 				FAFC8918210EEDED007AC126 /* FMBaseTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

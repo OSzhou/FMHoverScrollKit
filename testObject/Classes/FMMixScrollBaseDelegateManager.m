@@ -29,7 +29,6 @@
 }
 
 - (BOOL)isiPhoneX {
-    
     if(@available(iOS 11.0, *)) {
         UIWindow *keyWindow = [[[UIApplication sharedApplication] delegate] window];
         
@@ -394,7 +393,6 @@
     if (!_bar) {
         _bar = [[UIView alloc] init];
         _bar.frame = CGRectMake(0, (CGRectGetHeight(_headView.frame) - _config.button_H), FMView_W, _config.button_H);
-        _bar.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.5];
         CGFloat w = FMView_W;
         for (int i = 0; i < _cvcCount; i++) {
             UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -415,7 +413,7 @@
             }
             
             if (_config.btnTitleArr.count > 0) {
-                [btn setTitle:[NSString stringWithFormat:@"btn_%d", i] forState:UIControlStateNormal];
+                [btn setTitle:_config.btnTitleArr[i] forState:UIControlStateNormal];
             }
             
             if (_config.btnTitleArr && _config.btnTitleArr.count == _config.btnSelectedTitleArr.count) {

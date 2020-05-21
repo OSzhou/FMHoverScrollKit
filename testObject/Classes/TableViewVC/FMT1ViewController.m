@@ -28,7 +28,7 @@ static NSString  *ID = @"FM1";
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return 3;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

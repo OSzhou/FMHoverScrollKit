@@ -119,6 +119,10 @@
         if ([_tOrcArr[i] isKindOfClass:[UICollectionView class]]) {
             UICollectionView *cv = _tOrcArr[i];
             if ([cv isEqual:self.currentShowV]) {
+                if (cv.contentSize.height <= FMView_H - _config.headImage_H -_config.button_H - _config.barStop_H) {
+                    _headView.frame = CGRectMake(0, _config.barStop_H, FMView_W, _config.headImage_H + _config.button_H);
+                    cv.contentOffset = CGPointMake(0, - _config.headImage_H);
+                }
                 continue;
             } else {
                 cv.contentOffset = self.currentShowV.contentOffset.y < -_config.headImage_H ? CGPointMake(0, -_config.headImage_H) : self.currentShowV.contentOffset;
@@ -126,6 +130,10 @@
         } else if ([_tOrcArr[i] isKindOfClass:[UITableView class]]) {
             UITableView *tv = _tOrcArr[i];
             if ([tv isEqual:self.currentShowV]) {
+                if (tv.contentSize.height <= FMView_H - _config.headImage_H - _config.button_H - _config.barStop_H) {
+                    _headView.frame = CGRectMake(0, _config.barStop_H, FMView_W, _config.headImage_H + _config.button_H);
+                    tv.contentOffset = CGPointMake(0, - _config.headImage_H);
+                }
                 continue;
             } else {
                 tv.contentOffset = self.currentShowV.contentOffset.y < -_config.headImage_H ? CGPointMake(0, -_config.headImage_H) : self.currentShowV.contentOffset;
@@ -260,7 +268,7 @@
             frame.size.height = -_preTOffsetY + _config.button_H;
             [self resetTableViewContentOffsetYWithFrame:frame];
         } else {
-            _headView.frame = CGRectMake(0, _config.barStop_H, FMView_W, _config.headImage_H + _config.button_H);;
+            _headView.frame = CGRectMake(0, _config.barStop_H, FMView_W, _config.headImage_H + _config.button_H);
         }
     }
 }

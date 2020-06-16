@@ -14,7 +14,7 @@
 #import "FMMixScollFatherViewController.h"
 #import "FMMixScrollBaseDelegateManager.h"
 
-@interface FMMixScollFatherViewController ()
+@interface FMMixScollFatherViewController () <FMMixScrollManagerDelegate>
 @property (nonatomic, strong) FMMixScrollBaseDelegateManager *manager;
 @end
 
@@ -37,25 +37,19 @@
     //    config.headImage_H = 500;
     config.isTest = YES;
     _manager = [[FMMixScrollBaseDelegateManager alloc] initWithConfig:config fatherController:self];
-    
+    _manager.delegate = self;
     t1.delegate = _manager;
     c1.delegate = _manager;
     t3.delegate = _manager;
-    
+//    [_manager scrollToIndex:1];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)currentSelectedIndex:(NSInteger)index {
+    NSLog(@"current seleted index --- %ld", (long)index);
 }
-*/
 
 - (void)dealloc {
-    
+    NSLog(@"FMMixScollFatherViewController --- dealloc");
 }
 
 @end

@@ -52,8 +52,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@protocol FMMixScrollManagerDelegate <NSObject>
+
+- (void)currentSelectedIndex:(NSInteger)index;
+
+@end
+
 @interface FMMixScrollBaseDelegateManager : NSObject <FMBaseTableViewDelegate, FMBaseCollectionViewDelegate>
 
+@property (nonatomic, weak) id <FMMixScrollManagerDelegate> delegate;
 /** 头部视图，可以自己向上面添加自定义的控件 */
 @property (nonatomic, strong) HeadView *headView;
 

@@ -299,6 +299,10 @@
         CGFloat offSetX = scrollView.contentOffset.x;
         NSInteger index = offSetX / w;
         
+        if (self.delegate && [self.delegate respondsToSelector:@selector(currentSelectedIndex:)]) {
+            [self.delegate currentSelectedIndex:index];
+        }
+        
         if (index < _tOrcArr.count) {
             self.currentShowV = _tOrcArr[index];
         }
@@ -414,7 +418,7 @@
         for (int i = 0; i < _cvcCount; i++) {
             UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
             btn.frame = CGRectMake(i * w / _cvcCount, 0, w / _cvcCount, _config.button_H);
-            
+            btn.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
             if (_config.btnFont) {
                 btn.titleLabel.font = _config.btnFont;
             } else {

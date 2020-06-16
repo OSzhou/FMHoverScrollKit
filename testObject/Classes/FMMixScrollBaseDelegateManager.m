@@ -419,6 +419,7 @@
             UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
             btn.frame = CGRectMake(i * w / _cvcCount, 0, w / _cvcCount, _config.button_H);
             btn.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+            btn.titleLabel.textAlignment = NSTextAlignmentCenter;
             if (_config.btnFont) {
                 btn.titleLabel.font = _config.btnFont;
             } else {

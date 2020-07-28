@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "FMHoverScrollKit"
-  s.version      = "1.5.9"
+  s.version      = "1.6.0"
   s.summary      = " FMHoverScrollKit is iOS SDK for UI ."
 
   # This description is used to generate tags and improve search results.
@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/OSzhou/WYYKTScroll.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/OSzhou/FMHoverScrollKit.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

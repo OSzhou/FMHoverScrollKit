@@ -65,3 +65,30 @@ podspec 更新版本步骤
 5.pod trunk push xxx.podspec 提交最新的podspec文件
 
 注意：提交的代码里最好不要有警告
+
+---- 删除框架内某些文件 ---
+pre_install do |installer|
+    puts 'pre_install begin....'
+    dir_af = File.join(installer.sandbox.pod_dir('NIMSDK_LITE'),'NIMSDK', 'Libs')
+    Dir.foreach(dir_af) {|x|
+      real_path = File.join(dir_af, x)
+      if (!File.directory?(real_path) && File.exists?(real_path))
+        if(x == 'libaacplus.a' || x == 'libcrypto.a' || x == 'libevent.a' || x == 'libssl.a' || x == 'NIMSDK.framework')
+          File.delete(real_path)
+          puts 'delete:'+ x
+        end
+      end
+    }
+    
+    dir_af = File.join(installer.sandbox.pod_dir('BaiduMapKit'),'thirdLibs')
+    Dir.foreach(dir_af) {|x|
+      real_path = File.join(dir_af, x)
+      if (!File.directory?(real_path) && File.exists?(real_path))
+        if(x == 'libcrypto.a' || x == 'libssl.a')
+          File.delete(real_path)
+          puts 'delete1:'+ x
+        end
+      end
+    }
+    puts 'end pre_install.'
+end

@@ -1,4 +1,4 @@
-# WYYKTScroll
+# FMHoverScrollKit
 这是一个控件悬停的UI效果实现，类似于网易云课堂的详情页UI效果
 ###
 #### 1.工程引入FMBaseViewController, 并添加要自定义的controller
@@ -53,9 +53,9 @@ FMBaseViewController *bvc = [[FMBaseViewController alloc] init];
 * headView上的内容可自定义添加，通过 ftc.headView可拿到head部分的视图添加自己的控件。
 * 支持cocoaPods 安装 
 ````
-pod search WYTest
+pod search FMHoverScrollKit
 在Podfile中添加
-pod "WYTest"
+pod "FMHoverScrollKit"
 pod install || pod update
 ````
 ##功能尚不完善， 持续更新中,敬请期待！
